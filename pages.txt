@@ -1,0 +1,10 @@
+  <livewire:login />
+  <livewire:counter />
+  <livewire:header />
+  <livewire:signup />
+<livewire:dashboard  />
+<livewire:addrecord />
+<livewire:editrecord />
+<livewire:updaterecords />
+  <livewire:importrecord />
+<livewire:resetpassword />
