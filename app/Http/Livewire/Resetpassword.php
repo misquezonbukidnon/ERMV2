@@ -8,6 +8,6 @@ class Resetpassword extends Component
 {
     public function render()
     {
-        return view('livewire.resetpassword');
+        return view('livewire.authentication.resetpassword');
     }
 }

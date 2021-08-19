@@ -624,13 +624,13 @@
                                                 <!-- Keyboard Shortcuts Toggle -->
                                                 <div class="hs-unfold">
                                                     <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle" href="javascript:;" data-hs-unfold-options='{
-                              "target": "#keyboardShortcutsSidebar",
-                              "type": "css-animation",
-                              "animationIn": "fadeInRight",
-                              "animationOut": "fadeOutRight",
-                              "hasOverlay": true,
-                              "smartPositionOff": true
-                             }'>
+                                                    "target": "#keyboardShortcutsSidebar",
+                                                    "type": "css-animation",
+                                                    "animationIn": "fadeInRight",
+                                                    "animationOut": "fadeOutRight",
+                                                    "hasOverlay": true,
+                                                    "smartPositionOff": true
+                                                    }'>
                                                         <i class="tio-command-key"></i>
                                                     </a>
                                                 </div>

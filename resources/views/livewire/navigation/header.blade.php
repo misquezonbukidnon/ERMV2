@@ -32,7 +32,7 @@
             <li class="dropdown">
               <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tio-document-text"> &nbsp;</i>Records</a>
               <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
-                <a class="dropdown-item" href="#">New Records</a>
+                <a class="dropdown-item" href="/create/record">New Records</a>
                 <a class="dropdown-item" href="#">Update Records</a>
                 <a class="dropdown-item" href="#">Import/Export Records</a>
               </div>
