@@ -16,7 +16,12 @@ class OfficeSeeder extends Seeder
     {
         DB::table('offices')->insert([
             [
-                //
+                'name' => '',
+                'abbr' => ''
+            ],
+            [
+                'name' => '',
+                'abbr' => ''
             ],
         ]);
     }
