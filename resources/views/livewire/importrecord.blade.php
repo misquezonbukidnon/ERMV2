@@ -229,9 +229,9 @@
                                 <!-- Unfold -->
                                 <div class="hs-unfold">
                                     <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
-                       "target": "#filesListDropdown10",
-                       "type": "css-animation"
-                     }'>
+                                        "target": "#filesListDropdown10",
+                                        "type": "css-animation"
+                                        }'>
                                         <span class="d-none d-sm-inline-block mr-1">More</span>
                                         <i class="tio-chevron-down"></i>
                                     </a>
@@ -274,9 +274,9 @@
                                 <!-- Unfold -->
                                 <div class="hs-unfold">
                                     <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
-                       "target": "#filesListDropdown11",
-                       "type": "css-animation"
-                     }'>
+                                        "target": "#filesListDropdown11",
+                                        "type": "css-animation"
+                                        }'>
                                         <span class="d-none d-sm-inline-block mr-1">More</span>
                                         <i class="tio-chevron-down"></i>
                                     </a>
@@ -320,14 +320,61 @@
                                 <!-- Unfold -->
                                 <div class="hs-unfold">
                                     <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
-                       "target": "#filesListDropdown12",
-                       "type": "css-animation"
-                     }'>
+                                        "target": "#filesListDropdown12",
+                                        "type": "css-animation"
+                                        }'>
                                         <span class="d-none d-sm-inline-block mr-1">More</span>
                                         <i class="tio-chevron-down"></i>
                                     </a>
 
                                     <div id="filesListDropdown12" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right" style="min-width: 13rem;">
+                                        <span class="dropdown-header">Settings</span>
+
+                                      
+                                        <a class="dropdown-item" href="#">
+                                            <i class="tio-download-to dropdown-item-icon"></i>
+                                            Download
+                                        </a>
+
+                                    
+                                    </div>
+                                </div>
+                                <!-- End Unfold -->
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                    </li>
+                    <!-- End List Item -->
+
+                            <!-- List Item -->
+                            <li class="list-group-item">
+                        <div class="row align-items-center gx-2">
+                            <div class="col-auto">
+                                <img class="avatar avatar-xs avatar-4by3" src="./assets/svg/brands/google-sheets.svg" alt="Image Description">
+                            </div>
+
+                            <div class="col">
+                                <h5 class="mb-0">
+                                    <a class="text-dark" href="#">Honorarium - Records</a>
+                                </h5>
+                                <ul class="list-inline list-separator small">
+                                    <li class="list-inline-item">Updated 4 months ago</li>
+                                    <li class="list-inline-item">25kb</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-auto">
+                                <!-- Unfold -->
+                                <div class="hs-unfold">
+                                    <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options='{
+                                        "target": "#filesListDropdownhonor",
+                                        "type": "css-animation"
+                                        }'>
+                                        <span class="d-none d-sm-inline-block mr-1">More</span>
+                                        <i class="tio-chevron-down"></i>
+                                    </a>
+
+                                    <div id="filesListDropdownhonor" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right" style="min-width: 13rem;">
                                         <span class="dropdown-header">Settings</span>
 
                                       

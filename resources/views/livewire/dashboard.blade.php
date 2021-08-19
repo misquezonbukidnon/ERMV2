@@ -1,5 +1,6 @@
 <div>
     <div class="content container-fluid">
+         <!-- ********************************************************************Breadcrumb (Can be converted to Component)************************************************* -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -19,6 +20,7 @@
             "endPoint": "#stickyBlockEndPoint",
             "stickyOffsetTop": 20
             }'>
+             <!-- ********************************************************************User Profile Overview (Can be converted to Component)************************************************* -->
                     <!-- Header -->
                     <div class="card-header">
                         <h5 class="card-header-title">Profile</h5>
@@ -82,6 +84,7 @@
             "endPoint": "#stickyBlockEndPoint",
             "stickyOffsetTop": 20
             }'>
+            <!-- ********************************************************************Events (Can be converted to Component)************************************************* -->
                     <!-- Header -->
                     <div class="card-header">
                         <h5 class="card-header-title">Events</h5>
@@ -147,7 +150,7 @@
 
             <div class="col-lg-9">
                 <div class="row gx-2 gx-lg-3">
-
+                <!-- ********************************************************************Total Employees Card************************************************* -->
                     <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
                         <!-- Card -->
                         <a class="card card-hover-shadow  w-100 h-100" href="#">
@@ -207,72 +210,23 @@
                         </a>
                         <!-- End Card -->
                     </div>
-
                 </div>
+                <!-- ********************************************************************Dashboard Data Table************************************************* -->
+                <!-- Card -->
                 <div class="card">
                     <!-- Header -->
                     <div class="card-header">
-                        <div class="row justify-content-between align-items-center flex-grow-1">
-                            <div class="col-12 col-md">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="card-header-title">Users</h5>
-                                </div>
-                            </div>
-
-                            <div class="col-md-auto">
-                                <!-- Filter -->
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <!-- Select -->
-                                        <select class="js-select2-custom js-datatable-filter custom-select" size="1" style="opacity: 0;" data-target-column-index="1" data-hs-select2-options='{
-                            "minimumResultsForSearch": "Infinity",
-                            "customClass": "custom-select custom-select-sm custom-select-borderless",
-                            "dropdownAutoWidth": true,
-                            "width": true
-                            }'>
-                                            <option value="">Any</option>
-                                            <option value="Accountant">Accountant</option>
-                                            <option value="Co-founder">Co-founder</option>
-                                            <option value="Designer">Designer</option>
-                                            <option value="Developer">Developer</option>
-                                            <option value="Director">Director</option>
-                                        </select>
-                                        <!-- End Select -->
-                                    </div>
-                                    <div class="col">
-                                        <form>
-                                            <!-- Search -->
-                                            <div class="input-group input-group-merge input-group-flush">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <i class="tio-search"></i>
-                                                    </div>
-                                                </div>
-                                                <input id="datatableWithFilterSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
-                                            </div>
-                                            <!-- End Search -->
-                                        </form>
-                                    </div>
-                                </div>
-                                <!-- End Filter -->
-                            </div>
-                        </div>
+                        <h5 class="card-header-title">Employees</h5>
                     </div>
                     <!-- End Header -->
 
                     <!-- Table -->
                     <div class="table-responsive datatable-custom">
-                        <table id="datatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
-                                    "columnDefs": [{
-                                        "targets": [1],
-                                        "orderable": false
-                                    }],
-                                    "order": [],
-                                    "search": "#datatableWithFilterSearch",
-                                    "isResponsive": false,
-                                    "isShowPaging": false,
-                                    "pagination": "datatableWithFilterPagination"
-                                }'>
+                        <table id="columnSearchDatatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
+                                        "order": [],
+                                        "orderCellsTop": true,
+                                        "pagination": "datatableWithFilterPagination"
+                                    }'>
                             <thead class="thead-light">
                                 <tr>
                                     <th>Name</th>
@@ -280,19 +234,54 @@
                                     <th>Classification</th>
                                     <th>Status</th>
                                 </tr>
+                                <tr>
+                                    <th>
+                                        <input type="text" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
+                                    </th>
+                                    <th>
+                                        <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
+                                                "minimumResultsForSearch": "Infinity",
+                                                "customClass": "custom-select custom-select-sm text-capitalize"
+                                                }'>
+                                            <option value="">Any</option>
+                                            <option value="Director">Director</option>
+                                            <option value="Unknown">Unknown</option>
+                                            <option value="Executive director">Executive director</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select id="column3_search" class="js-select2-custom" data-hs-select2-options='{
+                                                "minimumResultsForSearch": "Infinity",
+                                                "customClass": "custom-select custom-select-sm text-capitalize"
+                                                }'>
+                                            <option value="">Any</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="United States">United States</option>
+                                            <option value="Austria ">Austria </option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select id="column4_search" class="js-select2-custom" data-hs-select2-options='{
+                                                "minimumResultsForSearch": "Infinity",
+                                                "customClass": "custom-select custom-select-sm text-capitalize"
+                                                }'>
+                                            <option value="">Any</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Suspended">Suspended</option>
+                                        </select>
+                                    </th>
+                                </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
+                                        <a class="media align-items-center pe-auto" style="cursor: pointer;">
                                             <div class="avatar avatar-circle mr-3">
                                                 <img class="avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
                                             </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Amanda Harvey <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></span>
-                                                <span class="d-block font-size-sm text-body">amanda@example.com</span>
-                                            </div>
+                                            <span class="d-block h5 text-hover-primary mb-0">Amanda Harvey </span>
                                         </a>
                                     </td>
                                     <td>
@@ -305,16 +294,14 @@
                                     </td>
                                 </tr>
 
+
                                 <tr>
                                     <td>
                                         <a class="media align-items-center" href="../user-profile.html">
                                             <div class="avatar avatar-soft-primary avatar-circle mr-3">
                                                 <span class="avatar-initials">A</span>
                                             </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Anne Richard</span>
-                                                <span class="d-block font-size-sm text-body">anne@example.com</span>
-                                            </div>
+                                            <span class="d-block h5 text-hover-primary mb-0">Anne Richard</span>
                                         </a>
                                     </td>
                                     <td>
@@ -330,13 +317,10 @@
                                 <tr>
                                     <td>
                                         <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img3.jpg" alt="Image Description">
+                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
+                                                <span class="avatar-initials">D</span>
                                             </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">David Harrison</span>
-                                                <span class="d-block font-size-sm text-body">david@example.com</span>
-                                            </div>
+                                            <span class="d-block h5 text-hover-primary mb-0">David Harrison</span>
                                         </a>
                                     </td>
                                     <td>
@@ -352,13 +336,10 @@
                                 <tr>
                                     <td>
                                         <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img5.jpg" alt="Image Description">
+                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
+                                                <span class="avatar-initials">F</span>
                                             </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Finch Hoot</span>
-                                                <span class="d-block font-size-sm text-body">finch@example.com</span>
-                                            </div>
+                                            <span class="d-block h5 text-hover-primary mb-0">Finch Hoot</span>
                                         </a>
                                     </td>
                                     <td>
@@ -374,13 +355,10 @@
                                 <tr>
                                     <td>
                                         <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-dark avatar-circle mr-3">
+                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
                                                 <span class="avatar-initials">B</span>
                                             </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Bob Dean</span>
-                                                <span class="d-block font-size-sm text-body">bob@example.com</span>
-                                            </div>
+                                            <span class="d-block h5 text-hover-primary mb-0">Bob Dean</span>
                                         </a>
                                     </td>
                                     <td>
@@ -393,438 +371,17 @@
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img9.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Ella Lauda <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></span>
-                                                <span class="d-block font-size-sm text-body">ella@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Co-founder</span>
-                                        <span class="d-block font-size-sm">All departments</span>
-                                    </td>
-                                    <td>United Kingdom <span class="text-hide">Code: GB</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-info avatar-circle mr-3">
-                                                <span class="avatar-initials">L</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Lori Hunter</span>
-                                                <span class="d-block font-size-sm text-body">hunter@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Developer</span>
-                                        <span class="d-block font-size-sm">Mobile app</span>
-                                    </td>
-                                    <td>Estonia <span class="text-hide">Code: EE</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                                <span class="avatar-initials">M</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Mark Colbert</span>
-                                                <span class="d-block font-size-sm text-body">mark@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Executive director</span>
-                                        <span class="d-block font-size-sm">Human resources</span>
-                                    </td>
-                                    <td>Canada <span class="text-hide">Code: CA</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img6.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Costa Quinn</span>
-                                                <span class="d-block font-size-sm text-body">costa@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Co-founder</span>
-                                        <span class="d-block font-size-sm">All departments</span>
-                                    </td>
-                                    <td>France <span class="text-hide">Code: FR</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-danger avatar-circle mr-3">
-                                                <span class="avatar-initials">R</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Rachel Doe <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></span>
-                                                <span class="d-block font-size-sm text-body">rachel@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Accountant</span>
-                                        <span class="d-block font-size-sm">Finance</span>
-                                    </td>
-                                    <td>United States <span class="text-hide">Code: US</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img8.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Linda Bates</span>
-                                                <span class="d-block font-size-sm text-body">linda@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Unknown</span>
-                                        <span class="d-block font-size-sm">Unknown</span>
-                                    </td>
-                                    <td>United Kingdom <span class="text-hide">Code: UK</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-danger"></span>Suspended
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-info avatar-circle mr-3">
-                                                <span class="avatar-initials">B</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Brian Halligan</span>
-                                                <span class="d-block font-size-sm text-body">brian@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Director</span>
-                                        <span class="d-block font-size-sm">Accounting</span>
-                                    </td>
-                                    <td>France <span class="text-hide">Code: FR</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-dark avatar-circle mr-3">
-                                                <span class="avatar-initials">C</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Chris Mathew</span>
-                                                <span class="d-block font-size-sm text-body">chris@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Developer</span>
-                                        <span class="d-block font-size-sm">Mobile app</span>
-                                    </td>
-                                    <td>Switzerland <span class="text-hide">Code: CH</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img7.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Clarice Boone <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></span>
-                                                <span class="d-block font-size-sm text-body">clarice@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Seller</span>
-                                        <span class="d-block font-size-sm">Branding products</span>
-                                    </td>
-                                    <td>United Kingdom <span class="text-hide">Code: UK</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-dark avatar-circle mr-3">
-                                                <span class="avatar-initials">L</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Lewis Clarke</span>
-                                                <span class="d-block font-size-sm text-body">lewis@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Co-founder</span>
-                                        <span class="d-block font-size-sm">IT department</span>
-                                    </td>
-                                    <td>Switzerland <span class="text-hide">Code: CH</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img4.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Sam Kart</span>
-                                                <span class="d-block font-size-sm text-body">sam@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Designer</span>
-                                        <span class="d-block font-size-sm">Branding</span>
-                                    </td>
-                                    <td>Canada <span class="text-hide">Code: CA</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-danger avatar-circle mr-3">
-                                                <span class="avatar-initials">J</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Johnny Appleseed</span>
-                                                <span class="d-block font-size-sm text-body">johnny@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Accountant</span>
-                                        <span class="d-block font-size-sm">Human resources</span>
-                                    </td>
-                                    <td>United States <span class="text-hide">Code: US</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-danger avatar-circle mr-3">
-                                                <span class="avatar-initials">P</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Phileas Fogg</span>
-                                                <span class="d-block font-size-sm text-body">phileas@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Designer</span>
-                                        <span class="d-block font-size-sm">Branding</span>
-                                    </td>
-                                    <td>Spain <span class="text-hide">Code: ES</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-danger"></span>Suspended
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img6.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Mark Williams <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></span>
-                                                <span class="d-block font-size-sm text-body">mark@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Co-founder</span>
-                                        <span class="d-block font-size-sm">Branding</span>
-                                    </td>
-                                    <td>United Kingdom <span class="text-hide">Code: GB</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-dark avatar-circle mr-3">
-                                                <span class="avatar-initials">T</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Timothy Silva</span>
-                                                <span class="d-block font-size-sm text-body">timothy@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Developer</span>
-                                        <span class="d-block font-size-sm">Mobile app</span>
-                                    </td>
-                                    <td>Italy <span class="text-hide">Code: IT</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-dark avatar-circle mr-3">
-                                                <span class="avatar-initials">G</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Gary Bishop <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></span>
-                                                <span class="d-block font-size-sm text-body">gary@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Developer</span>
-                                        <span class="d-block font-size-sm">Mobile app</span>
-                                    </td>
-                                    <td>Latvia <span class="text-hide">Code: LV</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-dark avatar-circle mr-3">
-                                                <span class="avatar-initials">Y</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Yorker Scogings</span>
-                                                <span class="d-block font-size-sm text-body">yorker@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Seller</span>
-                                        <span class="d-block font-size-sm">Branding products</span>
-                                    </td>
-                                    <td>Norway <span class="text-hide">Code: NO</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-danger"></span>Suspended
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-info avatar-circle mr-3">
-                                                <span class="avatar-initials">F</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Frank Phillips</span>
-                                                <span class="d-block font-size-sm text-body">frank@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Unknown</span>
-                                        <span class="d-block font-size-sm">Unknown</span>
-                                    </td>
-                                    <td>Norway <span class="text-hide">Code: NO</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-danger"></span>Suspended
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                                <span class="avatar-initials">E</span>
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="d-block h5 text-hover-primary mb-0">Elizabeth Carter</span>
-                                                <span class="d-block font-size-sm text-body">eliz@example.com</span>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Unknown</span>
-                                        <span class="d-block font-size-sm">Unknown</span>
-                                    </td>
-                                    <td>United States <span class="text-hide">Code: UK</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
-                    <!-- End Table -->
-
-                    <!-- Footer -->
                     <div class="card-footer">
-                        <!-- Pagination -->
                         <div class="d-flex justify-content-center justify-content-sm-end">
                             <nav id="datatableWithFilterPagination" aria-label="Activity pagination"></nav>
                         </div>
-                        <!-- End Pagination -->
                     </div>
-                    <!-- End Footer -->
+                    <!-- End Table -->
                 </div>
+                <!-- End Card -->
             </div>
             <!-- End Body -->
         </div>
@@ -838,5 +395,86 @@
 <!-- End Row -->
 <!-- End Card -->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ***************************************************************Modal for Employee viewing here************************************************** -->
+<!-- Modal -->
+<div class="modal fade" id="employeemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="addUserStepConfirmation" class="card card-lg">
+                <!-- Profile Cover -->
+                <div class="profile-cover">
+                    <div class="profile-cover-img-wrapper">
+                        <img class="profile-cover-img" src="./assets/img/1920x400/img1.jpg" alt="Image Description">
+                    </div>
+                </div>
+                <!-- End Profile Cover -->
+
+                <!-- Avatar -->
+                <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
+                    <img class="avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
+                </div>
+                <!-- End Avatar -->
+
+                <!-- Body -->
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-6 text-sm-right">Full name:</dt>
+                        <dd class="col-sm-6">Ella Lauda</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Email:</dt>
+                        <dd class="col-sm-6">ella@example.com</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Phone:</dt>
+                        <dd class="col-sm-6">+1 (609) 972-22-22</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Organization:</dt>
+                        <dd class="col-sm-6">Htmlstream</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Department:</dt>
+                        <dd class="col-sm-6">-</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Account type:</dt>
+                        <dd class="col-sm-6">Individual</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Country:</dt>
+                        <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Great Britain Flag"> United Kingdom</dd>
+
+                        <dt class="col-sm-6 text-sm-right">City:</dt>
+                        <dd class="col-sm-6">London</dd>
+
+                        <dt class="col-sm-6 text-sm-right">State:</dt>
+                        <dd class="col-sm-6">-</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Address line 1:</dt>
+                        <dd class="col-sm-6">45 Roker Terrace, Latheronwheel</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Address line 2:</dt>
+                        <dd class="col-sm-6">-</dd>
+
+                        <dt class="col-sm-6 text-sm-right">Zip code:</dt>
+                        <dd class="col-sm-6">KW5 8NW</dd>
+                    </dl>
+                    <!-- End Row -->
+                </div>
+                <!-- End Body -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
 
 </div>
