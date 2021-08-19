@@ -22,26 +22,24 @@
         <div class="card card-lg mb-5">
             <div class="card-body">
             <!-- Form -->
-            @if($errors->any())
-                <div>
-                    <div>Something went wrong</div>
-
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <form class="js-validate" method="POST" action="/register">
                 @csrf
                 <div class="text-center">
-                <div class="mb-5">
-                    <h1 class="display-4">Create your account</h1>
-                    <p>Already have an account? <a href="{{route('login')}}">Sign in here</a></p>
+                    <div class="mb-5">
+                        <h1 class="display-4">Create your account</h1>
+                        <p>Already have an account? <a href="{{route('login')}}">Sign in here</a></p>
+                    </div>
                 </div>
-
-                </div>
+                @if($errors->any())
+                    <div class="alert alert-danger media" role="alert">
+                        <i class="tio-warning mt-1 mr-1"></i>
+                        @foreach($errors->all() as $error)
+                            <div class="media-body" role="alert">
+                            &emsp; {{ $error }}
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
 
                 <label class="input-label" for="fullNameSrEmail">Full name</label>
 
@@ -71,7 +69,7 @@
 
                 <!-- office input -->
                 <div class="form-group">
-                    <label for="inputGroupHoverLightGenderSelect" class="input-label">Gender</label>
+                    <label for="inputGroupHoverLightGenderSelect" class="input-label">Office</label>
 
                     <div class="input-group input-group-merge input-group-hover-light">
                         <div class="input-group-prepend">
@@ -79,7 +77,7 @@
                             <i class="tio-user-outlined"></i>
                         </span>
                         </div>
-                        <select id="inputGroupHoverLightGenderSelect" class="custom-select" name="offices_id">
+                        <select id="inputGroupHoverLightGenderSelect" class="custom-select" name="offices_id" required>
                             <option>Choose an office</option>
                             @foreach($officelist as $office)
                                 <option value="{{ $office->id }}">{{ $office->abbr }} - {{ $office->name }}</option>
@@ -133,12 +131,12 @@
                 <!-- End Form Group -->
 
                 <!-- Checkbox -->
-                <div class="js-form-message form-group">
+                <!-- <div class="js-form-message form-group">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required data-msg="Please accept our Terms and Conditions.">
                     <label class="custom-control-label font-size-sm text-muted" for="termsCheckbox"> I accept the <a href="#">Terms and Conditions</a></label>
                 </div>
-                </div>
+                </div> -->
                 <!-- End Checkbox -->
 
                 <button type="submit" class="btn btn-lg btn-block btn-primary mb-2">Create an account</button>

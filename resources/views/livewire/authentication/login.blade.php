@@ -25,17 +25,6 @@
             <!-- Form -->
             <form class="js-validate" action="/login" method="POST">
             @csrf
-            @if($errors->any())
-                <div>
-                    <div>Something went wrong</div>
-
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <div class="text-center">
                 <div class="mb-5">
                 <h1 class="display-4">Sign in</h1>
@@ -51,6 +40,16 @@
 
                 <span class="divider text-muted mb-4">OR</span> -->
             </div>
+            @if($errors->any())
+                <div class="alert alert-danger media" role="alert">
+                    <i class="tio-warning mt-1 mr-1"></i>
+                    @foreach($errors->all() as $error)
+                        <div class="media-body" role="alert">
+                        &emsp; {{ $error }}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
 
             <!-- Form Group -->
             <div class="js-form-message form-group">
