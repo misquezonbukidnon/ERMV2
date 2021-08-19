@@ -46,7 +46,8 @@ class OfficeSeeder extends Seeder
             [
                 'name' => 'Human Resourse Management Office',
                 'abbr' => 'HRMO'
-            ],            [
+            ],
+            [
                 'name' => 'Local School Board',
                 'abbr' => 'LSB'
             ],

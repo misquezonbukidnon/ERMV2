@@ -22,11 +22,23 @@
         <div class="card card-lg mb-5">
             <div class="card-body">
             <!-- Form -->
-            <form class="js-validate">
+            @if($errors->any())
+                <div>
+                    <div>Something went wrong</div>
+
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form class="js-validate" method="POST" action="/register">
+                @csrf
                 <div class="text-center">
                 <div class="mb-5">
                     <h1 class="display-4">Create your account</h1>
-                    <p>Already have an account? <a href="login.blade.php">Sign in here</a></p>
+                    <p>Already have an account? <a href="{{route('login')}}">Sign in here</a></p>
                 </div>
 
                 </div>
@@ -37,13 +49,13 @@
                 <div class="form-row">
                 <div class="col-sm-6">
                     <div class="js-form-message form-group">
-                    <input type="text" class="form-control form-control-lg" name="fullName" id="fullNameSrEmail" placeholder="Mark" aria-label="Mark" required data-msg="Please enter your first name.">
+                    <input type="text" class="form-control form-control-lg" name="first" id="fullNameSrEmail" placeholder="Firstname" aria-label="first" required data-msg="Please enter your first name.">
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="js-form-message form-group">
-                    <input type="text" class="form-control form-control-lg" placeholder="Williams" aria-label="Williams" required data-msg="Please enter your last name.">
+                    <input type="text" class="form-control form-control-lg" name="last" placeholder="Lastname" aria-label="last" required data-msg="Please enter your last name.">
                     </div>
                 </div>
                 </div>
@@ -53,9 +65,28 @@
                 <div class="js-form-message form-group">
                 <label class="input-label" for="signupSrEmail">Your email</label>
 
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="Markwilliams@example.com" aria-label="Markwilliams@example.com" required data-msg="Please enter a valid email address.">
+                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="yourname@lguquezon.com" required data-msg="Please enter a valid email address.">
                 </div>
                 <!-- End Form Group -->
+
+                <!-- office input -->
+                <div class="form-group">
+                    <label for="inputGroupHoverLightGenderSelect" class="input-label">Gender</label>
+
+                    <div class="input-group input-group-merge input-group-hover-light">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="tio-user-outlined"></i>
+                        </span>
+                        </div>
+                        <select id="inputGroupHoverLightGenderSelect" class="custom-select" name="offices_id">
+                            <option>Choose an office</option>
+                            @foreach($officelist as $office)
+                                <option value="{{ $office->id }}">{{ $office->abbr }} - {{ $office->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
 
                 <!-- Form Group -->
                 <div class="js-form-message form-group">
@@ -84,7 +115,7 @@
                 <label class="input-label" for="signupSrConfirmPassword">Confirm password</label>
 
                 <div class="input-group input-group-merge">
-                    <input type="password" class="js-toggle-password form-control form-control-lg" name="confirmPassword" id="signupSrConfirmPassword" placeholder="8+ characters required" aria-label="8+ characters required" required
+                    <input type="password" class="js-toggle-password form-control form-control-lg" name="password_confirmation" id="signupSrConfirmPassword" placeholder="8+ characters required" aria-label="8+ characters required" required
                             data-msg="Password does not match the confirm password."
                             data-hs-toggle-password-options='{
                             "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],

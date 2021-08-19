@@ -23,11 +23,23 @@
         <div class="card card-lg mb-5">
         <div class="card-body">
             <!-- Form -->
-            <form class="js-validate">
+            <form class="js-validate" action="/login" method="POST">
+            @csrf
+            @if($errors->any())
+                <div>
+                    <div>Something went wrong</div>
+
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="text-center">
                 <div class="mb-5">
                 <h1 class="display-4">Sign in</h1>
-                <p>Don't have an account yet? <a href="authentication-signup-basic.html">Sign up here</a></p>
+                <p>Don't have an account yet? <a href="{{route('register')}}">Sign up here</a></p>
                 </div>
 
                 <!-- <a class="btn btn-lg btn-block btn-white mb-4" href="#">
@@ -44,21 +56,21 @@
             <div class="js-form-message form-group">
                 <label class="input-label" for="signinSrEmail">Your email</label>
 
-                <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail" tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required data-msg="Please enter a valid email address.">
+                <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail" tabindex="1" placeholder="Email" aria-label="yourname@lguquezon.com" required data-msg="Please enter a valid email address.">
             </div>
             <!-- End Form Group -->
 
             <!-- Form Group -->
             <div class="js-form-message form-group">
-                <label class="input-label" for="signupSrPassword" tabindex="0">
+                <!-- <label class="input-label" for="signupSrPassword" tabindex="0">
                 <span class="d-flex justify-content-between align-items-center">
                     Password
                     <a class="input-label-secondary" href="authentication-reset-password-basic.html">Forgot Password?</a>
                 </span>
-                </label>
+                </label> -->
 
                 <div class="input-group input-group-merge">
-                <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="8+ characters required" aria-label="8+ characters required" required
+                <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="Password" aria-label="Password" required
                         data-msg="Your password is invalid. Please try again."
                         data-hs-toggle-password-options='{
                             "target": "#changePassTarget",
@@ -78,7 +90,7 @@
             <!-- Checkbox -->
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox">
+                <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="remember">
                 <label class="custom-control-label font-size-sm text-muted" for="termsCheckbox"> Remember me</label>
                 </div>
             </div>

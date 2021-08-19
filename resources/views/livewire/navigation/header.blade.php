@@ -19,81 +19,85 @@
         </button>
         <!-- End Toggle -->
 
-        <nav class="collapse navbar-collapse" id="navbarNavMenuHeightEg">
-          <!-- Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <!-- Dropdown -->
-            <li class="dropdown">
-              <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="tio-home"></i> &nbsp;Home</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
-                <a class="dropdown-item" href="#">Dashboard</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tio-document-text"> &nbsp;</i>Records</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
-                <a class="dropdown-item" href="/create/record">New Records</a>
-                <a class="dropdown-item" href="#">Update Records</a>
-                <a class="dropdown-item" href="#">Import/Export Records</a>
-              </div>
-            </li>
+        @auth
+          <nav class="collapse navbar-collapse" id="navbarNavMenuHeightEg">
+            <!-- Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Dropdown -->
+              <li class="dropdown">
+                <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="tio-home"></i> &nbsp;Home</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
+                  <a class="dropdown-item" href="#">Dashboard</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tio-document-text"> &nbsp;</i>Records</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
+                  <a class="dropdown-item" href="/create/record">New Records</a>
+                  <a class="dropdown-item" href="#">Update Records</a>
+                  <a class="dropdown-item" href="#">Import/Export Records</a>
+                </div>
+              </li>
 
 
 
-          </ul>
-          <!-- End Navbar -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
+            </ul>
+            <!-- End Navbar -->
+            <ul class="navbar-nav">
+              <li class="nav-item">
 
-              <div class="hs-unfold">
-                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
-            "target": "#accountNavbarDropdown",
-            "type": "css-animation"
-          }'>
-                  <div class="avatar avatar-sm avatar-circle">
-                    <img class="avatar-img" src="../assets/img/160x160/img6.jpg" alt="Image Description">
-                    <span class="avatar-status avatar-sm-status avatar-status-success"></span>
-                  </div>
-                </a>
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
+              "target": "#accountNavbarDropdown",
+              "type": "css-animation"
+            }'>
+                    <div class="avatar avatar-sm avatar-circle">
+                      <img class="avatar-img" src="../assets/img/160x160/defaultuser.png" alt="Image Description">
+                      <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                    </div>
+                  </a>
 
-                <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
-                  <div class="dropdown-item">
-                    <div class="media align-items-center">
-                      <div class="avatar avatar-sm avatar-circle mr-2">
-                        <img class="avatar-img" src="../assets/img/160x160/img6.jpg" alt="Image Description">
-                      </div>
-                      <div class="media-body">
-                        <span class="card-title h5">Regei Cabug-os</span>
-                        <span class="card-text">cabugosregei@gmail.com</span>
+                  <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                    <div class="dropdown-item">
+                      <div class="media align-items-center">
+                        <div class="avatar avatar-sm avatar-circle mr-2">
+                          <img class="avatar-img" src="../assets/img/160x160/defaultuser.png" alt="Image Description">
+                        </div>
+                        <div class="media-body">
+                          <span class="card-title h5">{{ auth()->user()->first }} {{ auth()->user()->last }}</span>
+                          <span class="card-text">{{ auth()->user()->email }}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="dropdown-divider"></div>
-
-
-                  <div class="hs-unfold w-100">
-
-
-
-                    <a class="dropdown-item" data-toggle="modal" data-target="#changepassmodal" href="#">
-                      <span class="text-truncate pr-2" title="Profile & account"> <i class="tio-password"></i> &nbsp; Change Password</span>
-                    </a>
-
-
-
 
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item" href="#">
-                      <span class="text-truncate pr-2 text-danger" title="Sign out"> <i class="tio-sign-out"></i> &nbsp; Sign out</span>
-                    </a>
-                  </div>
-                </div>
 
-            </li>
-          </ul>
-        </nav>
+                    <div class="hs-unfold w-100">
+
+
+
+                      <a class="dropdown-item" data-toggle="modal" data-target="#changepassmodal" href="#">
+                        <span class="text-truncate pr-2" title="Profile & account"> <i class="tio-password"></i> &nbsp; Change Password</span>
+                      </a>
+
+
+
+
+                      <div class="dropdown-divider"></div>
+                      <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="dropdown-item" type="submit">
+                          <span class="text-truncate pr-2 text-danger" title="Sign out"> <i class="tio-sign-out"></i> &nbsp; Sign out</span>
+                        </a>
+                      </form>
+                    </div>
+                  </div>
+
+              </li>
+            </ul>
+          </nav>
+        @endauth
       </div>
     </div>
   </header>

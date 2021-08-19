@@ -6,8 +6,15 @@ use Livewire\Component;
 
 class Signup extends Component
 {
+    public $officelist;
+
+    public function mount($offices)
+    {
+        $this->officelist = $offices;
+    }
+
     public function render()
     {
-        return view('livewire.signup');
+        return view('livewire.authentication.signup');
     }
 }

@@ -36,15 +36,13 @@
 
                             <li>
                                 <i class="tio-user-outlined nav-icon"></i>
-                                Ella Lauda
+                                {{ auth()->user()->first }} {{ auth()->user()->last }}
                             </li>
+
+                            
                             <li>
                                 <i class="tio-briefcase-outlined nav-icon"></i>
-                                No department
-                            </li>
-                            <li>
-                                <i class="tio-city nav-icon"></i>
-                                Htmlstream
+                                {{ auth()->user()->offices->name }}
                             </li>
 
                             <li class="pt-2 pb-0">
@@ -53,24 +51,7 @@
 
                             <li>
                                 <i class="tio-online nav-icon"></i>
-                                ella@example.com
-                            </li>
-                            <li>
-                                <i class="tio-android-phone-vs nav-icon"></i>
-                                +1 (609) 972-22-22
-                            </li>
-
-                            <li class="pt-2 pb-0">
-                                <small class="card-subtitle">Teams</small>
-                            </li>
-
-                            <li>
-                                <i class="tio-group-equal nav-icon"></i>
-                                Member of 7 teams
-                            </li>
-                            <li>
-                                <i class="tio-briefcase-outlined nav-icon"></i>
-                                Working on 8 projects
+                                {{ auth()->user()->email }}
                             </li>
                         </ul>
                     </div>
