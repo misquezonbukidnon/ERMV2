@@ -120,12 +120,7 @@
                     <label for="inputGroupHoverLightOfficeSelect" class="input-label">Office</label>
 
                     <div class="input-group input-group-merge input-group-hover-light">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="tio-briefcase-outlined"></i>
-                        </span>
-                        </div>
-                        <select id="inputGroupHoverLightOfficeSelect" class="custom-select" name="offices_id" required>
+                        <select id="inputGroupHoverLightOfficeSelect" class="js-select2-custom" name="offices_id" required>
                             <option>Choose an office</option>
                             @foreach($officelist as $office)
                                 <option value="{{ $office->id }}">{{ $office->abbr }} - {{ $office->name }}</option>
@@ -139,12 +134,7 @@
                     <label for="inputGroupHoverLightPositionSelect" class="input-label">Position</label>
 
                     <div class="input-group input-group-merge input-group-hover-light">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="tio-poi-user"></i>
-                        </span>
-                        </div>
-                        <select id="inputGroupHoverLightPositionSelect" class="custom-select" name="positions_id" required>
+                        <select id="inputGroupHoverLightPositionSelect" class="js-select2-custom" name="positions_id" required>
                             <option>Choose a position</option>
                             @foreach($positionlist as $position)
                                 <option value="{{ $position->id }}">{{ $position->name }}</option>

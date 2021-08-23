@@ -22,12 +22,27 @@
                     <div class="card">
                         <div class="card-body">
                             <!-- Input Group -->
-                            <form action="/office/create" method="POST">
+                            <form wire:submit.prevent="submitForm" action="/office/create" method="POST">
+                                @csrf
+                                @if($errors->any())
+                                    <div class="alert alert-danger media" role="alert">
+                                        <i class="tio-warning mt-1 mr-1"></i>
+                                        @foreach($errors->all() as $error)
+                                            <div class="media-body" role="alert">
+                                            &emsp; {{ $error }}
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endif
                                 <div class="form-group">
-                                    <label for="formControlPilledFullName" class="input-label">Office name</label>
-                                    <input type="text" class="form-control form-control-pill" id="formControlPilledFullName" placeholder="Please enter Office name" aria-label="Mark Williams">
+                                    <label for="formControlPilledOffice" class="input-label">Office name</label>
+                                    <input wire:model="office" name="office" type="text" class="form-control form-control-pill" id="formControlPilledOffice" placeholder="Please enter office name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formControlPilledAbbr" class="input-label">Abbreviation</label>
+                                    <input wire:model="abbreviation" name="abbreviation" type="text" class="form-control form-control-pill" id="formControlPilledAbbr" placeholder="Please enter abbreviation">
                                     <div class="w-100 d-flex justify-content-center">
-                                        <button type="button" class="btn btn-primary mt-3">Submit</button>
+                                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
                                     </div>
                                 </div>
                             </form>
