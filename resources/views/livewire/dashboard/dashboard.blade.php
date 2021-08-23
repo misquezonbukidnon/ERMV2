@@ -89,9 +89,9 @@
 
            
                 <div class="table-responsive  datatable-custom">
-                    <table id="columnSearchDatatable" class="table w-100 table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
+                    <table id="columnSearchDatatable" class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
                                         "order": [],
-                                        "orderCellsTop": false,
+                                        "orderCellsTop": true,
                                         "pagination": "datatableWithFilterPagination"
                                     }'>
                         <thead class="thead-light">

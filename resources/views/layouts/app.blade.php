@@ -119,35 +119,22 @@
           .search(this.value)
           .draw();
       });
-
-
-      // INITIALIZATION OF SELECT2
-      // =======================================================
-      $('.js-select2-custom').each(function() {
-        var select2 = $.HSCore.components.HSSelect2.init($(this));
-      });
     });
   </script>
 
-<script>
+  <!-- <script>
     $(document).on('ready', function() {
       // INITIALIZATION OF DATATABLES
       // =======================================================
-      var datatable = $.HSCore.components.HSDatatables.init($('#columnSearchOfficeDatatable'));
+      var datatable = $.HSCore.components.HSDatatables.init($('#officedatatable'));
 
-      $('#column1_search').on('keyup', function() {
+      $('#officeSearch').on('keyup', function() {
         datatable
           .columns(0)
           .search(this.value)
           .draw();
       });
-
-      // INITIALIZATION OF SELECT2
-      // =======================================================
-      $('.js-select2-custom').each(function() {
-        var select2 = $.HSCore.components.HSSelect2.init($(this));
-      });
-    });
+    }); -->
   </script>
 
   <!-- Import File -->
@@ -267,8 +254,29 @@
       });
     });
   </script>
+  <!-- Office Datatable Search -->
+  <script>
+    $(document).on('ready', function() {
+      // INITIALIZATION OF DATATABLES
+      // =======================================================
+      var datatable = $.HSCore.components.HSDatatables.init($('#officedatatable'));
+    });
+    $('#officeinputSearch').on('mouseup', function(e) {
+      var $input = $(this),
+        oldValue = $input.val();
 
+      if (oldValue == "") return;
 
+      setTimeout(function() {
+        var newValue = $input.val();
+
+        if (newValue == "") {
+          // Gotcha
+          datatable.search('').draw();
+        }
+      }, 1);
+    });
+  </script>
 
 
   <!-- IE Support -->
