@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Office;
+use App\Models\UserRelationship;
 
 class User extends Authenticatable
 {
@@ -21,7 +21,6 @@ class User extends Authenticatable
         'first',
         'last',
         'email',
-        'offices_id',
         'password',
     ];
 
@@ -44,8 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function offices()
+    public function userrelationships()
     {
-        return $this->belongsTo(Office::class, 'offices_id');
+        return $this->hasMany(UserRelationship::class);
     }
 }

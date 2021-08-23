@@ -23,13 +23,18 @@
 
              <li>
                  <i class="tio-user-outlined nav-icon"></i>
-                 {{ auth()->user()->first }} {{ auth()->user()->last }}
+                 {{ $users->users->first }} {{ $users->users->last }}
              </li>
 
 
              <li>
                  <i class="tio-briefcase-outlined nav-icon"></i>
-                 {{ auth()->user()->offices->name }}
+                {{ $users->offices->name }}
+             </li>
+
+             <li>
+                 <i class="tio-poi-user nav-icon"></i>
+                {{ $users->positions->name }}
              </li>
 
              <li class="pt-2 pb-0">
@@ -38,7 +43,7 @@
 
              <li>
                  <i class="tio-online nav-icon"></i>
-                 {{ auth()->user()->email }}
+                 {{ $users->users->email }}
              </li>
          </ul>
      </div>

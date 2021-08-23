@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Office;
+use App\Models\Position;
+use App\Models\Roles;
 use App\Models\User;
+use App\Models\UserRelationship;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +23,9 @@ class RegisterController extends Controller
     public function create()
     {
         $offices = Office::all();
-        return view('auth.register', compact('offices'));
+        $roles = Roles::all();
+        $positions = Position::all();
+        return view('auth.register', compact('offices', 'roles', 'positions'));
     }
 
     /**
@@ -36,16 +41,26 @@ class RegisterController extends Controller
             'first' => 'required',
             'last' => 'required',
             'email' => 'required|email|unique:users',
-            'offices_id' => 'required',
             'password' => 'required|confirmed|min:8',
+            'offices_id' => 'required',
+            'roles_id' => 'required',
+            'offices_id' => 'required',
+            'positions_id' => 'required',
         ]);
         
         $user = User::create([
             'first' => $request->first,
             'last' => $request->last,
             'email' => $request->email,
-            'offices_id' => $request->offices_id,
             'password' => Hash::make($request->password),
+        ]);
+
+        $userRels = UserRelationship::create([
+            'users_id' => $user->id,
+            'roles_id' => $request->roles_id,
+            'offices_id' => $request->offices_id,
+            'positions_id' => $request->positions_id,
+            'user_images_id' => $request->user_images_id,
         ]);
 
         Auth::login($user);

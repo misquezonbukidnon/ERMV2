@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\UserRelationship;
 
-class Office extends Model
+class Position extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'abbr',
     ];
 
     public function userrelationships()

@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Office;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +16,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             OfficeSeeder::class,
+            RolesSeeder::class,
+            PositionSeeder::class,
+            UserImageSeeder::class,
         ]);
     }
 }

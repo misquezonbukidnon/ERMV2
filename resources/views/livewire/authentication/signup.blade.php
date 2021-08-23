@@ -41,6 +41,35 @@
                     </div>
                 @endif
 
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="js-form-message form-group">
+                            <div class="d-flex align-items-center">
+                                <!-- Avatar -->
+                                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
+
+                                <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader"
+                                        data-hs-file-attach-options='{
+                                            "textTarget": "#avatarImg",
+                                            "mode": "image",
+                                            "targetAttr": "src",
+                                            "resetTarget": ".js-file-attach-reset-img",
+                                            "resetImg": "../assets/img/160x160/img1.jpg"
+                                        }' name="user_image">
+
+                                <span class="avatar-uploader-trigger">
+                                    <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
+                                </span>
+                                </label>
+                                <!-- End Avatar -->
+
+                                <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <label class="input-label" for="fullNameSrEmail">Full name</label>
 
                 <!-- Form Group -->
@@ -67,9 +96,9 @@
                 </div>
                 <!-- End Form Group -->
 
-                <!-- office input -->
+                <!-- Roles input -->
                 <div class="form-group">
-                    <label for="inputGroupHoverLightGenderSelect" class="input-label">Office</label>
+                    <label for="inputGroupHoverLightRoleSelect" class="input-label">Role</label>
 
                     <div class="input-group input-group-merge input-group-hover-light">
                         <div class="input-group-prepend">
@@ -77,7 +106,26 @@
                             <i class="tio-user-outlined"></i>
                         </span>
                         </div>
-                        <select id="inputGroupHoverLightGenderSelect" class="custom-select" name="offices_id" required>
+                        <select id="inputGroupHoverLightRoleSelect" class="custom-select" name="roles_id" required>
+                            <option>Choose a role</option>
+                            @foreach($rolelist as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <!-- office input -->
+                <div class="form-group">
+                    <label for="inputGroupHoverLightOfficeSelect" class="input-label">Office</label>
+
+                    <div class="input-group input-group-merge input-group-hover-light">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="tio-briefcase-outlined"></i>
+                        </span>
+                        </div>
+                        <select id="inputGroupHoverLightOfficeSelect" class="custom-select" name="offices_id" required>
                             <option>Choose an office</option>
                             @foreach($officelist as $office)
                                 <option value="{{ $office->id }}">{{ $office->abbr }} - {{ $office->name }}</option>
@@ -85,6 +133,28 @@
                         </select>
                     </div>
                 </div>
+
+                <!-- Position input -->
+                <div class="form-group">
+                    <label for="inputGroupHoverLightPositionSelect" class="input-label">Position</label>
+
+                    <div class="input-group input-group-merge input-group-hover-light">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="tio-poi-user"></i>
+                        </span>
+                        </div>
+                        <select id="inputGroupHoverLightPositionSelect" class="custom-select" name="positions_id" required>
+                            <option>Choose a position</option>
+                            @foreach($positionlist as $position)
+                                <option value="{{ $position->id }}">{{ $position->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <!-- image default value -->
+                <input type="text" name="user_images_id" value="1" hidden>
 
                 <!-- Form Group -->
                 <div class="js-form-message form-group">
