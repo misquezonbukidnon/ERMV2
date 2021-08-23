@@ -59,17 +59,6 @@ class RegisterController extends Controller
         ]);
 
         if ($request->image_upload != null) {
-            // $imageName = $user->last.'_'.$user->first.'.'.$request->image_upload->extension();
-        
-            // storing image to public folder
-            // $request->image_upload->resize(800, 800)->move(public_path('images'), $imageName);
-    
-            /* Store $imageName name in DATABASE from HERE */
-
-            // $user_image = UserImage::create([
-            //     'name' => $imageName,
-            // ]);
-
             $image = $request->file('image_upload');
             $imageName = $user->last.'_'.$user->first.'.'.$request->image_upload->extension();
         
