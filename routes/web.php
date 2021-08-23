@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OfficeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,6 @@ Route::get('/register', [RegisterController::class, 'create'])
 Route::post('/register', [RegisterController::class, 'store'])
     ->middleware('guest');
 
-
 Route::get('/login', [LoginController::class, 'create'])
     ->middleware('guest')
     ->name('login');
@@ -38,3 +38,9 @@ Route::post('/login', [LoginController::class, 'store'])
 Route::post('/logout', [LoginController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout');
+
+    // modules
+
+Route::get('/office', [OfficeController::class, 'index'])
+    ->middleware('auth')
+    ->name('office');

@@ -14,7 +14,7 @@ class OfficeController extends Controller
      */
     public function index()
     {
-        //
+        return view('nav.office');
     }
 
     /**

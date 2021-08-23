@@ -4,10 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class Addrecord extends Component
+class Userprofile extends Component
 {
     public function render()
     {
-        return view('livewire.record.addrecord');
+        return view('livewire.component.userprofile');
     }
 }

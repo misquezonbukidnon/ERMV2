@@ -27,7 +27,7 @@
               <li class="dropdown">
                 <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="tio-home"></i> &nbsp;Home</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
-                  <a class="dropdown-item" href="#">Dashboard</a>
+                  <a class="dropdown-item" href="/">Dashboard</a>
                 </div>
               </li>
               <li class="dropdown">
@@ -35,6 +35,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
                   <a class="dropdown-item" href="/create/record">New Records</a>
                   <a class="dropdown-item" href="#">Update Records</a>
+                  <a class="dropdown-item" href="{{ route('office') }}">Offices</a>
                   <a class="dropdown-item" href="#">Import/Export Records</a>
                 </div>
               </li>

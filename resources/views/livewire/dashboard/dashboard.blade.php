@@ -1,6 +1,6 @@
 <div>
     <div class="content container-fluid">
-         <!-- ********************************************************************Breadcrumb (Can be converted to Component)************************************************* -->
+        <!-- ********************************************************************Breadcrumb (Can be converted to Component)************************************************* -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -9,366 +9,252 @@
         </nav>
         <div class="row">
             <div class="col-lg-3">
-                <!-- Sticky Block Start Point -->
                 <div id="accountSidebarNav"></div>
-
-                <!-- Card -->
-                <div class="js-sticky-block card mb-3 mb-lg-5" data-hs-sticky-block-options='{
-            "parentSelector": "#accountSidebarNav",
-            "breakpoint": "lg",
-            "startPoint": "#accountSidebarNav",
-            "endPoint": "#stickyBlockEndPoint",
-            "stickyOffsetTop": 20
-            }'>
-             <!-- ********************************************************************User Profile Overview (Can be converted to Component)************************************************* -->
-                    <!-- Header -->
-                    <div class="card-header">
-                        <h5 class="card-header-title">Profile</h5>
-                    </div>
-                    <!-- End Header -->
-
-                    <!-- Body -->
-                    <div class="card-body">
-                        <ul class="list-unstyled list-unstyled-py-3 text-dark mb-3">
-                            <li class="py-0">
-                                <small class="card-subtitle">About</small>
-                            </li>
-
-                            <li>
-                                <i class="tio-user-outlined nav-icon"></i>
-                                {{ auth()->user()->first }} {{ auth()->user()->last }}
-                            </li>
-
-                            
-                            <li>
-                                <i class="tio-briefcase-outlined nav-icon"></i>
-                                {{ auth()->user()->offices->name }}
-                            </li>
-
-                            <li class="pt-2 pb-0">
-                                <small class="card-subtitle">Contacts</small>
-                            </li>
-
-                            <li>
-                                <i class="tio-online nav-icon"></i>
-                                {{ auth()->user()->email }}
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Body -->
-                </div>
-                <!-- End Card -->
-                <div class="js-sticky-block card mb-3 mb-lg-5" data-hs-sticky-block-options='{
-            "parentSelector": "#accountSidebarNav",
-            "breakpoint": "lg",
-            "startPoint": "#accountSidebarNav",
-            "endPoint": "#stickyBlockEndPoint",
-            "stickyOffsetTop": 20
-            }'>
-            <!-- ********************************************************************Events (Can be converted to Component)************************************************* -->
-                    <!-- Header -->
-                    <div class="card-header">
-                        <h5 class="card-header-title">Events</h5>
-                    </div>
-                    <!-- End Header -->
-
-                    <!-- Body -->
-                    <div class="card-body " style="overflow-y: auto; overflow-x: hidden; height: 437px">
-                        <!-- Step -->
-                        <ul class="step">
-                            <li class="step-item">
-                                <div class="step-content-wrapper">
-                                    <div class="step-avatar">
-                                        <img class="step-avatar-img" src="../assets/img/160x160/img9.jpg" alt="Image Description">
-                                    </div>
-                                    <div class="step-content">
-                                        <h4>Jay Lilia Poe <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"just now"</span></h4>
-                                        <p class="step-text">Added a new record.</p>
-                                        <div class="media">
-                                            <div class="step-avatar">
-                                                <img class="step-avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
-                                            </div>
-                                            <div class="media-body text-truncate">
-                                                <span class="d-block text-dark text-truncate">Lods Pomzic</span>
-                                                <small class="d-block">MMO</small>
-                                                <small class="d-block">Job Order</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-
-                            <li class="step-item">
-                                <div class="step-content-wrapper">
-                                    <div class="step-avatar">
-                                        <img class="step-avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
-                                    </div>
-                                    <div class="step-content">
-                                        <h4>Jay Leo Pol <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"1 hour ago"</span></h4>
-                                        <p class="step-text">We strive to figure out ways to help your business grow through all platforms.</p>
-
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="step-item">
-                                <div class="step-content-wrapper">
-                                    <div class="step-avatar">
-                                        <img class="step-avatar-img" src="../assets/img/160x160/img3.jpg" alt="Image Description">
-                                    </div>
-                                    <div class="step-content">
-                                        <h4>Je Lio Pul <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"just now"</span></h4>
-                                        <p class="step-text">Find what you need in one template and combine features at will.</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- End Step -->
-                    </div>
-                    <!-- End Body -->
-                </div>
-                <!-- End Card -->
+                <livewire:userprofile/>
+                <livewire:userevents/>
             </div>
+        </div>
 
-            <div class="col-lg-9">
-                <div class="row gx-2 gx-lg-3">
+        <div class="col-lg-9">
+            <div class="row gx-2 gx-lg-3">
                 <!-- ********************************************************************Total Employees Card************************************************* -->
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-                        <!-- Card -->
-                        <a class="card card-hover-shadow  w-100 h-100" href="#">
-                            <div class="card-body">
-                                <h6 class="card-subtitle d-flex justify-content-center">Total Regular</h6>
-                                <div class=" d-flex justify-content-center w-100">
-                                    <div class="mt-3">
-                                        <span class="card-title h1">72,540</span>
-                                    </div>
+                <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                    <!-- Card -->
+                    <a class="card card-hover-shadow  w-100 h-100" href="#">
+                        <div class="card-body">
+                            <h6 class="card-subtitle d-flex justify-content-center">Total Regular</h6>
+                            <div class=" d-flex justify-content-center w-100">
+                                <div class="mt-3">
+                                    <span class="card-title h1">72,540</span>
                                 </div>
                             </div>
-                        </a>
-                        <!-- End Card -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-                        <!-- Card -->
-                        <a class="card card-hover-shadow  w-100 h-100" href="#">
-                            <div class="card-body">
-                                <h6 class="card-subtitle d-flex justify-content-center">Total Casual</h6>
-                                <div class=" d-flex justify-content-center w-100">
-                                    <div class="mt-3">
-                                        <span class="card-title h1">72,540</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- End Card -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-                        <!-- Card -->
-                        <a class="card card-hover-shadow  w-100 h-100" href="#">
-                            <div class="card-body">
-                                <h6 class="card-subtitle d-flex justify-content-center">Total Job Order</h6>
-                                <div class=" d-flex justify-content-center w-100">
-                                    <div class="mt-3">
-                                        <span class="card-title h1">72,540</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- End Card -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-                        <!-- Card -->
-                        <a class="card card-hover-shadow  w-100 h-100" href="#">
-                            <div class="card-body">
-                                <h6 class="card-subtitle d-flex justify-content-center">Total Honorarium</h6>
-                                <div class=" d-flex justify-content-center w-100">
-                                    <div class="mt-3">
-                                        <span class="card-title h1">72,540</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- End Card -->
-                    </div>
+                        </div>
+                    </a>
+                    <!-- End Card -->
                 </div>
-                <!-- ********************************************************************Dashboard Data Table************************************************* -->
-                <!-- Card -->
-                <div class="card">
-                    <!-- Header -->
-                    <div class="card-header">
-                        <h5 class="card-header-title">Employees</h5>
-                    </div>
-                    <!-- End Header -->
 
-                    <!-- Table -->
-                    <div class="table-responsive datatable-custom">
-                        <table id="columnSearchDatatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
+                <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                    <!-- Card -->
+                    <a class="card card-hover-shadow  w-100 h-100" href="#">
+                        <div class="card-body">
+                            <h6 class="card-subtitle d-flex justify-content-center">Total Casual</h6>
+                            <div class=" d-flex justify-content-center w-100">
+                                <div class="mt-3">
+                                    <span class="card-title h1">72,540</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Card -->
+                </div>
+
+                <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                    <!-- Card -->
+                    <a class="card card-hover-shadow  w-100 h-100" href="#">
+                        <div class="card-body">
+                            <h6 class="card-subtitle d-flex justify-content-center">Total Job Order</h6>
+                            <div class=" d-flex justify-content-center w-100">
+                                <div class="mt-3">
+                                    <span class="card-title h1">72,540</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Card -->
+                </div>
+
+                <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+                    <!-- Card -->
+                    <a class="card card-hover-shadow  w-100 h-100" href="#">
+                        <div class="card-body">
+                            <h6 class="card-subtitle d-flex justify-content-center">Total Honorarium</h6>
+                            <div class=" d-flex justify-content-center w-100">
+                                <div class="mt-3">
+                                    <span class="card-title h1">72,540</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Card -->
+                </div>
+            </div>
+            <!-- ********************************************************************Dashboard Data Table************************************************* -->
+            <!-- Card -->
+            <div class="card">
+               
+                <div class="card-header">
+                    <h5 class="card-header-title">Employees</h5>
+                </div>
+        
+
+           
+                <div class="table-responsive datatable-custom">
+                    <table id="columnSearchDatatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
                                         "order": [],
-                                        "orderCellsTop": true,
+                                        "orderCellsTop": false,
                                         "pagination": "datatableWithFilterPagination"
                                     }'>
-                            <thead class="thead-light">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Classification</th>
-                                    <th>Status</th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <input type="text" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
-                                    </th>
-                                    <th>
-                                        <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Classification</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <input type="text" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
+                                </th>
+                                <th>
+                                    <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
                                                 "minimumResultsForSearch": "Infinity",
                                                 "customClass": "custom-select custom-select-sm text-capitalize"
                                                 }'>
-                                            <option value="">Any</option>
-                                            <option value="Director">Director</option>
-                                            <option value="Unknown">Unknown</option>
-                                            <option value="Executive director">Executive director</option>
-                                        </select>
-                                    </th>
-                                    <th>
-                                        <select id="column3_search" class="js-select2-custom" data-hs-select2-options='{
+                                        <option value="">Any</option>
+                                        <option value="Director">Director</option>
+                                        <option value="Unknown">Unknown</option>
+                                        <option value="Executive director">Executive director</option>
+                                    </select>
+                                </th>
+                                <th>
+                                    <select id="column3_search" class="js-select2-custom" data-hs-select2-options='{
                                                 "minimumResultsForSearch": "Infinity",
                                                 "customClass": "custom-select custom-select-sm text-capitalize"
                                                 }'>
-                                            <option value="">Any</option>
-                                            <option value="United Kingdom">United Kingdom</option>
-                                            <option value="United States">United States</option>
-                                            <option value="Austria ">Austria </option>
-                                        </select>
-                                    </th>
-                                    <th>
-                                        <select id="column4_search" class="js-select2-custom" data-hs-select2-options='{
+                                        <option value="">Any</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="United States">United States</option>
+                                        <option value="Austria ">Austria </option>
+                                    </select>
+                                </th>
+                                <th>
+                                    <select id="column4_search" class="js-select2-custom" data-hs-select2-options='{
                                                 "minimumResultsForSearch": "Infinity",
                                                 "customClass": "custom-select custom-select-sm text-capitalize"
                                                 }'>
-                                            <option value="">Any</option>
-                                            <option value="Active">Active</option>
-                                            <option value="Pending">Pending</option>
-                                            <option value="Suspended">Suspended</option>
-                                        </select>
-                                    </th>
-                                </tr>
-                            </thead>
+                                        <option value="">Any</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Suspended">Suspended</option>
+                                    </select>
+                                </th>
+                            </tr>
+                        </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center pe-auto" style="cursor: pointer;">
-                                            <div class="avatar avatar-circle mr-3">
-                                                <img class="avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
-                                            </div>
-                                            <span class="d-block h5 text-hover-primary mb-0">Amanda Harvey </span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Director</span>
-                                        <span class="d-block font-size-sm">Human resources</span>
-                                    </td>
-                                    <td>United Kingdom <span class="text-hide">Code: GB</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a class="media align-items-center pe-auto" style="cursor: pointer;">
+                                        <div class="avatar avatar-circle mr-3">
+                                            <img class="avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
+                                        </div>
+                                        <span class="d-block h5 text-hover-primary mb-0">Amanda Harvey </span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="d-block h5 mb-0">Director</span>
+                                    <span class="d-block font-size-sm">Human resources</span>
+                                </td>
+                                <td>United Kingdom <span class="text-hide">Code: GB</span></td>
+                                <td>
+                                    <span class="legend-indicator bg-success"></span>Active
+                                </td>
+                            </tr>
 
 
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                                <span class="avatar-initials">A</span>
-                                            </div>
-                                            <span class="d-block h5 text-hover-primary mb-0">Anne Richard</span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Seller</span>
-                                        <span class="d-block font-size-sm">Branding products</span>
-                                    </td>
-                                    <td>United States <span class="text-hide">Code: US</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-warning"></span>Pending
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <a class="media align-items-center" href="../user-profile.html">
+                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
+                                            <span class="avatar-initials">A</span>
+                                        </div>
+                                        <span class="d-block h5 text-hover-primary mb-0">Anne Richard</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="d-block h5 mb-0">Seller</span>
+                                    <span class="d-block font-size-sm">Branding products</span>
+                                </td>
+                                <td>United States <span class="text-hide">Code: US</span></td>
+                                <td>
+                                    <span class="legend-indicator bg-warning"></span>Pending
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                                <span class="avatar-initials">D</span>
-                                            </div>
-                                            <span class="d-block h5 text-hover-primary mb-0">David Harrison</span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Unknown</span>
-                                        <span class="d-block font-size-sm">Unknown</span>
-                                    </td>
-                                    <td>United States <span class="text-hide">Code: US</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <a class="media align-items-center" href="../user-profile.html">
+                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
+                                            <span class="avatar-initials">D</span>
+                                        </div>
+                                        <span class="d-block h5 text-hover-primary mb-0">David Harrison</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="d-block h5 mb-0">Unknown</span>
+                                    <span class="d-block font-size-sm">Unknown</span>
+                                </td>
+                                <td>United States <span class="text-hide">Code: US</span></td>
+                                <td>
+                                    <span class="legend-indicator bg-success"></span>Active
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                                <span class="avatar-initials">F</span>
-                                            </div>
-                                            <span class="d-block h5 text-hover-primary mb-0">Finch Hoot</span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Designer</span>
-                                        <span class="d-block font-size-sm">IT department</span>
-                                    </td>
-                                    <td>Argentina <span class="text-hide">Code: AR</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-danger"></span>Suspended
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <a class="media align-items-center" href="../user-profile.html">
+                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
+                                            <span class="avatar-initials">F</span>
+                                        </div>
+                                        <span class="d-block h5 text-hover-primary mb-0">Finch Hoot</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="d-block h5 mb-0">Designer</span>
+                                    <span class="d-block font-size-sm">IT department</span>
+                                </td>
+                                <td>Argentina <span class="text-hide">Code: AR</span></td>
+                                <td>
+                                    <span class="legend-indicator bg-danger"></span>Suspended
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td>
-                                        <a class="media align-items-center" href="../user-profile.html">
-                                            <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                                <span class="avatar-initials">B</span>
-                                            </div>
-                                            <span class="d-block h5 text-hover-primary mb-0">Bob Dean</span>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <span class="d-block h5 mb-0">Executive director</span>
-                                        <span class="d-block font-size-sm">Marketing</span>
-                                    </td>
-                                    <td>Austria <span class="text-hide">Code: AT</span></td>
-                                    <td>
-                                        <span class="legend-indicator bg-success"></span>Active
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <a class="media align-items-center" href="../user-profile.html">
+                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
+                                            <span class="avatar-initials">B</span>
+                                        </div>
+                                        <span class="d-block h5 text-hover-primary mb-0">Bob Dean</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="d-block h5 mb-0">Executive director</span>
+                                    <span class="d-block font-size-sm">Marketing</span>
+                                </td>
+                                <td>Austria <span class="text-hide">Code: AT</span></td>
+                                <td>
+                                    <span class="legend-indicator bg-success"></span>Active
+                                </td>
+                            </tr>
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-center justify-content-sm-end">
-                            <nav id="datatableWithFilterPagination" aria-label="Activity pagination"></nav>
-                        </div>
-                    </div>
-                    <!-- End Table -->
+                        </tbody>
+                    </table>
                 </div>
-                <!-- End Card -->
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center justify-content-sm-end">
+                        <nav id="datatableWithFilterPagination" aria-label="Activity pagination"></nav>
+                    </div>
+                </div>
+         
             </div>
-            <!-- End Body -->
-        </div>
-        <!-- End Card -->
 
+        </div>
+        <!-- End Body -->
     </div>
+    <!-- End Card -->
+
+</div>
 </div>
 <!-- End Row -->
 </div>
