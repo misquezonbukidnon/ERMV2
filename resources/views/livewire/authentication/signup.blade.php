@@ -42,9 +42,9 @@
                 @endif
 
                 <div class="form-row">
-                    <div class="col-sm-6">
-                        <div class="js-form-message form-group">
-                            <div class="d-flex align-items-center">
+                    <div class="col-sm-12">
+                        <div class="js-form-message w-100  form-group">
+                            <div class="d-flex justify-content-center  align-items-center">
                                 <!-- Avatar -->
                                 <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
                                 <img id="avatarImg" class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
