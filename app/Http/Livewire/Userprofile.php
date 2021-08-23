@@ -10,7 +10,8 @@ class Userprofile extends Component
 {
     public function render()
     {
-        $users = UserRelationship::findOrFail(auth()->user()->id)->with('users', 'offices', 'roles', 'positions', 'userimages')->first();
+        $user_id = auth()->user()->id;
+        $users = UserRelationship::where('users_id', $user_id)->with('users', 'offices', 'roles', 'positions', 'userimages')->first();
         return view('livewire.component.userprofile', compact('users'));
     }
 }

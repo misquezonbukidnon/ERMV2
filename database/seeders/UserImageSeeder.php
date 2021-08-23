@@ -16,7 +16,7 @@ class UserImageSeeder extends Seeder
     {
         DB::table('user_images')->insert([
             [
-                'name' => 'Default',
+                'name' => 'Default.png',
             ],
         ]);
     }

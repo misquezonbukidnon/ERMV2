@@ -19,7 +19,7 @@ class CreateUserRelationshipsTable extends Migration
             $table->unsignedBigInteger('roles_id');
             $table->unsignedBigInteger('offices_id');
             $table->unsignedBigInteger('positions_id');
-            $table->unsignedBigInteger('user_images_id');
+            $table->unsignedBigInteger('user_images_id')->nullable();
             $table->timestamps();
 
             $table->foreign('users_id')

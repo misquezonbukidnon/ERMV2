@@ -7,11 +7,13 @@ use App\Models\Office;
 use App\Models\Position;
 use App\Models\Roles;
 use App\Models\User;
+use App\Models\UserImage;
 use App\Models\UserRelationship;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 
 class RegisterController extends Controller
 {
@@ -46,6 +48,7 @@ class RegisterController extends Controller
             'roles_id' => 'required',
             'offices_id' => 'required',
             'positions_id' => 'required',
+            'image_upload' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         
         $user = User::create([
@@ -55,13 +58,46 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $userRels = UserRelationship::create([
-            'users_id' => $user->id,
-            'roles_id' => $request->roles_id,
-            'offices_id' => $request->offices_id,
-            'positions_id' => $request->positions_id,
-            'user_images_id' => $request->user_images_id,
-        ]);
+        if ($request->image_upload != null) {
+            // $imageName = $user->last.'_'.$user->first.'.'.$request->image_upload->extension();
+        
+            // storing image to public folder
+            // $request->image_upload->resize(800, 800)->move(public_path('images'), $imageName);
+    
+            /* Store $imageName name in DATABASE from HERE */
+
+            // $user_image = UserImage::create([
+            //     'name' => $imageName,
+            // ]);
+
+            $image = $request->file('image_upload');
+            $imageName = $user->last.'_'.$user->first.'.'.$request->image_upload->extension();
+        
+            $img = Image::make($image->path());
+            $img->resize(800, 800, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/images/users/').$imageName);
+
+            $user_image = UserImage::create([
+                'name' => $imageName,
+            ]);
+
+            $userRels = UserRelationship::create([
+                'users_id' => $user->id,
+                'roles_id' => $request->roles_id,
+                'offices_id' => $request->offices_id,
+                'positions_id' => $request->positions_id,
+                'user_images_id' => $user_image->id,
+            ]);
+        } else {
+            $userRels = UserRelationship::create([
+                'users_id' => $user->id,
+                'roles_id' => $request->roles_id,
+                'offices_id' => $request->offices_id,
+                'positions_id' => $request->positions_id,
+                'user_images_id' => 1,
+            ]);
+        }
 
         Auth::login($user);
         return redirect(RouteServiceProvider::HOME);

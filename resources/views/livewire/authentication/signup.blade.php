@@ -22,7 +22,7 @@
         <div class="card card-lg mb-5">
             <div class="card-body">
             <!-- Form -->
-            <form class="js-validate" method="POST" action="/register">
+            <form class="js-validate" method="POST" action="/register" enctype="multipart/form-data">
                 @csrf
                 <div class="text-center">
                     <div class="mb-5">
@@ -56,7 +56,7 @@
                                             "targetAttr": "src",
                                             "resetTarget": ".js-file-attach-reset-img",
                                             "resetImg": "../assets/img/160x160/img1.jpg"
-                                        }' name="user_image">
+                                        }' name="image_upload">
 
                                 <span class="avatar-uploader-trigger">
                                     <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
@@ -152,9 +152,6 @@
                         </select>
                     </div>
                 </div>
-
-                <!-- image default value -->
-                <input type="text" name="user_images_id" value="1" hidden>
 
                 <!-- Form Group -->
                 <div class="js-form-message form-group">

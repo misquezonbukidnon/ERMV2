@@ -53,7 +53,7 @@
               "type": "css-animation"
             }'>
                     <div class="avatar avatar-sm avatar-circle">
-                      <img class="avatar-img" src="../assets/img/160x160/defaultuser.png" alt="Image Description">
+                      <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}" alt="Image Description">
                       <span class="avatar-status avatar-sm-status avatar-status-success"></span>
                     </div>
                   </a>
@@ -62,7 +62,7 @@
                     <div class="dropdown-item">
                       <div class="media align-items-center">
                         <div class="avatar avatar-sm avatar-circle mr-2">
-                          <img class="avatar-img" src="../assets/img/160x160/defaultuser.png" alt="Image Description">
+                          <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}" alt="Image Description">
                         </div>
                         <div class="media-body">
                           <span class="card-title h5">{{ auth()->user()->first }} {{ auth()->user()->last }}</span>
