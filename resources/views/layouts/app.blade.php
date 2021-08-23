@@ -62,7 +62,6 @@
   <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
   <script src="./assets/vendor/clipboard/dist/clipboard.min.js"></script>
   <script src="./assets/js/hs.datatables.js"></script>
-  <script src="./assets/vendor/select2/dist/js/select2.full.min.js"></script>
   <script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
   <script src="./assets/vendor/hs-file-attach/dist/hs-file-attach.min.js"></script>
   <script src="./assets/vendor/hs-step-form/dist/hs-step-form.min.js"></script>
@@ -82,8 +81,6 @@
   <script src="./assets/js/hs.chartjs.js"></script>
   <script src="./assets/js/hs.dropzone.js"></script>
 
-  <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
-  <script src="./assets/js/hs.datatables.js"></script>
 
   <!-- Home Datatable With Filters -->
   <script>
@@ -231,7 +228,7 @@
         }
       }).init();
     });
-    // Datatable Edit Office
+    // Datatable Edit Office routes - /office
     $(document).on('ready', function() {
       // INITIALIZATION OF EDITABLE TABLE
       // =======================================================
@@ -256,11 +253,21 @@
   </script>
   <!-- Office Datatable Search -->
   <script>
+    
     $(document).on('ready', function() {
       // INITIALIZATION OF DATATABLES
       // =======================================================
-      var datatable = $.HSCore.components.HSDatatables.init($('#officedatatable'));
+      var datatable = $.HSCore.components.HSDatatables.init($('#officedatatable'), {
+        language: {
+          zeroRecords: '<div class="text-center p-4">' +
+            '<img class="mb-3" src="./assets/svg/illustrations/sorry.svg" alt="Image Description" style="width: 7rem;">' +
+            '<p class="mb-0">No data to show</p>' +
+            '</div>'
+        }
+      });
     });
+
+    
     $('#officeinputSearch').on('mouseup', function(e) {
       var $input = $(this),
         oldValue = $input.val();
@@ -277,6 +284,7 @@
       }, 1);
     });
   </script>
+
 
 
   <!-- IE Support -->
