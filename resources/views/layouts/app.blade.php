@@ -253,7 +253,6 @@
   </script>
   <!-- Office Datatable Search -->
   <script>
-    
     $(document).on('ready', function() {
       // INITIALIZATION OF DATATABLES
       // =======================================================
@@ -265,23 +264,23 @@
             '</div>'
         }
       });
-    });
 
-    
-    $('#officeinputSearch').on('mouseup', function(e) {
-      var $input = $(this),
-        oldValue = $input.val();
+      $('#officeinputSearch').on('mouseup', function(e) {
 
-      if (oldValue == "") return;
+        var $input = $(this),
+          oldValue = $input.val();
 
-      setTimeout(function() {
-        var newValue = $input.val();
+        if (oldValue == "") return;
 
-        if (newValue == "") {
-          // Gotcha
-          datatable.search('').draw();
-        }
-      }, 1);
+        setTimeout(function() {
+          var newValue = $input.val();
+
+          if (newValue == "") {
+            // Gotcha
+            datatable.search('').draw();
+          }
+        }, 1);
+      });
     });
   </script>
 

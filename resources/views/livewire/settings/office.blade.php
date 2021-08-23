@@ -76,10 +76,10 @@
                                         }],
                                         "order": [],
                                         "info": {
-                                        "totalQty": "datatableEntriesInfoTotalQty"
+                                        "totalQty": "#datatableEntriesInfoTotalQty"
                                         },
                                         "search": "#officeinputSearch",
-                                        "entries": "datatableEntries",
+                                        "entries": "#datatableEntries",
                                         "isResponsive": false,
                                         "isShowPaging": false,
                                         "pageLength": 10,
@@ -131,9 +131,9 @@
                                         "dropdownAutoWidth": true,
                                         "width": true
                                     }'>
-                                    <option value="10">10</option>
-                                    <option value="15" selected>15</option>
-                                    <option value="20">20</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15" >15</option>
+                                    <option value="100">100</option>
                                 </select>
                                 <!-- End Select -->
 
