@@ -11,8 +11,8 @@
     </div>
 
     <!-- Content -->
-    <div class="container py-5 py-sm-7">
-    <a class="d-flex justify-content-center mb-5" href="index.html">
+    <div class="container">
+    <a class="d-flex justify-content-center mb-5" href="/register">
     <img class="z-index-2" src="./assets/img/160x160/LGUSEAL.png" alt="Image Description" style="width: 8rem;">
     </a>
 

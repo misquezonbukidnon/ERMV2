@@ -1,5 +1,3 @@
-<div>
-      <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main" class="main">
 <div class="position-fixed top-0 right-0 left-0 bg-img-hero" style="height: 32rem; background-image: url(./assets/svg/components/abstract-bg-4.svg);">
     <!-- SVG Bottom Shape -->
@@ -12,8 +10,8 @@
 </div>
 
 <!-- Content -->
-<div class="container py-5 py-sm-7">
-    <a class="d-flex justify-content-center mb-5" href="index.html">
+<div class="container">
+    <a class="d-flex justify-content-center mb-5" href="/login">
     <img class="z-index-2" src="./assets/img/160x160/LGUSEAL.png" alt="Image Description" style="width: 8rem;">
     </a>
 
@@ -122,5 +120,3 @@
 </div>
 <!-- End Content -->
 </main>
-
-</div>
