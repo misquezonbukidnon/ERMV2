@@ -106,14 +106,15 @@
         <div class="text-center">
             <small class="text-cap mb-4">Powered by</small>
 
-            <div class="w-85 mx-auto">
+            <!-- <div class="w-85 mx-auto">
                 <div class="row justify-content-between">
                 <div class="col">
                     <img class="img-fluid" width= "100" src="./assets/img/160x160/MIS.png" alt="Image Description">
                 </div>
         
                 </div>
-            </div>
+            </div> -->
+            <p class="text-cap mb-4">Local Government Unit of Quezon Bukidnon <br> Management Information System Division</p>
         </div>
         <!-- End Footer -->
     </div>
