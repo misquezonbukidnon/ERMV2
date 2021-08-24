@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Livewire;
+
 use Livewire\Component;
 
-class Office extends Component
+class Officetable extends Component
 {
     public function render()
     {
-        return view('livewire.settings.office');
+        return view('livewire.component.officetable');
     }
 }
