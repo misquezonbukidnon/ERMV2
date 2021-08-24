@@ -13,7 +13,7 @@ export default class HSFileAttach {
 		this.elem = elem;
 		this.defaults = {
 			textTarget: null,
-			maxFileSize: 10000, // Infinity - off file size detection
+			maxFileSize: 1024, // Infinity - off file size detection
 			errorMessage: 'File is too big!',
 			mode: 'simple',
 			targetAttr: null,
@@ -35,7 +35,7 @@ export default class HSFileAttach {
 				return;
 			}
 			
-			if (this.files[0].size > (options.maxFileSize * 10000)) {
+			if (this.files[0].size > (options.maxFileSize * 1024)) {
 				alert(options.errorMessage);
 				
 				return;
