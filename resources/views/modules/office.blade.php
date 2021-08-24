@@ -8,26 +8,30 @@
             <li class="breadcrumb-item"><a href="{{ route('office') }}">Office</a></li>
         </ol>
     </nav>
-    <div class="row">
-        <div class="col-lg-3">
-            <div id="accountSidebarNav"></div>
-            <livewire:component.office.addofficeform />
-            <br>
-            <livewire:component.dashboard.userprofile />
-        </div>
-    </div>
 
-    <div class="col-lg-9">
-        <div class="row">
-            <div class="col-lg-8 mb-5">
-                <livewire:component.office.officetable :offices="$offices"/>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <livewire:component.dashboard.userevents />
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div id="accountSidebarNav"></div>
+                    <livewire:component.office.addofficeform />
+                    <br>
+                    <livewire:component.dashboard.userprofile />
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-8 mb-5">
+                            <livewire:component.office.officetable :offices="$offices" />
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <livewire:component.dashboard.userevents />
+                        </div>
+                    </div>
+
+                    <!-- End Card -->
+                </div>
             </div>
         </div>
-        
-        <!-- End Card -->
     </div>
     <!-- End Body -->
 </div>
