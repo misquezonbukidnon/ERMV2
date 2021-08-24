@@ -32,7 +32,7 @@
   <!-- Navigation -->
   <livewire:component.navigation.header />
 
-  <div style="margin-top: 6rem">
+  <div style="margin-top: 1rem">
     <!-- Livewire Components -->
     @yield('content')
   </div>
