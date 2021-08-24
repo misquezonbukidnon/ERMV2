@@ -12,7 +12,7 @@
 
     <!-- Content -->
     <div class="container">
-    <a class="d-flex justify-content-center mb-5" href="/register">
+    <a class="d-flex justify-content-center mb-5" href="#">
     <img class="z-index-2" src="./assets/img/160x160/LGUSEAL.png" alt="Image Description" style="width: 8rem;">
     </a>
 
