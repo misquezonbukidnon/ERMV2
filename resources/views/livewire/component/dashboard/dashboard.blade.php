@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <div id="accountSidebarNav"></div>
-                <livewire:userprofile/>
-                <livewire:userevents/>
+                <livewire:component.dashboard.userprofile/>
+                <livewire:component.dashboard.userevents/>
             </div>
         </div>
 

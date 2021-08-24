@@ -30,7 +30,7 @@
 
 <body>
   <!-- Navigation -->
-  <livewire:header />
+  <livewire:component.navigation.header />
 
   <div style="margin-top: 6rem">
     <!-- Livewire Components -->

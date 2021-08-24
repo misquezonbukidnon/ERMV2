@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Component\Office;
 
-use App\Models\Office as ModelsOffice;
 use Livewire\Component;
+use App\Models\Office as ModelsOffice;
 
-
-class Addoffice extends Component
+class Addofficeform extends Component
 {
     //Public input field
     public $office;
@@ -44,6 +43,6 @@ class Addoffice extends Component
     
     public function render()
     {
-        return view('livewire.component.addoffice');
+        return view('livewire.component.office.addofficeform');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Component\Auth;
 
 use Livewire\Component;
 
@@ -19,6 +19,6 @@ class Signup extends Component
 
     public function render()
     {
-        return view('livewire.authentication.signup');
+        return view('livewire.component.auth.signup');
     }
 }

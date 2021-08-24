@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-  <livewire:dashboard/>
+  <livewire:component.dashboard.dashboard/>
 @endsection

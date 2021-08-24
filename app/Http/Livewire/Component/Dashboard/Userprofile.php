@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Component\Dashboard;
 
 use App\Models\UserRelationship;
 
@@ -12,6 +12,6 @@ class Userprofile extends Component
     {
         $user_id = auth()->user()->id;
         $users = UserRelationship::where('users_id', $user_id)->with('users', 'offices', 'roles', 'positions', 'userimages')->first();
-        return view('livewire.component.userprofile', compact('users'));
+        return view('livewire.component.dashboard.userprofile', compact('users'));
     }
 }
