@@ -1,6 +1,9 @@
 <div>
     <!-- Card -->
     <div class="card">
+        <div class="card-header">
+            <h5 class="card-header-title">Create Office</h5>
+        </div>
         <div class="card-body">
             <!-- Input Group -->
             <form wire:submit.prevent="submitForm" action="/office/create" method="POST">

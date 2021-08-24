@@ -11,21 +11,22 @@
     <div class="row">
         <div class="col-lg-3">
             <div id="accountSidebarNav"></div>
+            <livewire:component.office.addofficeform />
+            <br>
             <livewire:component.dashboard.userprofile />
-            <livewire:component.dashboard.userevents />
         </div>
     </div>
 
     <div class="col-lg-9">
         <div class="row">
-            <div class="col-lg-5 mb-5">
-                <livewire:component.office.addofficeform />
+            <div class="col-lg-8 mb-5">
+                <livewire:component.office.officetable :offices="$offices"/>
             </div>
-            <div class="col">
+            <div class="col-lg-4 mb-3">
+                <livewire:component.dashboard.userevents />
             </div>
         </div>
-        <!--------------------------------------------------------------- paste table component here --------------------------------------------------------------->
-        <livewire:component.office.officetable :offices="$offices"/>
+        
         <!-- End Card -->
     </div>
     <!-- End Body -->
