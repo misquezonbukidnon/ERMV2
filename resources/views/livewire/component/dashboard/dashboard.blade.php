@@ -92,7 +92,7 @@
                     <table id="columnSearchDatatable" class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
                                     "columnDefs": [{
                                             "targets": [0, 1, 2],
-                                            "orderable": false
+                                            "orderable": true
                                         }],
                                         "order": [],
                                         "info": {
