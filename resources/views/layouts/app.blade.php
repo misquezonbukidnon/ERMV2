@@ -17,15 +17,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="./assets/vendor/icon-set/style.css">
-  <link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="./assets/vendor/chart.js/dist/Chart.min.css">
-  <link rel="stylesheet" href="./assets/vendor/daterangepicker/daterangepicker.css">
-  <link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="./assets/vendor/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/icon-set/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}">
+  <!-- <link rel="stylesheet" href="{{ asset('assets/vendor/chart.js/dist/Chart.min.css') }}"> -->
+  <!-- <link rel="stylesheet" href="{{ asset('assets/vendor/daterangepicker/daterangepicker.css') }}"> -->
+  <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/flatpickr/dist/flatpickr.min.css') }}">
 
   <!-- CSS Front Template -->
-  <link rel="stylesheet" href="./assets/css/theme.min.css">
+  <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
 </head>
 
 <body>
@@ -38,48 +38,48 @@
   </div>
 
   @livewireScripts
-  <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+  <script src="{{ asset('assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js') }}"></script>
 
   <!-- End Create a new user Modal -->
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
   <!-- JS Global Compulsory  -->
-  <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="./assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery-migrate/dist/jquery-migrate.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- JS Implementing Plugins -->
-  <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
-  <script src="./assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
-  <script src="./assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
-  <script src="./assets/vendor/select2/dist/js/select2.full.min.js"></script>
-  <script src="./assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="./assets/vendor/chart.js.extensions/chartjs-extensions.js"></script>
-  <script src="./assets/vendor/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
-  <script src="./assets/vendor/daterangepicker/moment.min.js"></script>
-  <script src="./assets/vendor/daterangepicker/daterangepicker.js"></script>
-  <script src="./assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
-  <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
-  <script src="./assets/vendor/clipboard/dist/clipboard.min.js"></script>
-  <script src="./assets/js/hs.datatables.js"></script>
-  <script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
-  <script src="./assets/vendor/hs-file-attach/dist/hs-file-attach.min.js"></script>
-  <script src="./assets/vendor/hs-step-form/dist/hs-step-form.min.js"></script>
-  <script src="./assets/vendor/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-  <script src="./assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
-  <script src="./assets/vendor/hs-add-field/dist/hs-add-field.min.js"></script>
-  <script src="./assets/js/hs.flatpickr.js"></script>
-  <script src="./assets/vendor/hs-toggle-password/dist/js/hs-toggle-password.js"></script>
-  <script src="./assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="./assets/vendor/table-edits/build/table-edits.min.js"></script>
+  <script src="{{ asset('assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/hs-unfold/dist/hs-unfold.min.js') }}"></script>
+  <!-- <script src="{{ asset('assets/vendor/hs-form-search/dist/hs-form-search.min.js') }}"></script> -->
+  <script src="{{ asset('assets/vendor/select2/dist/js/select2.full.min.js') }}"></script>
+  <!-- <script src="{{ asset('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/chart.js.extensions/chartjs-extensions.js') }}"></script>
+  <script src="{{ asset('assets/vendor/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js') }}"></script> -->
+  <!-- <script src="{{ asset('assets/vendor/daterangepicker/moment.min.js') }}"></script> 
+  <script src="{{ asset('assets/vendor/daterangepicker/daterangepicker.js') }}"></script> -->
+  <script src="{{ asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/datatables.net.extensions/select/select.min.js') }}"></script>
+  <!-- <script src="{{ asset('assets/vendor/clipboard/dist/clipboard.min.js') }}"></script> -->
+  <script src="{{ asset('assets/js/hs.datatables.js') }}"></script>
+  <script src="{{ asset('assets/vendor/dropzone/dist/min/dropzone.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/hs-file-attach/dist/hs-file-attach.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/hs-step-form/dist/hs-step-form.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery-mask-plugin/dist/jquery.mask.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/flatpickr/dist/flatpickr.min.js') }}"></script>
+  <!-- <script src="{{ asset('assets/vendor/hs-add-field/dist/hs-add-field.min.js') }}"></script> -->
+  <script src="{{ asset('assets/js/hs.flatpickr.js') }}"></script>
+  <script src="{{ asset('assets/vendor/hs-toggle-password/dist/js/hs-toggle-password.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/table-edits/build/table-edits.min.js') }}"></script>
 
   <!-- JS Front -->
-  <script src="./assets/js/theme.min.js"></script>
+  <script src="{{ asset('assets/js/theme.min.js') }}"></script>
 
-  <script src="./assets/vendor/appear/dist/appear.min.js"></script>
-  <script src="./assets/vendor/hs-counter/dist/hs-counter.min.js"></script>
-  <script src="./assets/js/hs.chartjs.js"></script>
-  <script src="./assets/js/hs.dropzone.js"></script>
+  <script src="{{ asset('assets/vendor/appear/dist/appear.min.js') }}"></script>
+  <!-- <script src="{{ asset('assets/vendor/hs-counter/dist/hs-counter.min.js') }}"></script> -->
+  <!-- <script src="{{ asset('assets/js/hs.chartjs.js') }}"></script> -->
+  <script src="{{ asset('assets/js/hs.dropzone.js') }}"></script>
 
 
   <!-- Home Datatable With Filters -->

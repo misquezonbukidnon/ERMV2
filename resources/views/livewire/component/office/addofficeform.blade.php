@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="formControlPilledAbbr" class="input-label">Abbreviation</label>
-                    <input wire:model="abbreviation" name="abbreviation" type="text" class="form-control form-control-pill {{ $errors->has('abbreviation') ? ' is-invalid' : '' }}" id="formControlPilledAbbr" placeholder="Please enter abbreviation">
+                    <input wire:model="abbreviation" name="abbreviation" type="text" class="form-control form-control-pill {{ $errors->has('abbreviation') ? ' is-invalid' : '' }}" id="formControlPilledAbbr">
                     @if ($errors->has('abbreviation'))
                         <span class="invalid-feedback">
                             <strong>{{ $errors->first('abbreviation') }}</strong>
