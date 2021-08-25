@@ -1,5 +1,9 @@
 html,
 body {
-    max-width: 100%;
-    overflow-x: hidden;
+    max-width: 110%;
+    overflow-x: hidden !important;
+}
+
+.modal-open {
+    width: 100vw !important;
 }
