@@ -28,6 +28,6 @@
                 </div>
             </div>
         </form>
-        <!-- End Input Group -->
+    <!-- End Input Group -->
     </div>
 </div>

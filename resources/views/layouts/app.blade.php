@@ -26,6 +26,7 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 </head>
 
 <body>
