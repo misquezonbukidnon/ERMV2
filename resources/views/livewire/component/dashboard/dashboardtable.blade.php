@@ -6,7 +6,9 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive datatable-custom">
-                    <table id="columnSearchDatatable" class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
+                    <table id="columnSearchDatatable"
+                        class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                        data-hs-datatables-options='{
                                             "columnDefs": [{
                                                     "orderable": true
                                                 }],
@@ -29,7 +31,8 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <input type="text" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
+                                    <input type="text" id="column1_search" class="form-control form-control-sm"
+                                        placeholder="Search names">
                                 </th>
                                 <th>
                                     <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
@@ -72,7 +75,8 @@
                                 <td>
                                     <a class="media align-items-center pe-auto" style="cursor: pointer;">
                                         <div class="avatar avatar-circle mr-3">
-                                            <img class="avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
+                                            <img class="avatar-img" src="../assets/img/160x160/img10.jpg"
+                                                alt="Image Description">
                                         </div>
                                         <span class="d-block h5 text-hover-primary mb-0">Amanda Harvey </span>
                                     </a>

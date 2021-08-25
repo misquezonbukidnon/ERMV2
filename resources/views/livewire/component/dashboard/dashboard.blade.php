@@ -78,8 +78,8 @@
                     </div>
 
                     <!-- employee datatable -->
-                    <livewire:component.dashboard.dashboardtable class="bg-danger" />
-                  
+                    <livewire:component.dashboard.dashboardtable />
+
                 </div>
                 <div class="col-lg-3">
                     <livewire:component.dashboard.userevents />
@@ -92,7 +92,8 @@
 
 <!-- ***************************************************************Modal for Employee viewing here************************************************** -->
 <!-- Modal -->
-<div class="modal fade" id="employeemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="employeemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div id="addUserStepConfirmation" class="card card-lg">
@@ -132,7 +133,9 @@
                         <dd class="col-sm-6">Individual</dd>
 
                         <dt class="col-sm-6 text-sm-right">Country:</dt>
-                        <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Great Britain Flag"> United Kingdom</dd>
+                        <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1"
+                                src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Great Britain Flag"> United
+                            Kingdom</dd>
 
                         <dt class="col-sm-6 text-sm-right">City:</dt>
                         <dd class="col-sm-6">London</dd>

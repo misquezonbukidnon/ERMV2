@@ -8,7 +8,9 @@
             @csrf
             <div class="form-group">
                 <label for="formControlPilledOffice" class="input-label">Office name</label>
-                <input wire:model="office" id="formControlPilledOffice" type="text" class="form-control form-control-pill {{ $errors->has('office') ? ' is-invalid' : '' }}" name="office" value="{{ old('office') }}" required autofocus>
+                <input wire:model="office" id="formControlPilledOffice" type="text"
+                    class="form-control form-control-pill {{ $errors->has('office') ? ' is-invalid' : '' }}"
+                    name="office" value="{{ old('office') }}" required autofocus>
                 @if ($errors->has('office'))
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('office') }}</strong>
@@ -17,7 +19,9 @@
             </div>
             <div class="form-group">
                 <label for="formControlPilledAbbr" class="input-label">Abbreviation</label>
-                <input wire:model="abbreviation" name="abbreviation" type="text" class="form-control form-control-pill {{ $errors->has('abbreviation') ? ' is-invalid' : '' }}" id="formControlPilledAbbr">
+                <input wire:model="abbreviation" name="abbreviation" type="text"
+                    class="form-control form-control-pill {{ $errors->has('abbreviation') ? ' is-invalid' : '' }}"
+                    id="formControlPilledAbbr">
                 @if ($errors->has('abbreviation'))
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('abbreviation') }}</strong>
@@ -28,6 +32,6 @@
                 </div>
             </div>
         </form>
-    <!-- End Input Group -->
+        <!-- End Input Group -->
     </div>
 </div>
