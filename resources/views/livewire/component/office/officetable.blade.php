@@ -34,10 +34,8 @@
                     class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle"
                     data-hs-datatables-options='{
                                         "columnDefs": [{
-                                            "targets": [0, 1, 2],
                                             "orderable": true
                                         }],
-                                        "order": [],
                                         "info": {
                                         "totalQty": "#datatableEntriesInfoTotalQty"
                                         },
