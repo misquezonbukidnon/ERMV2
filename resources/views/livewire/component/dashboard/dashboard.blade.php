@@ -100,7 +100,7 @@
                 <!-- Profile Cover -->
                 <div class="profile-cover">
                     <div class="profile-cover-img-wrapper">
-                        <img class="profile-cover-img" src="./assets/img/1920x400/img1.jpg" alt="Image Description">
+                        <img class="profile-cover-img" src="./assets/img/1920x400/img3.jpg" alt="Image Description">
                     </div>
                 </div>
                 <!-- End Profile Cover -->

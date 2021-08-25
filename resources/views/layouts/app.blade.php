@@ -6,6 +6,7 @@
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="assets/img/160x160/LGUSEAL.png" />
 
   <!-- Title -->
   <title>ERM LGU QUEZON</title>
@@ -289,7 +290,8 @@
 
   <!-- IE Support -->
   <script>
-    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write(
+      '<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
   </script>
 </body>
 
