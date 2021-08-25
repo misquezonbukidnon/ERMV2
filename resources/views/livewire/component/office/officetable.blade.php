@@ -27,9 +27,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="table-responsive datatable-custom">
-            <table id="officedatatable" class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle" data-hs-datatables-options='{
+        <div class="card-body">
+            <div class="table-responsive datatable-custom">
+                <table id="officedatatable" class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle" data-hs-datatables-options='{
                                         "columnDefs": [{
                                             "targets": [0, 1, 2],
                                             "orderable": true
@@ -45,37 +45,38 @@
                                         "pageLength": 10,
                                         "pagination": "datatableWithPaginationPagination"
                                     }'>
-                <thead class="thead-light">
-                    <tr>
-                        <th>Abbreviation</th>
-                        <th>Office Name</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Abbreviation</th>
+                            <th>Office Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    @foreach($officelist as $office)
-                    <tr>
-                        <td>
-                            <span class="d-block h5 mb-0">{{ $office->abbr }}</span>
-                        </td>
-                        <td>
-                            <a class="media align-items-center" href="user-profile.html">
-                                <div class="media-body">
-                                    <span class="d-block h5 text-hover-primary mb-0">{{ $office->name }}</span>
+                    <tbody>
+                        @foreach($officelist as $office)
+                        <tr>
+                            <td>
+                                <span class="d-block h5 mb-0">{{ $office->abbr }}</span>
+                            </td>
+                            <td>
+                                <a class="media align-items-center" href="user-profile.html">
+                                    <div class="media-body">
+                                        <span class="d-block h5 text-hover-primary mb-0">{{ $office->name }}</span>
 
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary btn-xs btn-icon " data-toggle="modal" data-target="#officeEditModal">
-                                <i class="tio-edit"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-xs btn-icon " data-toggle="modal" data-target="#officeEditModal">
+                                    <i class="tio-edit"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="card-footer">
             <!-- Pagination -->
