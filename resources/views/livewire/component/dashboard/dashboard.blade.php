@@ -96,7 +96,7 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div id="addUserStepConfirmation" class="card card-lg">
+            <div id="addUserStepConfirmation" class="card card-lg border-0">
                 <!-- Profile Cover -->
                 <div class="profile-cover">
                     <div class="profile-cover-img-wrapper">
@@ -112,8 +112,8 @@
                 <!-- End Avatar -->
 
                 <!-- Body -->
-                <div class="card-body">
-                    <dl class="row">
+                <div class="card-body ">
+                    <dl class="row ">
                         <dt class="col-sm-6 text-sm-right">Full name:</dt>
                         <dd class="col-sm-6">Ella Lauda</dd>
 
@@ -137,20 +137,6 @@
                                 src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Great Britain Flag"> United
                             Kingdom</dd>
 
-                        <dt class="col-sm-6 text-sm-right">City:</dt>
-                        <dd class="col-sm-6">London</dd>
-
-                        <dt class="col-sm-6 text-sm-right">State:</dt>
-                        <dd class="col-sm-6">-</dd>
-
-                        <dt class="col-sm-6 text-sm-right">Address line 1:</dt>
-                        <dd class="col-sm-6">45 Roker Terrace, Latheronwheel</dd>
-
-                        <dt class="col-sm-6 text-sm-right">Address line 2:</dt>
-                        <dd class="col-sm-6">-</dd>
-
-                        <dt class="col-sm-6 text-sm-right">Zip code:</dt>
-                        <dd class="col-sm-6">KW5 8NW</dd>
                     </dl>
                     <!-- End Row -->
                 </div>
