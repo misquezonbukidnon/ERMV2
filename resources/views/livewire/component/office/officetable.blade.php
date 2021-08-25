@@ -19,7 +19,8 @@
                                     <i class="tio-search"></i>
                                 </div>
                             </div>
-                            <input id="officeinputSearch" type="search" class="form-control" placeholder="Search Office" aria-label="Search users">
+                            <input id="officeinputSearch" type="search" class="form-control" placeholder="Search Office"
+                                aria-label="Search users">
                         </div>
                         <!-- End Search -->
                     </form>
@@ -29,7 +30,9 @@
         </div>
         <div class="card-body">
             <div class="table-responsive datatable-custom">
-                <table id="officedatatable" class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle" data-hs-datatables-options='{
+                <table id="officedatatable"
+                    class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle"
+                    data-hs-datatables-options='{
                                         "columnDefs": [{
                                             "targets": [0, 1, 2],
                                             "orderable": true
@@ -47,28 +50,21 @@
                                     }'>
                     <thead class="thead-light">
                         <tr>
-                            <th>Abbreviation</th>
-                            <th>Office Name</th>
+                            <th>Office</th>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach($officelist as $office)
+                        @foreach($offices as $office)
                         <tr>
                             <td>
                                 <span class="d-block h5 mb-0">{{ $office->abbr }}</span>
+                                <span class="d-block font-size-sm">{{ $office->name }}</span>
                             </td>
                             <td>
-                                <a class="media align-items-center" href="user-profile.html">
-                                    <div class="media-body">
-                                        <span class="d-block h5 text-hover-primary mb-0">{{ $office->name }}</span>
-
-                                    </div>
-                                </a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-xs btn-icon " data-toggle="modal" data-target="#officeEditModal">
+                                <button type="button" class="btn btn-outline-primary btn-xs btn-icon "
+                                    data-toggle="modal" data-target="#officeEditModal">
                                     <i class="tio-edit"></i>
                                 </button>
                             </td>

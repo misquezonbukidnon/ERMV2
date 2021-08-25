@@ -6,6 +6,14 @@
         <!-- Input Group -->
         <form wire:submit.prevent="submitForm" action="/office/create" method="POST">
             @csrf
+            @if (session()->has('success_message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="tio-checkmark-circle mt-1 mr-1"></i> {{ session('success_message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="tio-clear tio-lg"></i>
+                </button>
+            </div>
+            @endif
             <div class="form-group">
                 <label for="formControlPilledOffice" class="input-label">Office name</label>
                 <input wire:model="office" id="formControlPilledOffice" type="text"

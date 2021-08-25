@@ -31,8 +31,12 @@ class Addofficeform extends Component
             'name' => $this->office,
             'abbr' => $this->abbreviation,
         ]);
+        // Sleep for 1 second before flash message
+        sleep(1);
         // reset form after submission
         $this->resetForm();
+
+        session()->flash('success_message', "Successfully added to database");
     }
 
     private function resetForm()
@@ -40,7 +44,7 @@ class Addofficeform extends Component
         $this->office='';
         $this->abbreviation='';
     }
-    
+
     public function render()
     {
         return view('livewire.component.office.addofficeform');
