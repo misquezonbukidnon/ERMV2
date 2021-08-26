@@ -53,6 +53,11 @@ class OfficeEdit extends Component
         session()->flash('success_message', "Successfully updated to database");
     }
 
+    public function refreshTable()
+    {
+        $this->emit('refreshTable');
+    }
+
 
     public function render()
     {

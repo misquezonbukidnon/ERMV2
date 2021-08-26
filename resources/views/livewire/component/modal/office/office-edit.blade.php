@@ -2,7 +2,7 @@
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-dialog" role="document">
-            <form wire:submit.prevent="submitForm({{ $office_id }})" action="#" method="POST">
+            <form wire:submit.prevent="submitForm({{ $office_id }})" action="#" method="POST" autocomplete="off">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
@@ -53,11 +53,11 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+                        <button wire:click="refreshTable" type="button" class="btn btn-white"
+                            data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" wire:click=""">Update</button>
                     </div>
             </form>
         </div>
     </div>
-</div>
 </div>

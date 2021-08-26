@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
         <!-- Input Group -->
-        <form wire:submit.prevent="submitForm" action="/office/create" method="POST">
+        <form wire:submit.prevent="submitForm" action="/office/create" method="POST" autocomplete="off">
             @csrf
             @if (session()->has('success_message'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -36,7 +36,7 @@
                 </span>
                 @endif
                 <div class="w-100 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                    <button wire:click="addTableRefresh" type="submit" class="btn btn-primary mt-3">Submit</button>
                 </div>
             </div>
         </form>

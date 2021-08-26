@@ -30,6 +30,14 @@
         </div>
     </div>
     <div class="card-body">
+        @if (session()->has('table_updated'))
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <i class="tio-checkmark-circle mt-1 mr-1"></i> {{ session('table_updated') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="tio-clear tio-lg"></i>
+            </button>
+        </div>
+        @endif
         <div class="table-responsive datatable-custom">
             <table id="officedatatable"
                 class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle"

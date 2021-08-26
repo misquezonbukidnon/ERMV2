@@ -45,9 +45,9 @@ class Addofficeform extends Component
         $this->abbreviation='';
     }
 
-    public function updateTable()
+    public function addTableRefresh()
     {
-        $this->emit('updateTable');
+        $this->emit('addTableRefresh');
     }
 
     public function render()

@@ -9,14 +9,22 @@ use Livewire\WithPagination;
 class Officetable extends Component
 {
     use WithPagination;
+
     protected $listeners = [
-        'updateTable' => 'refreshTable'
+        'addTableRefresh',
+        'refreshTable'
     ];
+
+    public function addTableRefresh()
+    {
+        session()->flash('table_updated', "Table has been updated!");
+    }
 
     public function refreshTable()
     {
-        //
+        session()->flash('table_updated', "Table has been updated!");
     }
+
 
     public function officeModalEdit($itemID)
     {
