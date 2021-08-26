@@ -1,4 +1,4 @@
-<div class="card" wire:ignore>
+<div class="card">
     <!-- Header -->
     <div class="card-header">
         <div class="row justify-content-between align-items-center flex-grow-1">
@@ -18,7 +18,9 @@
                                 <i class="tio-search"></i>
                             </div>
                         </div>
-                        <input id="officeinputSearch" type="search" class="form-control" placeholder="Search Office"
+                        <!-- <input id="officeinputSearch" type="search" class="form-control" placeholder="Search Office"
+                            aria-label="Search users"> -->
+                        <input wire:model="search" type="search" class="form-control" placeholder="Search Office"
                             aria-label="Search users">
                     </div>
                     <!-- End Search -->
@@ -73,40 +75,19 @@
         </div>
     </div>
     <div class="card-footer">
-        <!-- Pagination -->
         <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
             <div class="col-sm mb-2 mb-sm-0">
-                <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
-                    <span class="mr-2">Showing:</span>
 
-                    <!-- Select -->
-                    <select id="datatableEntries" class="js-select2-custom" data-hs-select2-options='{
-                                        "minimumResultsForSearch": "Infinity",
-                                        "customClass": "custom-select custom-select-sm custom-select-borderless",
-                                        "dropdownAutoWidth": true,
-                                        "width": true
-                                    }'>
-                        <option value="10" selected>10</option>
-                        <option value="15">15</option>
-                        <option value="100">100</option>
-                    </select>
-                    <!-- End Select -->
-
-                    <span class="text-secondary mr-2">of</span>
-
-                    <!-- Pagination Quantity -->
-                    <span id="datatableEntriesInfoTotalQty"></span>
-                </div>
             </div>
 
             <div class="col-sm-auto">
                 <div class="d-flex justify-content-center justify-content-sm-end">
                     <!-- Pagination -->
-                    <nav id="datatableWithPaginationPagination" aria-label="Activity pagination"></nav>
+                    {{ $offices->links() }}
                 </div>
             </div>
         </div>
-        <!-- End Pagination -->
+
     </div>
 </div>
 <!-- End Card -->
