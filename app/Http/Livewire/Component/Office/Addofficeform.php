@@ -45,6 +45,11 @@ class Addofficeform extends Component
         $this->abbreviation='';
     }
 
+    public function updateTable()
+    {
+        $this->emit('updateTable');
+    }
+
     public function render()
     {
         return view('livewire.component.office.addofficeform');

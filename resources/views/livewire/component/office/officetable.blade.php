@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" wire:ignore>
     <!-- Header -->
     <div class="card-header">
         <div class="row justify-content-between align-items-center flex-grow-1">
@@ -60,7 +60,8 @@
                             <span class="d-block font-size-sm">{{ $office->name }}</span>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary btn-xs btn-icon " data-toggle="modal"
+                            <button wire:click="officeModalEdit({{ $office->id }})" type="button"
+                                class="btn btn-outline-primary btn-xs btn-icon " data-toggle="modal"
                                 data-target="#officeEditModal">
                                 <i class="tio-edit"></i>
                             </button>

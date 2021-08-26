@@ -73,7 +73,8 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a class="media align-items-center pe-auto" style="cursor: pointer;"   data-toggle="modal" data-target="#employeemodal">
+                                    <a class="media align-items-center pe-auto" style="cursor: pointer;"
+                                        data-toggle="modal" data-target="#employeemodal">
                                         <div class="avatar avatar-circle mr-3">
                                             <img class="avatar-img" src="../assets/img/160x160/img10.jpg"
                                                 alt="Image Description">
