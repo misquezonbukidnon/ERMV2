@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OfficeController;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,7 @@ Route::post('/logout', [LoginController::class, 'destroy'])
 Route::get('/office', [OfficeController::class, 'index'])
     ->middleware('auth')
     ->name('office');
+
+Route::get('/employee/create', [EmployeeController::class, 'index'])
+    ->middleware('auth')
+    ->name('employee_create');

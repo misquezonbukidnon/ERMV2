@@ -92,7 +92,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                   class="tio-document-text"></i>&nbsp;Records</a>
               <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
-                <a class="dropdown-item" href="/create/record">New Records</a>
+                <a class="dropdown-item" href="{{ route('employee_create') }}">New Records</a>
                 <a class="dropdown-item" href="#">Update Records</a>
                 <a class="dropdown-item" href="{{ route('office') }}">Offices</a>
                 <a class="dropdown-item" href="#">Import/Export Records</a>
