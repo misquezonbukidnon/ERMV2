@@ -4,8 +4,8 @@
       <div class="navbar-nav-wrap">
         <div class="navbar-brand-wrapper">
           <!-- Logo -->
-          <a class="navbar-brand" href="../index.html" aria-label="Front">
-            <img width="50rem" src="./assets/img/160x160/LGUSEAL.png" alt="Logo">
+          <a class="navbar-brand" href="/dashboard" aria-label="Front">
+            <img width="50rem" src="{{ asset('assets/img/160x160/LGUSEAL.png') }}" alt="Logo">
           </a>
           <!-- End Logo -->
         </div>
