@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Classification;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,7 +19,7 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             PositionSeeder::class,
             UserImageSeeder::class,
-            Classification::class,
+            ClassificationSeeder::class,
         ]);
     }
 }
