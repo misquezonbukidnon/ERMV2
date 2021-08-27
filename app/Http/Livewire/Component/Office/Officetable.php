@@ -47,7 +47,7 @@ class Officetable extends Component
 
     public function refreshTable()
     {
-        session()->flash('table_updated', "Table has been updated!");
+        //
     }
 
 
