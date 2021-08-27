@@ -269,6 +269,7 @@
 
       $('#officeinputSearch').on('mouseup', function(e) {
 
+        $("officedatatable").DataTable().ajax.reload();
         var $input = $(this),
           oldValue = $input.val();
 
