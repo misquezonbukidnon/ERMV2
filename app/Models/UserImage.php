@@ -12,7 +12,6 @@ class UserImage extends Model
 
     protected $fillable = [
         'name',
-        'file_path',
     ];
 
     public function userrelationships()

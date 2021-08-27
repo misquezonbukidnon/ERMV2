@@ -15,6 +15,10 @@ class CreateEmploymentStatusesTable extends Migration
     {
         Schema::create('employment_statuses', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('date_started')->nullable();
+            $table->string('date_ended')->nullable();
+            $table->string('remarks')->nullable();
             $table->timestamps();
         });
     }
