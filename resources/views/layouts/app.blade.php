@@ -287,7 +287,18 @@
     });
   </script>
 
-
+  <script>
+    $(document).on('ready', function() {
+      $.HSCore.components.HSFlatpickr.init($('#js-flatpickr-disabling-dates'), {
+        disable: [
+          function(date) {
+            // return true to disable
+            return (date.getDay() === 0 || date.getDay() === 6);
+          }
+        ],
+      });
+    });
+  </script>
 
   <!-- IE Support -->
   <script>

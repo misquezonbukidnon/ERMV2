@@ -8,16 +8,24 @@
         </ol>
     </nav>
 
+
     <div class="row">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-3">
                     <livewire:component.dashboard.userprofile />
-                    <br>
-                    <livewire:component.dashboard.userevents />
                 </div>
                 <div class="col-lg-9">
-                    <livewire:component.record.addrecord />
+                    <div class="row">
+                        <div class="col-lg-8 mb-5">
+                            <livewire:component.record.addrecord />
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <livewire:component.dashboard.userevents />
+                        </div>
+                    </div>
+
+                    <!-- End Card -->
                 </div>
             </div>
         </div>
