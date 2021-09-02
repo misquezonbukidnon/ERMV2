@@ -84,7 +84,18 @@
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
+                                <!-- Form Group -->
+                                <div class="row form-group">
+                                    <label for="organizationLabel" class="col-sm-3 col-form-label input-label">Employee
+                                        Identification Number</label>
 
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="Identification Numbe"
+                                            id="Identification Numbe" placeholder="Identification Number"
+                                            aria-label="Htmlstream">
+                                    </div>
+                                </div>
+                                <!-- End Form Group -->
                                 <!-- Form Group -->
                                 <div class="row form-group">
                                     <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Full name <i
@@ -119,6 +130,17 @@
                                 <!-- End Form Group -->
 
                                 <!-- Form Group -->
+                                <div class="row form-group">
+                                    <label for="emailLabel" class="col-sm-3 col-form-label input-label">Address</label>
+
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" name="Address" id="AddressLabel"
+                                            placeholder="Address" aria-label="Address">
+                                    </div>
+                                </div>
+                                <!-- End Form Group -->
+
+                                <!-- Form Group -->
                                 <div class="js-add-field row form-group" data-hs-add-field-options='{
                                                     "template": "#addPhoneFieldTemplate",
                                                     "container": "#addPhoneFieldContainer",
@@ -134,24 +156,6 @@
                                                 aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
                                                             "template": "+63 0000000000"
                                                             }'>
-
-                                            <div class="input-group-append">
-                                                <!-- Select -->
-                                                <div class="select2-custom">
-                                                    <select class="js-select2-custom" name="phoneSelect"
-                                                        data-hs-select2-options='{
-                                                                    "minimumResultsForSearch": "Infinity",
-                                                                    "dropdownAutoWidth": true,
-                                                                    "width": "6rem"
-                                                                    }'>
-                                                        <option value="Mobile" selected>Mobile</option>
-                                                        <option value="Home">Home</option>
-
-
-                                                    </select>
-                                                    <!-- End Select -->
-                                                </div>
-                                            </div>
                                         </div>
 
                                         <!-- Container For Input Field -->
@@ -181,24 +185,6 @@
                                             aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
                                  "template": "+0(000)000-00-00"
                                }'>
-
-                                        <div class="input-group-append">
-                                            <!-- Select -->
-                                            <div class="select2-custom">
-                                                <select class="js-select2-custom-dynamic"
-                                                    data-name="additionlPhoneSelect" data-hs-select2-options='{
-                                    "minimumResultsForSearch": "Infinity",
-                                    "dropdownAutoWidth": true,
-                                    "width": "6rem"
-                                  }'>
-                                                    <option value="Mobile" selected>Mobile</option>
-                                                    <option value="Home">Home</option>
-
-
-                                                </select>
-                                            </div>
-                                            <!-- End Select -->
-                                        </div>
                                     </div>
 
                                     <a class="js-delete-field input-group-add-field-delete" href="javascript:;">
@@ -230,6 +216,17 @@
                                         <input type="number" class="form-control" name="organization"
                                             id="organizationLabel" placeholder="+xx xxx-xxxx-xx"
                                             aria-label="Htmlstream">
+                                    </div>
+                                </div>
+                                <!-- End Form Group -->
+                                <!-- Form Group -->
+                                <div class="row form-group">
+                                    <label for="emailLabel" class="col-sm-3 col-form-label input-label"> Emergency
+                                        Contact Person Email</label>
+
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" name="email" id="ecpemailLabel"
+                                            placeholder="yourname@example.com" aria-label="clarice@example.com">
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
