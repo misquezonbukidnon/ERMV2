@@ -428,13 +428,14 @@
                             <div class="card-body">
                                 <dl class="row">
                                     <dt class="col-sm-6 text-sm-right">Employee Identification Number:</dt>
-                                    <dd class="col-sm-6">ella@example.com</dd>
+                                    <dd class="col-sm-6">091221</dd>
                                     <dt class="col-sm-6 text-sm-right">Full name:</dt>
-                                    <dd class="col-sm-6">{{ $firstname }} {{ $middlename }} {{ $lastname }} {{ $suffix}}
+                                    <dd class="col-sm-6">{{ $firstname }} {{ $middlename }} {{ $lastname }} {{ $suffix
+                                        }}
                                     </dd>
 
                                     <dt class="col-sm-6 text-sm-right">Email:</dt>
-                                    <dd class="col-sm-6">ella@example.com</dd>
+                                    <dd class="col-sm-6">ivankunnn.lguquezon.com</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Phone:</dt>
                                     <dd class="col-sm-6">+1 (609) 972-22-22</dd>
@@ -443,28 +444,28 @@
                                     <dd class="col-sm-6">Address</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">Ivan Nacion</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Emergency Contact #:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">6969696</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Emergency Contact #:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dt class="col-sm-6 text-sm-right">Emergency Contact Person Email:</dt>
+                                    <dd class="col-sm-6">Email.gmail.com</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Position:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">Doggie</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Office:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">Manangement Information System</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Classification:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">Warrior</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Status:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">Nacional</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Employment Date:</dt>
-                                    <dd class="col-sm-6">-</dd>
+                                    <dd class="col-sm-6">12/12/12 sale</dd>
 
 
 
@@ -477,8 +478,8 @@
                             <div class="card-footer d-sm-flex align-items-sm-center">
                                 <button type="button" class="btn btn-ghost-secondary mb-2 mb-sm-0"
                                     data-hs-step-form-prev-options='{
-                         "targetSelector": "#addUserStepBillingAddress"
-                       }'>
+                                            "targetSelector": "#addUserStepBillingAddress"
+                                        }'>
                                     <i class="tio-chevron-left"></i> Previous step
                                 </button>
 
