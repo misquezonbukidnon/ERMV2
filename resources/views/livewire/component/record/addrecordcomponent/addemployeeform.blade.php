@@ -63,8 +63,9 @@
                                                     src="{{ asset('assets/img/160x160/img1.jpg') }}"
                                                     alt="Image Description">
 
-                                                <input type="file" class="js-file-attach avatar-uploader-input"
-                                                    id="avatarUploader" data-hs-file-attach-options='{
+                                                <input type="file" name="image"
+                                                    class="js-file-attach avatar-uploader-input" id="avatarUploader"
+                                                    data-hs-file-attach-options='{
                                                                 "textTarget": "#avatarImg",
                                                                 "mode": "image",
                                                                 "targetAttr": "src",
@@ -81,6 +82,9 @@
                                             <button type="button"
                                                 class="js-file-attach-reset-img btn btn-white">Delete</button>
                                         </div>
+                                        <div class="col-sm-12">
+                                            <!-- <small>{{ $image }}</small> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -90,9 +94,12 @@
                                         Identification Number</label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="Identification Numbe"
-                                            id="Identification Numbe" placeholder="Identification Number"
-                                            aria-label="Htmlstream">
+                                        <input wire:model="employee_number" type="text" class="form-control"
+                                            name="employee_number" id="Identification Numbe"
+                                            placeholder="Identification Number" aria-label="Htmlstream">
+                                        <div class="col-sm-12">
+                                            <small>{{ $employee_number }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -105,14 +112,23 @@
 
                                     <div class="col-sm-9">
                                         <div class="input-group input-group-sm-down-break">
-                                            <input type="text" class="form-control" name="firstname" id="firstnameLabel"
-                                                placeholder="Firstname" aria-label="Clarice">
-                                            <input type="text" class="form-control" name="middlename"
-                                                id="middlenameLabel" placeholder="Middlename" aria-label="Boone">
-                                            <input type="text" class="form-control" name="lastname" id="lastnameLabel"
-                                                placeholder="Lastname" aria-label="Boone">
-                                            <input type="text" class="form-control" name="Suffix" id="SuffixLabel"
-                                                placeholder="Suffix" aria-label="Boone">
+                                            <input wire:model="firstname" type="text" class="form-control"
+                                                name="firstname" id="firstnameLabel" placeholder="Firstname"
+                                                aria-label="Clarice">
+                                            <input wire:model="middlename" type="text" class="form-control"
+                                                name="middlename" id="middlenameLabel" placeholder="Middlename"
+                                                aria-label="Boone">
+                                            <input wire:model="lastname" type="text" class="form-control"
+                                                name="lastname" id="lastnameLabel" placeholder="Lastname"
+                                                aria-label="Boone">
+                                            <input wire:model="suffix" type="text" class="form-control" name="suffix"
+                                                id="SuffixLabel" placeholder="Suffix" aria-label="Boone">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <small>{{ $firstname }}</small>
+                                            <small>{{ $middlename }}</small>
+                                            <small>{{ $lastname }}</small>
+                                            <small>{{ $suffix }}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -120,11 +136,17 @@
 
                                 <!-- Form Group -->
                                 <div class="row form-group">
-                                    <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email</label>
+                                    <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email <span
+                                            class="input-label-secondary">(Optional)</span></label>
+
 
                                     <div class="col-sm-9">
-                                        <input type="email" class="form-control" name="email" id="emailLabel"
-                                            placeholder="yourname@example.com" aria-label="clarice@example.com">
+                                        <input wire:model="email" type="email" class="form-control" name="email"
+                                            id="emailLabel" placeholder="yourname@example.com"
+                                            aria-label="clarice@example.com">
+                                        <div class="col-sm-12">
+                                            <small>{{ $email }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -134,8 +156,11 @@
                                     <label for="emailLabel" class="col-sm-3 col-form-label input-label">Address</label>
 
                                     <div class="col-sm-9">
-                                        <input type="email" class="form-control" name="Address" id="AddressLabel"
-                                            placeholder="Address" aria-label="Address">
+                                        <input wire:model="address" type="text" class="form-control" name="Address"
+                                            id="AddressLabel" placeholder="Address" aria-label="Address">
+                                        <div class="col-sm-12">
+                                            <small>{{ $address }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -151,47 +176,21 @@
 
                                     <div class="col-sm-9">
                                         <div class="input-group input-group-sm-down-break align-items-center">
-                                            <input type="text" class="js-masked-input form-control" name="phone"
-                                                id="phoneLabel" placeholder="+xx xxx-xxxx-xx"
-                                                aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
+                                            <input wire:model="contact_number" type="text"
+                                                class="js-masked-input form-control" name="phone" id="phoneLabel"
+                                                placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx"
+                                                data-hs-mask-options='{
                                                             "template": "+63 0000000000"
                                                             }'>
                                         </div>
-
+                                        <div class="col-sm-12">
+                                            <small>{{ $contact_number }}</small>
+                                        </div>
                                         <!-- Container For Input Field -->
                                         <div id="addPhoneFieldContainer"></div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
-
-                                <!-- Add Phone Input Field -->
-                                <div id="addAddressFieldTemplate" style="display: none;">
-                                    <div class="input-group-add-field">
-                                        <input type="text" class="form-control" data-name="addressLine"
-                                            placeholder="Your address" aria-label="Your address">
-
-                                        <a class="js-delete-field input-group-add-field-delete" href="javascript:;">
-                                            <i class="tio-clear"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- End Add Phone Input Field -->
-
-                                <!-- Add Phone Input Field -->
-                                <div id="addPhoneFieldTemplate" class="input-group-add-field" style="display: none;">
-                                    <div class="input-group input-group-sm-down-break align-items-center">
-                                        <input type="text" class="js-masked-input form-control"
-                                            data-name="additionlPhone" placeholder="+x(xxx)xxx-xx-xx"
-                                            aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
-                                 "template": "+0(000)000-00-00"
-                               }'>
-                                    </div>
-
-                                    <a class="js-delete-field input-group-add-field-delete" href="javascript:;">
-                                        <i class="tio-clear"></i>
-                                    </a>
-                                </div>
-                                <!-- End Add Phone Input Field -->
 
                                 <!-- Form Group -->
                                 <div class="row form-group">
@@ -200,8 +199,12 @@
                                         Person</label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="organization"
-                                            id="organizationLabel" placeholder="John Doe" aria-label="Htmlstream">
+                                        <input wire:model="emergency_contact_person" type="text" class="form-control"
+                                            name="emergency_contact_person" id="organizationLabel"
+                                            placeholder="Emergency Contact Person" aria-label="Htmlstream">
+                                        <div class="col-sm-12">
+                                            <small>{{ $emergency_contact_person }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -213,9 +216,12 @@
                                         #</label>
 
                                     <div class="col-sm-9">
-                                        <input type="number" class="form-control" name="organization"
-                                            id="organizationLabel" placeholder="+xx xxx-xxxx-xx"
-                                            aria-label="Htmlstream">
+                                        <input wire:model="ecp_contact_number" type="text" class="form-control"
+                                            name="ecp_contact_number" id="organizationLabel"
+                                            placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
+                                        <div class="col-sm-12">
+                                            <small>{{ $ecp_contact_number }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -225,8 +231,12 @@
                                         Contact Person Email</label>
 
                                     <div class="col-sm-9">
-                                        <input type="email" class="form-control" name="email" id="ecpemailLabel"
-                                            placeholder="yourname@example.com" aria-label="clarice@example.com">
+                                        <input wire:model="ecp_email" type="email" class="form-control" name="ecp_email"
+                                            id="ecpemailLabel" placeholder="yourname@example.com"
+                                            aria-label="clarice@example.com">
+                                        <div class="col-sm-12">
+                                            <small>{{ $ecp_email }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -418,7 +428,8 @@
                             <div class="card-body">
                                 <dl class="row">
                                     <dt class="col-sm-6 text-sm-right">Full name:</dt>
-                                    <dd class="col-sm-6">Ella Lauda</dd>
+                                    <dd class="col-sm-6">{{ $firstname }} {{ $middlename }} {{ $lastname }} {{ $suffix
+                                        }}</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Email:</dt>
                                     <dd class="col-sm-6">ella@example.com</dd>
