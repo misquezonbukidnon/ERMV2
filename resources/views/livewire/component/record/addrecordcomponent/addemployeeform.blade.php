@@ -305,8 +305,8 @@
                                     <div class="col-sm-9">
                                         <!-- Select -->
                                         <div class="mb-3">
-                                            <select class="js-select2-custom" id="locationLabel"
-                                                data-hs-select2-options='{
+                                            <select wire:model="positions_id" name="positions_id"
+                                                class="js-select2-custom" id="locationLabel" data-hs-select2-options='{
                                     "placeholder": "Select Position"
                                   }'>
                                                 <option>Select Position</option>
@@ -317,6 +317,9 @@
                                             </select>
                                         </div>
                                         <!-- End Select -->
+                                        <div class="col-sm-12">
+                                            <small>{{ $positions_id }}</small>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End Form Group -->
@@ -327,7 +330,8 @@
                                     <div class="col-sm-9">
                                         <!-- Select -->
                                         <div class="mb-3">
-                                            <select class="js-select2-custom" id="Office" data-hs-select2-options='{
+                                            <select wire:model="offices_id" class="js-select2-custom" id="Office"
+                                                data-hs-select2-options='{
                                     "placeholder": "Select Office"
                                   }'>
                                                 <option>Select Office</option>
@@ -336,6 +340,9 @@
                                                 @endforeach
 
                                             </select>
+                                            <div class="col-sm-12">
+                                                <small>{{ $offices_id }}</small>
+                                            </div>
                                         </div>
                                         <!-- End Select -->
                                     </div>
@@ -453,10 +460,10 @@
                                     <dd class="col-sm-6">Email.gmail.com</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Position:</dt>
-                                    <dd class="col-sm-6">Doggie</dd>
+                                    <dd class="col-sm-6">{{$positions_id}}</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Office:</dt>
-                                    <dd class="col-sm-6">Manangement Information System</dd>
+                                    <dd class="col-sm-6">{{$offices_id}}</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Classification:</dt>
                                     <dd class="col-sm-6">Warrior</dd>
