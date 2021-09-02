@@ -83,7 +83,7 @@
   </div>
 
   @livewireScripts
-  
+
 
   <!-- Home Datatable With Filters -->
   <script>
@@ -134,8 +134,8 @@
           .search(this.value)
           .draw();
       });
-    }); -->
-  </script>
+    });
+  </script> -->
 
   <!-- Import File -->
   <script>
@@ -222,15 +222,15 @@
     });
 
     // initialization of add input filed
-    $('.js-add-field').each(function() {
-      new HSAddField($(this), {
-        addedField: function() {
-          $('.js-add-field .js-select2-custom-dynamic').each(function() {
-            var select2dynamic = $.HSCore.components.HSSelect2.init($(this));
-          });
-        }
-      }).init();
-    });
+    // $('.js-add-field').each(function() {
+    //   new HSAddField($(this), {
+    //     addedField: function() {
+    //       $('.js-add-field .js-select2-custom-dynamic').each(function() {
+    //         var select2dynamic = $.HSCore.components.HSSelect2.init($(this));
+    //       });
+    //     }
+    //   }).init();
+    // });
     // Datatable Edit Office routes - /office
     $(document).on('ready', function() {
       // INITIALIZATION OF EDITABLE TABLE
