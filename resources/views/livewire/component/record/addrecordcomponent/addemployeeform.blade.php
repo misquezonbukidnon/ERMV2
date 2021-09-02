@@ -286,13 +286,10 @@
                                                 data-hs-select2-options='{
                                     "placeholder": "Select Position"
                                   }'>
-                                                <option label="empty"></option>
-                                                <option value="AF"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Programmer</span></span>'>
-                                                    Programmer</option>
-                                                <option value="AX"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Tester</span></span>'>
-                                                    Tester</option>
+                                                <option>Select Position</option>
+                                                @foreach($positions as $position)
+                                                <option value="{{$position->id}}">{{ $position->name }}</option>
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -310,13 +307,10 @@
                                             <select class="js-select2-custom" id="Office" data-hs-select2-options='{
                                     "placeholder": "Select Office"
                                   }'>
-                                                <option label="empty"></option>
-                                                <option value="AF"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Afghanistan</span></span>'>
-                                                    Programmer</option>
-                                                <option value="AX"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Aland Islands</span></span>'>
-                                                    Tester</option>
+                                                <option>Select Office</option>
+                                                @foreach($offices as $office)
+                                                <option value="{{$office->id}}">{{ $office->name }}</option>
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -335,13 +329,11 @@
                                                 data-hs-select2-options='{
                                     "placeholder": "Select Classification"
                                   }'>
-                                                <option label="empty"></option>
-                                                <option value="AF"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Afghanistan</span></span>'>
-                                                    Programmer</option>
-                                                <option value="AX"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Aland Islands</span></span>'>
-                                                    Tester</option>
+                                                <option>Select Classification</option>
+                                                @foreach($classifications as $classification)
+                                                <option value="{{$classification->id}}">{{ $classification->name }}
+                                                </option>
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -360,14 +352,11 @@
                                             <select class="js-select2-custom" id="Status" data-hs-select2-options='{
                                     "placeholder": "Select Status"
                                   }'>
-                                                <option label="empty"></option>
-                                                <option value="AF"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Afghanistan</span></span>'>
-                                                    Programmer</option>
-                                                <option value="AX"
-                                                    data-option-template='<span class="d-flex align-items-center"><span class="text-truncate">Aland Islands</span></span>'>
-                                                    Tester</option>
-
+                                                <option>Select Employment Status</option>
+                                                @foreach($employmentstatuses as $employmentstatus)
+                                                <option value="{{$employmentstatus->id}}">{{ $employmentstatus->name }}
+                                                </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <!-- End Select -->

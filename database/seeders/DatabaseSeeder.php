@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             PositionSeeder::class,
             UserImageSeeder::class,
             ClassificationSeeder::class,
+            EmploymentStatusSeeder::class,
         ]);
     }
 }
