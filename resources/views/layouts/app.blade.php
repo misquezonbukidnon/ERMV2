@@ -28,18 +28,6 @@
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-</head>
-
-<body>
-  <!-- Navigation -->
-  <livewire:component.navigation.header />
-
-  <div style="margin-top: 1rem">
-    <!-- Livewire Components -->
-    @yield('content')
-  </div>
-
-  @livewireScripts
   <script src="{{ asset('assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js') }}"></script>
 
   <!-- End Create a new user Modal -->
@@ -83,6 +71,19 @@
   <!-- <script src="{{ asset('assets/js/hs.chartjs.js') }}"></script> -->
   <script src="{{ asset('assets/js/hs.dropzone.js') }}"></script>
 
+</head>
+
+<body>
+  <!-- Navigation -->
+  <livewire:component.navigation.header />
+
+  <div style="margin-top: 1rem">
+    <!-- Livewire Components -->
+    @yield('content')
+  </div>
+
+  @livewireScripts
+  
 
   <!-- Home Datatable With Filters -->
   <script>

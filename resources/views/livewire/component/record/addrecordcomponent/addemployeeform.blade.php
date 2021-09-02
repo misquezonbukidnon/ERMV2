@@ -484,7 +484,7 @@
                     <!-- Message Body -->
                     <div id="successMessageContent" style="display:none;">
                         <div class="text-center">
-                            <img class="img-fluid mb-3" src="./assets/svg/illustrations/hi-five.svg"
+                            <img class="img-fluid mb-3" src="../assets/svg/illustrations/hi-five.svg"
                                 alt="Image Description" style="max-width: 15rem;">
 
                             <div class="mb-4">
