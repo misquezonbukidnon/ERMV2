@@ -411,7 +411,7 @@
                             <!-- Profile Cover -->
                             <div class="profile-cover">
                                 <div class="profile-cover-img-wrapper">
-                                    <img class="profile-cover-img" src="{{ asset('assets/img/1920x400/img3.jpg') }}"
+                                    <img class="profile-cover-img" src="{{ asset('assets/img/1920x400/img1.jpg') }}"
                                         alt="Image Description">
                                 </div>
                             </div>
@@ -419,7 +419,7 @@
 
                             <!-- Avatar -->
                             <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
-                                <img class="avatar-img" src="{{asset('assets/img/160x160/img3.jpg')}}"
+                                <img class="avatar-img" src="{{asset('assets/img/160x160/img9.jpg')}}"
                                     alt="Image Description">
                             </div>
                             <!-- End Avatar -->
@@ -427,48 +427,44 @@
                             <!-- Body -->
                             <div class="card-body">
                                 <dl class="row">
-                                    <dt class="col-sm-6 text-sm-right">Employee Identification Number:</dt>
-                                    <dd class="col-sm-6">091221</dd>
                                     <dt class="col-sm-6 text-sm-right">Full name:</dt>
                                     <dd class="col-sm-6">{{ $firstname }} {{ $middlename }} {{ $lastname }} {{ $suffix
-                                        }}
-                                    </dd>
+                                        }}</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Email:</dt>
-                                    <dd class="col-sm-6">ivankunnn.lguquezon.com</dd>
+                                    <dd class="col-sm-6">{{ $email }}</dd>
 
                                     <dt class="col-sm-6 text-sm-right">Phone:</dt>
-                                    <dd class="col-sm-6">+1 (609) 972-22-22</dd>
+                                    <dd class="col-sm-6">{{ $contact_number }}</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Address:</dt>
-                                    <dd class="col-sm-6">Address</dd>
+                                    <dt class="col-sm-6 text-sm-right">Organization:</dt>
+                                    <dd class="col-sm-6">Htmlstream</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
-                                    <dd class="col-sm-6">Ivan Nacion</dd>
+                                    <dt class="col-sm-6 text-sm-right">Department:</dt>
+                                    <dd class="col-sm-6">-</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Emergency Contact #:</dt>
-                                    <dd class="col-sm-6">6969696</dd>
+                                    <dt class="col-sm-6 text-sm-right">Account type:</dt>
+                                    <dd class="col-sm-6">Individual</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Emergency Contact Person Email:</dt>
-                                    <dd class="col-sm-6">Email.gmail.com</dd>
+                                    <dt class="col-sm-6 text-sm-right">Country:</dt>
+                                    <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1"
+                                            src="{{ asset('assets/vendor/flag-icon-css/flags/1x1/gb.svg') }}"
+                                            alt="Great Britain Flag"> United Kingdom</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Position:</dt>
-                                    <dd class="col-sm-6">Doggie</dd>
+                                    <dt class="col-sm-6 text-sm-right">City:</dt>
+                                    <dd class="col-sm-6">London</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Office:</dt>
-                                    <dd class="col-sm-6">Manangement Information System</dd>
+                                    <dt class="col-sm-6 text-sm-right">State:</dt>
+                                    <dd class="col-sm-6">-</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Classification:</dt>
-                                    <dd class="col-sm-6">Warrior</dd>
+                                    <dt class="col-sm-6 text-sm-right">Address line 1:</dt>
+                                    <dd class="col-sm-6">45 Roker Terrace, Latheronwheel</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Status:</dt>
-                                    <dd class="col-sm-6">Nacional</dd>
+                                    <dt class="col-sm-6 text-sm-right">Address line 2:</dt>
+                                    <dd class="col-sm-6">-</dd>
 
-                                    <dt class="col-sm-6 text-sm-right">Employment Date:</dt>
-                                    <dd class="col-sm-6">12/12/12 sale</dd>
-
-
-
+                                    <dt class="col-sm-6 text-sm-right">Zip code:</dt>
+                                    <dd class="col-sm-6">KW5 8NW</dd>
                                 </dl>
                                 <!-- End Row -->
                             </div>
@@ -478,8 +474,8 @@
                             <div class="card-footer d-sm-flex align-items-sm-center">
                                 <button type="button" class="btn btn-ghost-secondary mb-2 mb-sm-0"
                                     data-hs-step-form-prev-options='{
-                                            "targetSelector": "#addUserStepBillingAddress"
-                                        }'>
+                         "targetSelector": "#addUserStepBillingAddress"
+                       }'>
                                     <i class="tio-chevron-left"></i> Previous step
                                 </button>
 
