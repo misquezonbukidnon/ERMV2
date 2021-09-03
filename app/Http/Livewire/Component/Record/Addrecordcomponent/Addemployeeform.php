@@ -31,6 +31,7 @@ class Addemployeeform extends Component
     public $employment_statuses_id;
     public $image;
     public $file_upload;
+    public $date;
 
 
     public function render()

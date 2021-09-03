@@ -2,12 +2,12 @@
                     "progressSelector": "#addUserStepFormProgress",
                     "stepsSelector": "#addUserStepFormContent",
                     "endSelector": "#addUserFinishBtn",
-                    "isValidate": false
+                    "isValidate": true
                 }' autocomplete="off" enctype="multipart/form-data">
     <div class="row justify-content-lg-center">
         <div class="col-lg-8">
             <!-- Step -->
-            <ul id="addUserStepFormProgress"
+            <ul wire:ignore id="addUserStepFormProgress"
                 class="js-step-progress step step-sm step-icon-sm step step-inline step-item-between mb-3 mb-md-5">
                 <li class="step-item">
                     <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
@@ -49,7 +49,7 @@
                 <!-- Card -->
                 <div id="addUserStepProfile" class="card card-lg active">
                     <!-- Body -->
-                    <div class="card-body">
+                    <div class="card-body" wire:ignore>
                         <!-- Form Group -->
                         <div class="row form-group">
                             <label class="col-sm-3 col-form-label input-label">Image</label>
@@ -91,8 +91,9 @@
                                 Date</label>
                             <div class="col-sm-9">
                                 <!-- Form Group -->
-                                <input type="text" class="js-flatpickr form-control flatpickr-custom"
-                                    placeholder="Select dates" data-hs-flatpickr-options='{
+                                <input wire:model="date" name="date" type="text"
+                                    class="js-flatpickr form-control flatpickr-custom" placeholder="Select dates"
+                                    data-hs-flatpickr-options='{
                                         "dateFormat": "d/m/Y"
                                     }'>
                                 <!-- End Form Group -->
@@ -234,7 +235,7 @@
                 </div>
                 <!-- End Card -->
 
-                <div id="addUserStepBillingAddress" class="card card-lg" style="display: none;">
+                <div wire:ignore id="addUserStepBillingAddress" class="card card-lg" style="display: none;">
                     <!-- Body -->
                     <div class="card-body">
                         <!-- Form Group -->
@@ -265,15 +266,12 @@
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class="mb-3">
-                                    <select name="positions_id" class="js-select2-custom" id="locationLabel"
-                                        data-hs-select2-options='{
-                                            "placeholder": "Select Position"
-                                        }'>
+                                    <select wire:model="offices_id" name="positions_id" class="js-select2-custom"
+                                        id="locationLabel">
                                         <option>Select Position</option>
                                         @foreach($positions as $position)
                                         <option value="{{$position->id}}">{{ $position->name }}</option>
                                         @endforeach
-
                                     </select>
                                 </div>
                                 <!-- End Select -->
@@ -286,14 +284,12 @@
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class="mb-3">
-                                    <select class="js-select2-custom" id="Office" data-hs-select2-options='{
-                            "placeholder": "Select Office"
-                            }'>
+                                    <select wire:model="offices_id" name="offices_id" class="js-select2-custom"
+                                        id="Office">
                                         <option>Select Office</option>
                                         @foreach($offices as $office)
                                         <option value="{{$office->id}}">{{ $office->name }}</option>
                                         @endforeach
-
                                     </select>
                                 </div>
                                 <!-- End Select -->
@@ -307,15 +303,13 @@
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class="mb-3">
-                                    <select class="js-select2-custom" id="Classification" data-hs-select2-options='{
-                                            "placeholder": "Select Classification"
-                                        }'>
+                                    <select wire:model="classifications_id" name="classifications_id"
+                                        class="js-select2-custom" id="Classification">
                                         <option>Select Classification</option>
                                         @foreach($classifications as $classification)
                                         <option value="{{$classification->id}}">{{ $classification->name }}
                                         </option>
                                         @endforeach
-
                                     </select>
                                 </div>
                                 <!-- End Select -->
@@ -329,9 +323,8 @@
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class="mb-3">
-                                    <select class="js-select2-custom" id="Status" data-hs-select2-options='{
-                                            "placeholder": "Select Status"
-                                        }'>
+                                    <select wire:model="employment_statuses_id" name="employment_statuses_id"
+                                        class="js-select2-custom" id="Status">
                                         <option>Select Employment Status</option>
                                         @foreach($employmentstatuses as $employmentstatus)
                                         <option value="{{$employmentstatus->id}}">{{ $employmentstatus->name }}
@@ -384,38 +377,36 @@
                     <!-- Body -->
                     <div class="card-body">
                         <dl class="row">
+                            <dt class="col-sm-6 text-sm-right">Date of Employment:</dt>
+                            <dd class="col-sm-6">{{ $date }}</dd>
                             <dt class="col-sm-6 text-sm-right">Employee Identification Number:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $employee_number }}</dd>
                             <dt class="col-sm-6 text-sm-right">Full name:</dt>
-                            <dd class="col-sm-6">
-                                <div wire:key="foo" wire:ignore>
-
-                                </div>
-                            </dd>
+                            <dd class="col-sm-6">{{ $firstname }} {{ $middlename }} {{ $lastname }} {{ $suffix }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Email:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $email }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Phone:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $contact_number }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Address:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $address }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $emergency_contact_person }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Emergency Contact #:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $ecp_contact_number }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Emergency Contact Person Email:</dt>
-                            <dd class="col-sm-6"></dd>
+                            <dd class="col-sm-6">{{ $ecp_email }}</dd>
 
                             <dt class="col-sm-6 text-sm-right">Position:</dt>
-                            <dd class="col-sm-6">{{$positions_id}}</dd>
+                            <dd class="col-sm-6"></dd>
 
                             <dt class="col-sm-6 text-sm-right">Office:</dt>
-                            <dd class="col-sm-6">{{$offices_id}}</dd>
+                            <dd class="col-sm-6"></dd>
 
                             <dt class="col-sm-6 text-sm-right">Classification:</dt>
                             <dd class="col-sm-6"></dd>
@@ -424,12 +415,8 @@
                             <dd class="col-sm-6"></dd>
 
                             <dt class="col-sm-6 text-sm-right">Employment Date:</dt>
-                            <dd class="col-sm-6"></dd>
-
-
-
+                            <dd class="col-sm-6">{{ $date }}</dd>
                         </dl>
-                        <!-- End Row -->
                     </div>
                     <!-- End Body -->
 
