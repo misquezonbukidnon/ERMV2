@@ -14,14 +14,21 @@
             <div class="row">
                 <div class="col-lg-3">
                     <livewire:component.dashboard.userprofile />
+                    <div class="mt-3">
+                        <livewire:component.dashboard.userevents />
+                    </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-lg-8 mb-5">
-                            <livewire:component.record.addrecord />
+                        <div class="col-lg-7 mb-5">
+                            <livewire:component.record.addrecordcomponent.personalinformation />
+                            <div class="mt-3">
+                                <livewire:component.record.addrecordcomponent.employmenttable />
+                            </div>
+
                         </div>
-                        <div class="col-lg-4 mb-3">
-                            <livewire:component.dashboard.userevents />
+                        <div class="col-lg-5 mb-3">
+                            <livewire:component.record.addrecordcomponent.employmentinformation />
                         </div>
                     </div>
 
