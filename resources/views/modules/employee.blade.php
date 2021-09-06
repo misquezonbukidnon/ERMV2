@@ -10,7 +10,7 @@
 
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col">
             <div class="row">
                 <div class="col-lg-3">
                     <livewire:component.dashboard.userprofile />
@@ -18,21 +18,13 @@
                         <livewire:component.dashboard.userevents />
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="row">
-                        <div class="col-lg-7 mb-5">
-                            <livewire:component.record.addrecordcomponent.personalinformation />
-                            <div class="mt-3">
-                                <livewire:component.record.addrecordcomponent.employmenttable />
-                            </div>
-
-                        </div>
-                        <div class="col-lg-5 mb-3">
-                            <livewire:component.record.addrecordcomponent.employmentinformation />
-                        </div>
+                <div class="col">
+                    <div class="col-lg-12 mb-5">
+                        <livewire:component.record.addrecordcomponent.addemployeeform />
                     </div>
-
-                    <!-- End Card -->
+                    <div class="col-lg-7 mb-5">
+                        <livewire:component.record.addrecordcomponent.employmenttable />
+                    </div>
                 </div>
             </div>
         </div>
