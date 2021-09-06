@@ -34,6 +34,20 @@ class Addemployeeform extends Component
     public $date;
 
 
+    // validation rules
+    protected $rules = [
+        'lastname' => 'required|min:5',
+        'firstname' => 'required|min:5',
+        'middlename' => 'required',
+        'employee_number' => 'required',
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+
     public function render()
     {
         $offices = Office::all();
