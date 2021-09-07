@@ -18,13 +18,14 @@
                         <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                                 <!-- Avatar -->
-                                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
+                                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5"
+                                    for="editavatarUploader">
                                     <img id="editavatarImg" class="avatar-img"
                                         src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
 
                                     <input type="file" name="image" class="js-file-attach avatar-uploader-input"
                                         id="editavatarUploader" data-hs-file-attach-options='{
-                                                        "textTarget": "#avatarImg",
+                                                        "textTarget": "#editavatarImg",
                                                         "mode": "image",
                                                         "targetAttr": "src",
                                                         "resetTarget": ".js-file-attach-reset-img",
