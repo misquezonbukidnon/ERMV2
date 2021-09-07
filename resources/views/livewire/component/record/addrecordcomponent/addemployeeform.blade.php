@@ -1,54 +1,12 @@
-<form class="js-step-form" data-hs-step-form-options='{
-                    "progressSelector": "#addUserStepFormProgress",
-                    "stepsSelector": "#addUserStepFormContent",
-                    "endSelector": "#addUserFinishBtn",
-                    "isValidate": false
-                }' autocomplete="off" enctype="multipart/form-data">
-    <div class="row justify-content-lg-center">
-        <div class="col-lg-8">
-            <!-- Step -->
-            <ul wire:ignore id="addUserStepFormProgress"
-                class="js-step-progress step step-sm step-icon-sm step step-inline step-item-between mb-3 mb-md-5">
-                <li class="step-item">
-                    <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
-                                        "targetSelector": "#addUserStepProfile"
-                                        }'>
-                        <span class="step-icon step-icon-soft-dark">1</span>
-                        <div class="step-content">
-                            <span class="step-title">Personal Information</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="step-item">
-                    <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
-                                        "targetSelector": "#addUserStepBillingAddress"
-                                        }'>
-                        <span class="step-icon step-icon-soft-dark">2</span>
-                        <div class="step-content">
-                            <span class="step-title">Employment Information</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="step-item">
-                    <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
-                                        "targetSelector": "#addUserStepConfirmation"
-                                        }'>
-                        <span class="step-icon step-icon-soft-dark">3</span>
-                        <div class="step-content">
-                            <span class="step-title">Confirmation</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- End Step -->
-
-            <!-- Content Step Form -->
-            <div id="addUserStepFormContent">
+<form>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-7">
                 <!-- Card -->
-                <div id="addUserStepProfile" class="card card-lg active" wire:ignore>
-                    <!-- Body -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-header-title">Personal Information</h5>
+                    </div>
                     <div class="card-body">
                         <!-- Form Group -->
                         <div class="row form-group">
@@ -218,23 +176,16 @@
                             </div>
                         </div>
                         <!-- End Form Group -->
-
                     </div>
-                    <!-- End Body -->
-
-                    <!-- Footer -->
-                    <div class="card-footer d-flex justify-content-end align-items-center">
-                        <button type="button" class="btn btn-primary" data-hs-step-form-next-options='{
-                        "targetSelector": "#addUserStepBillingAddress"
-                    }'>
-                            Next <i class="tio-chevron-right"></i>
-                        </button>
-                    </div>
-                    <!-- End Footer -->
                 </div>
                 <!-- End Card -->
-
-                <div id="addUserStepBillingAddress" class="card card-lg" style="display: none;" wire:ignore>
+            </div>
+            <div class="col-lg-5">
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-header-title">Employment Information</h5>
+                    </div>
                     <!-- Body -->
                     <div class="card-body">
                         <!-- Form Group -->
@@ -336,7 +287,8 @@
                                             data-component-id="{{ $this->id }}">
                                             <option>Select Employment Status</option>
                                             @foreach($employmentstatuses as $employmentstatus)
-                                            <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name }}
+                                            <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name
+                                                }}
                                             </option>
                                             @endforeach
                                         </select>
@@ -346,138 +298,11 @@
                                 <!-- End Select -->
                             </div>
                         </div>
-
                     </div>
                     <!-- End Body -->
-
-                    <!-- Footer -->
-                    <div class="card-footer d-flex align-items-center">
-                        <button type="button" class="btn btn-ghost-secondary" data-hs-step-form-prev-options='{
-                                        "targetSelector": "#addUserStepProfile"
-                                    }'>
-                            <i class="tio-chevron-left"></i> Previous step
-                        </button>
-
-                        <div class="ml-auto">
-                            <button type="button" class="btn btn-primary" data-hs-step-form-next-options='{
-                                            "targetSelector": "#addUserStepConfirmation"
-                                        }'>
-                                Next <i class="tio-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- End Footer -->
                 </div>
-
-                <div id="addUserStepConfirmation" class="card card-lg" style="display: none;">
-                    <!-- Profile Cover -->
-                    <div class="profile-cover">
-                        <div class="profile-cover-img-wrapper">
-                            <img class="profile-cover-img" src="{{ asset('assets/img/1920x400/img3.jpg') }}"
-                                alt="Image Description">
-                        </div>
-                    </div>
-                    <!-- End Profile Cover -->
-
-                    <!-- Avatar -->
-                    <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
-                        <img class="avatar-img" src="{{asset('assets/img/160x160/img3.jpg')}}" alt="Image Description">
-                    </div>
-                    <!-- End Avatar -->
-
-                    <!-- Body -->
-                    <div class="card-body">
-                        <dl class="row">
-                            <dt class="col-sm-6 text-sm-right">Employee Identification Number:</dt>
-                            <dd class="col-sm-6"></dd>
-                            <dt class="col-sm-6 text-sm-right">Full name:
-                            </dt>
-                            <dd class="col-sm-6">
-                                {{$firstname}} {{$middlename}} {{$lastname}}
-                            </dd>
-                            <dt class="col-sm-6 text-sm-right">Email:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Phone:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Address:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Emergency Contact #:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Emergency Contact Person Email:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Position:</dt>
-                            <dd class="col-sm-6">{{$positions_id}}</dd>
-
-                            <dt class="col-sm-6 text-sm-right">Office:</dt>
-                            <dd class="col-sm-6">{{$offices_id}}</dd>
-
-                            <dt class="col-sm-6 text-sm-right">Classification:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Status:</dt>
-                            <dd class="col-sm-6"></dd>
-
-                            <dt class="col-sm-6 text-sm-right">Employment Date:</dt>
-                            <dd class="col-sm-6"></dd>
-
-
-
-                        </dl>
-                        <!-- End Row -->
-                    </div>
-                    <!-- End Body -->
-
-                    <!-- Footer -->
-                    <div class="card-footer d-sm-flex align-items-sm-center">
-                        <button type="button" class="btn btn-ghost-secondary mb-2 mb-sm-0"
-                            data-hs-step-form-prev-options='{
-                    "targetSelector": "#addUserStepBillingAddress"
-                }'>
-                            <i class="tio-chevron-left"></i> Previous step
-                        </button>
-
-                        <div class="ml-auto">
-                            <button id="addUserFinishBtn" type="button" class="btn btn-primary">Add
-                                user</button>
-                        </div>
-                    </div>
-                    <!-- End Footer -->
-                </div>
+                <!-- End Card -->
             </div>
-            <!-- End Content Step Form -->
-
-            <!-- Message Body -->
-            <div id="successMessageContent" style="display:none;">
-                <div class="text-center">
-                    <img class="img-fluid mb-3" src="../assets/svg/illustrations/hi-five.svg" alt="Image Description"
-                        style="max-width: 15rem;">
-
-                    <div class="mb-4">
-                        <h2>Successful!</h2>
-                        <p>New <span class="font-weight-bold text-dark">Ella Lauda</span> user
-                            has been successfully created.</p>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-white mr-3" href="users.html">
-                            <i class="tio-chevron-left ml-1"></i> Back to users
-                        </a>
-                        <a class="btn btn-primary" href="users-add-user.html">
-                            <i class="tio-user-add mr-1"></i> Add new user
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- End Message Body -->
         </div>
     </div>
-    <!-- End Row -->
 </form>

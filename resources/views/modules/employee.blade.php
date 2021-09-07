@@ -19,7 +19,11 @@
 
         <div class="col-lg-9 mb-5">
             <livewire:component.record.addrecordcomponent.addemployeeform />
+            <div class="col-lg-7 mt-5">
+                <livewire:component.record.addrecordcomponent.employmenttable />
+            </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
