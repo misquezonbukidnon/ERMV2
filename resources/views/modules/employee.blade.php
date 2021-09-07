@@ -25,5 +25,5 @@
         </div>
     </div>
 </div>
-</div>
+<livewire:component.modal.record.record-edit />
 @endsection

@@ -109,7 +109,8 @@
                             <span class=" d-block mb-0">Casual</span>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary btn-xs btn-icon ">
+                            <button data-toggle="modal" data-target="#editrecordmodal" type="button"
+                                class="btn btn-outline-primary btn-xs btn-icon ">
                                 <i class="tio-edit"></i>
                             </button>
                         </td>

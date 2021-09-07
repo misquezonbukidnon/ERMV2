@@ -20,7 +20,6 @@
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="{{ asset('assets/vendor/icon-set/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/flatpickr/dist/flatpickr.min.css') }}">
 
   <!-- CSS Front Template -->

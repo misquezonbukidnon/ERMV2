@@ -45,7 +45,7 @@
                         <!-- End Form Group -->
                         <!-- End Form Group -->
                         <div class="row form-group">
-                            <label for="locationLabel" class="col-sm-3 col-form-label input-label">Employment
+                            <label class="col-sm-3 col-form-label input-label">Employment
                                 Date</label>
                             <div class="col-sm-9">
                                 <!-- Form Group -->
@@ -190,29 +190,27 @@
                     <div class="card-body">
                         <!-- Form Group -->
                         <div class="row form-group">
-                            <label for="locationLabel" class="col-sm-3 col-form-label input-label">201
+                            <label class="col-sm-3 col-form-label input-label">201
                                 File</label>
                             <div class="col-sm-9">
-                                <form>
-                                    <!-- File Attachment Input -->
-                                    <label class="custom-file-boxed" for="customFileInputBoxedEg">
-                                        <span id="customFileBoxedEg">Browse your device and upload
-                                            documents</span>
-                                        <small class="d-block text-muted">Maximum file size 10MB</small>
+                                <!-- File Attachment Input -->
+                                <label class="custom-file-boxed" for="customFileInputBoxedEg">
+                                    <span id="uploadEmployeeUpdload">Browse your device and upload
+                                        documents</span>
+                                    <small class="d-block text-muted">Maximum file size 10MB</small>
 
-                                        <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file"
-                                            class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
-                                                    "textTarget": "#customFileBoxedEg"
+                                    <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file"
+                                        class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
+                                                    "textTarget": "#uploadEmployeeUpdload"
                                                 }'>
-                                    </label>
-                                    <!-- End File Attachment Input -->
-                                </form>
+                                </label>
+                                <!-- End File Attachment Input -->
                             </div>
                         </div>
                         <!-- End Form Group -->
                         <!-- Form Group -->
                         <div class="row form-group">
-                            <label for="locationLabel" class="col-sm-3 col-form-label input-label">Position</label>
+                            <label class="col-sm-3 col-form-label input-label">Position</label>
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class=" dldl">
@@ -233,7 +231,7 @@
                         <!-- End Form Group -->
                         <!-- Form Group -->
                         <div class="row form-group">
-                            <label for="locationLabel" class="col-sm-3 col-form-label input-label">Office</label>
+                            <label class="col-sm-3 col-form-label input-label">Office</label>
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class=" dldl">
@@ -254,8 +252,7 @@
                         <!-- End Form Group -->
                         <!-- Form Group -->
                         <div class="row form-group">
-                            <label for="locationLabel"
-                                class="col-sm-3 col-form-label input-label">Classification</label>
+                            <label class="col-sm-3 col-form-label input-label">Classification</label>
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class=" dldl">
@@ -278,7 +275,7 @@
 
                         <!-- Form Group -->
                         <div class="row form-group">
-                            <label for="locationLabel" class="col-sm-3 col-form-label input-label">Status</label>
+                            <label class="col-sm-3 col-form-label input-label">Status</label>
                             <div class="col-sm-9">
                                 <!-- Select -->
                                 <div class=" dldl">
@@ -298,6 +295,9 @@
                                 <!-- End Select -->
                             </div>
                         </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
                     </div>
                     <!-- End Body -->
                 </div>
@@ -305,4 +305,5 @@
             </div>
         </div>
     </div>
+
 </form>
