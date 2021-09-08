@@ -20,7 +20,6 @@
                         <!-- Form Group -->
                         <div class="row form-group">
                             <label class="col-sm-3 col-form-label input-label">Image</label>
-
                             <div class="col-sm-9">
                                 <div class="d-flex align-items-center">
                                     <!-- Avatar -->
@@ -29,15 +28,15 @@
                                         <img id="avatarImg" class="avatar-img"
                                             src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
 
-                                        <input type="file" name="image" class="js-file-attach avatar-uploader-input"
-                                            id="avatarUploader" data-hs-file-attach-options='{
+                                        <input type="file" name="image_upload"
+                                            class="js-file-attach avatar-uploader-input" id="avatarUploader"
+                                            data-hs-file-attach-options='{
                                                         "textTarget": "#avatarImg",
                                                         "mode": "image",
                                                         "targetAttr": "src",
                                                         "resetTarget": ".js-file-attach-reset-img",
                                                         "resetImg": "/assets/img/160x160/img1.jpg"
                                                     }'>
-
                                         <span class="avatar-uploader-trigger">
                                             <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
                                         </span>

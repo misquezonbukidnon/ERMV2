@@ -81,8 +81,9 @@ class Addemployeeform extends Component
             'ecp_email' => $this->ecp_email,
         ]);
 
-        if ($this->image != null) {
-            $image_upload = file($this->image);
+        if ($request->image_upload != null) {
+            $image_upload = $request->image_upload->file('image');
+            dd($image_upload);
             $imageName = $employee->lastname.'_'.$employee->firstname.'.'.$this->image->extension();
 
             $img = Image::make($this->$image_upload->path());
