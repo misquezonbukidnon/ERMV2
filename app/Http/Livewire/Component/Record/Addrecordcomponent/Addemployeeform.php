@@ -30,21 +30,35 @@ class Addemployeeform extends Component
     public $classifications_id;
     public $employment_statuses_id;
     public $image;
-    public $file_upload;
+    public $file_document;
     public $date;
+    public $message;
 
 
     // validation rules
     protected $rules = [
+        'date' => 'required|date',
+        'employee_number' => 'required',
         'lastname' => 'required|min:5',
         'firstname' => 'required|min:5',
         'middlename' => 'required',
-        'employee_number' => 'required',
+        'address' => 'required|min:5',
+        'emergency_contact_person' => 'required',
+        'ecp_contact_number' => 'required',
+        'offices_id' => 'required',
+        'positions_id' => 'required',
+        'classifications_id' => 'required',
+        'employment_statuses_id' => 'required',
     ];
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+
+    public function employeeForm()
+    {
+        $this->message = "form has been triggered";
     }
 
 
