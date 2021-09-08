@@ -15,13 +15,10 @@
                             <div class="col-sm-9">
                                 <div class="d-flex align-items-center">
                                     <!-- Avatar -->
-                                    <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5"
-                                        for="avatarUploader">
-                                        <img id="avatarImg" class="avatar-img"
-                                            src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
+                                    <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
+                                        <img id="avatarImg" class="avatar-img" src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
 
-                                        <input type="file" name="image" class="js-file-attach avatar-uploader-input"
-                                            id="avatarUploader" data-hs-file-attach-options='{
+                                        <input type="file" name="image" class="js-file-attach avatar-uploader-input" id="avatarUploader" data-hs-file-attach-options='{
                                                         "textTarget": "#avatarImg",
                                                         "mode": "image",
                                                         "targetAttr": "src",
@@ -49,8 +46,7 @@
                                 Date</label>
                             <div class="col-sm-9">
                                 <!-- Form Group -->
-                                <input type="text" class="js-flatpickr form-control flatpickr-custom"
-                                    placeholder="Select dates" data-hs-flatpickr-options='{
+                                <input type="text" class="js-flatpickr form-control flatpickr-custom" placeholder="Select dates" data-hs-flatpickr-options='{
                                         "dateFormat": "d/m/Y"
                                     }'>
                                 <!-- End Form Group -->
@@ -63,42 +59,59 @@
                                 Identification Number</label>
 
                             <div class="col-sm-9">
-                                <input wire:model="employee_number" type="text" class="form-control"
-                                    name="employee_number" id="Identification Numbe" placeholder="Identification Number"
-                                    aria-label="Htmlstream">
-                            </div>
-                        </div>
-                        <!-- End Form Group -->
-                        <!-- Form Group -->
-                        <div class="row form-group">
-                            <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Full name <i
-                                    class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top"
-                                    title="Displayed on public forums, such as Front."></i></label>
-
-                            <div class="col-sm-9">
-                                <div class="input-group input-group-sm-down-break">
-                                    <input wire:model="firstname" type="text" class="form-control" name="firstname"
-                                        id="firstnameLabel" placeholder="Firstname" aria-label="Clarice">
-                                    <input wire:model="middlename" type="text" class="form-control" name="middlename"
-                                        id="middlenameLabel" placeholder="Middlename" aria-label="Boone">
-                                    <input wire:model="lastname" type="text" class="form-control" name="lastname"
-                                        id="lastnameLabel" placeholder="Lastname" aria-label="Boone">
-                                    <input wire:model="suffix" type="text" class="form-control" name="suffix"
-                                        id="SuffixLabel" placeholder="Suffix" aria-label="Boone">
-                                </div>
+                                <input wire:model="employee_number" type="text" class="form-control" name="employee_number" id="Identification Numbe" placeholder="Identification Number" aria-label="Htmlstream">
                             </div>
                         </div>
                         <!-- End Form Group -->
 
                         <!-- Form Group -->
                         <div class="row form-group">
-                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email <span
-                                    class="input-label-secondary">(Optional)</span></label>
+                            <label for="firstname" class="col-sm-3 col-form-label input-label">First name</label>
+
+                            <div class="col-sm-9">
+                                <input wire:model="firstname" type="text" class="form-control" name="firstname" id="firstname" placeholder="first name" aria-label="firstname">
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="middlename" class="col-sm-3 col-form-label input-label">Middle name</label>
+
+                            <div class="col-sm-9">
+                                <input wire:model="middlename" type="text" class="form-control" name="middlename" id="middlename" placeholder="middle name" aria-label="middlename">
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="lastname" class="col-sm-3 col-form-label input-label">Last name</label>
+
+                            <div class="col-sm-9">
+                                <input wire:model="lastname" type="text" class="form-control" name="lastname" id="lastname" placeholder="last name" aria-label="lastname">
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="suffix" class="col-sm-3 col-form-label input-label">Suffix</label>
+
+                            <div class="col-sm-9">
+                                <input wire:model="suffix" type="text" class="form-control" name="suffix" id="suffix" placeholder="suffix" aria-label="suffix">
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+
+
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email <span class="input-label-secondary">(Optional)</span></label>
 
 
                             <div class="col-sm-9">
-                                <input wire:model="email" type="email" class="form-control" name="email" id="emailLabel"
-                                    placeholder="yourname@example.com" aria-label="clarice@example.com">
+                                <input wire:model="email" type="email" class="form-control" name="email" id="emailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -108,8 +121,7 @@
                             <label for="emailLabel" class="col-sm-3 col-form-label input-label">Address</label>
 
                             <div class="col-sm-9">
-                                <input wire:model="address" type="text" class="form-control" name="Address"
-                                    id="AddressLabel" placeholder="Address" aria-label="Address">
+                                <input wire:model="address" type="text" class="form-control" name="Address" id="AddressLabel" placeholder="Address" aria-label="Address">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -120,14 +132,11 @@
                                             "container": "#addPhoneFieldContainer",
                                             "defaultCreated": 0
                                         }'>
-                            <label for="phoneLabel" class="col-sm-3 col-form-label input-label">Phone <span
-                                    class="input-label-secondary">(Optional)</span></label>
+                            <label for="phoneLabel" class="col-sm-3 col-form-label input-label">Phone <span class="input-label-secondary">(Optional)</span></label>
 
                             <div class="col-sm-9">
                                 <div class="input-group input-group-sm-down-break align-items-center">
-                                    <input wire:model="contact_number" type="text" class="js-masked-input form-control"
-                                        name="phone" id="phoneLabel" placeholder="+xx xxx-xxxx-xx"
-                                        aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
+                                    <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="phone" id="phoneLabel" placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
                                                     "template": "+63 0000000000"
                                                     }'>
                                 </div>
@@ -144,9 +153,7 @@
                                 Person</label>
 
                             <div class="col-sm-9">
-                                <input wire:model="emergency_contact_person" type="text" class="form-control"
-                                    name="emergency_contact_person" id="organizationLabel2"
-                                    placeholder="Emergency Contact Person" aria-label="Htmlstream">
+                                <input wire:model="emergency_contact_person" type="text" class="form-control" name="emergency_contact_person" id="organizationLabel2" placeholder="Emergency Contact Person" aria-label="Htmlstream">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -158,9 +165,7 @@
                                 #</label>
 
                             <div class="col-sm-9">
-                                <input wire:model="ecp_contact_number" type="text" class="form-control"
-                                    name="ecp_contact_number" id="organizationLabel3" placeholder="+xx xxx-xxxx-xx"
-                                    aria-label="Htmlstream">
+                                <input wire:model="ecp_contact_number" type="text" class="form-control" name="ecp_contact_number" id="organizationLabel3" placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -170,9 +175,7 @@
                                 Contact Person Email</label>
 
                             <div class="col-sm-9">
-                                <input wire:model="ecp_email" type="email" class="form-control" name="ecp_email"
-                                    id="ecpemailLabel" placeholder="yourname@example.com"
-                                    aria-label="clarice@example.com">
+                                <input wire:model="ecp_email" type="email" class="form-control" name="ecp_email" id="ecpemailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -199,8 +202,7 @@
                                         documents</span>
                                     <small class="d-block text-muted">Maximum file size 10MB</small>
 
-                                    <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file"
-                                        class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
+                                    <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file" class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
                                                     "textTarget": "#uploadEmployeeUpdload"
                                                 }'>
                                 </label>
@@ -215,8 +217,7 @@
                                 <!-- Select -->
                                 <div class=" dldl">
                                     <div wire:ignore>
-                                        <select wire:model="offices_id" data-pharaonic="select2"
-                                            data-component-id="{{ $this->id }}">
+                                        <select wire:model="offices_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                             <option>Select Position</option>
                                             @foreach($positions as $position)
                                             <option value="{{$position->name}}">{{ $position->name }}</option>
@@ -236,8 +237,7 @@
                                 <!-- Select -->
                                 <div class=" dldl">
                                     <div wire:ignore>
-                                        <select wire:model="positions_id" data-pharaonic="select2"
-                                            data-component-id="{{ $this->id }}">
+                                        <select wire:model="positions_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                             <option>Select offices</option>
                                             @foreach($offices as $office)
                                             <option value="{{$office->name}}">{{ $office->name }}</option>
@@ -257,8 +257,7 @@
                                 <!-- Select -->
                                 <div class=" dldl">
                                     <div wire:ignore>
-                                        <select wire:model="classifications_id" data-pharaonic="select2"
-                                            data-component-id="{{ $this->id }}">
+                                        <select wire:model="classifications_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                             <option>Select Classification</option>
                                             @foreach($classifications as $classification)
                                             <option value="{{$classification->name}}">{{ $classification->name }}
@@ -280,8 +279,7 @@
                                 <!-- Select -->
                                 <div class=" dldl">
                                     <div wire:ignore>
-                                        <select wire:model="employment_statuses_id" data-pharaonic="select2"
-                                            data-component-id="{{ $this->id }}">
+                                        <select wire:model="employment_statuses_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                             <option>Select Employment Status</option>
                                             @foreach($employmentstatuses as $employmentstatus)
                                             <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name
