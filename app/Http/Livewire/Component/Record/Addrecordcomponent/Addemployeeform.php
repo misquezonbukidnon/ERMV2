@@ -3,10 +3,16 @@
 namespace App\Http\Livewire\Component\Record\Addrecordcomponent;
 
 use App\Models\Classification;
+use App\Models\Employee;
+use App\Models\EmployeeImage;
+use App\Models\EmployeeRelationship;
 use App\Models\EmploymentStatus;
 use Livewire\Component;
 use App\Models\Office;
 use App\Models\Position;
+use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+
 use Livewire\WithFileUploads;
 
 class Addemployeeform extends Component
@@ -34,10 +40,8 @@ class Addemployeeform extends Component
     public $date;
     public $message;
 
-
     // validation rules
     protected $rules = [
-        'date' => 'required|date',
         'employee_number' => 'required',
         'lastname' => 'required|min:5',
         'firstname' => 'required|min:5',
@@ -56,9 +60,68 @@ class Addemployeeform extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function employeeForm()
+    public function employeeForm(Request $request)
     {
-        $this->message = "form has been triggered";
+        // validation
+        $data = $this->validate();
+
+        // storing to first model
+
+        $employee = Employee::create([
+            'employee_number' => $this->employee_number,
+            'lastname' => $this->lastname,
+            'firstname' => $this->firstname,
+            'middlename' => $this->middlename,
+            'suffix' => $this->suffix,
+            'address' => $this->address,
+            'contact_number' => $this->contact_number,
+            'email' => $this->email,
+            'emergency_contact_person' => $this->emergency_contact_person,
+            'ecp_contact_number' => $this->ecp_contact_number,
+            'ecp_email' => $this->ecp_email,
+        ]);
+
+        if ($this->image != null) {
+            $image_upload = file($this->image);
+            $imageName = $employee->lastname.'_'.$employee->firstname.'.'.$this->image->extension();
+
+            $img = Image::make($this->$image_upload->path());
+            $img->resize(800, 800, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/images/employees/').$imageName);
+
+            $user_image = EmployeeImage::create([
+                'name' => $imageName,
+            ]);
+
+            $employeeRels = EmployeeRelationship::create([
+                'employees_id' => $employee->id,
+                'offices_id' => $this->offices_id,
+                'positions_id' => $this->positions_id,
+                'classifications_id' => $this->classifications_id,
+                'employment_statuses_id' => $this->employment_statuses_id,
+                'employee_images_id' => $user_image->id,
+            ]);
+
+            sleep(1);
+
+            session()->flash('success_message', "Successfully added to database");
+        } else {
+            $employeeRels = EmployeeRelationship::create([
+                'employees_id' => $employee->id,
+                'offices_id' => $this->offices_id,
+                'positions_id' => $this->positions_id,
+                'classifications_id' => $this->classifications_id,
+                'employment_statuses_id' => $this->employment_statuses_id,
+                'employee_images_id' => null,
+            ]);
+
+            sleep(1);
+
+            session()->flash('success_message', "Successfully added to database");
+        }
+
+        // document upload TBF
     }
 
 

@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration
             $table->string('lastname');
             $table->string('firstname');
             $table->string('middlename');
-            $table->string('suffix');
+            $table->string('suffix')->nullable();
             $table->string('address');
             $table->string('contact_number')->nullable();
             $table->string('email')->nullable();

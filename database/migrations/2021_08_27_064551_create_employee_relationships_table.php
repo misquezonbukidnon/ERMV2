@@ -20,8 +20,8 @@ class CreateEmployeeRelationshipsTable extends Migration
             $table->unsignedBigInteger('positions_id');
             $table->unsignedBigInteger('classifications_id');
             $table->unsignedBigInteger('employment_statuses_id');
-            $table->unsignedBigInteger('employee_images_id');
-            $table->unsignedBigInteger('file_uploads_id');
+            $table->unsignedBigInteger('employee_images_id')->nullable();
+            $table->unsignedBigInteger('file_uploads_id')->nullable();
             $table->timestamps();
 
 

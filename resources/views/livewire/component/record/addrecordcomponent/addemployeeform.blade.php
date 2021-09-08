@@ -1,4 +1,13 @@
-<form wire:submit.prevent="employeeForm" method="POST" enctype="multipart/form-data" autocomplete="false">
+<form wire:submit.prevent="employeeForm" method="POST" enctype="multipart/form-data">
+    @csrf
+    @if (session()->has('success_message'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="tio-checkmark-circle mt-1 mr-1"></i> {{ session('success_message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="tio-clear tio-lg"></i>
+        </button>
+    </div>
+    @endif
     <div class="col-lg-12">
         <div class="row">
             <div class="col-lg-7">
@@ -9,9 +18,6 @@
                     </div>
                     <div class="card-body">
                         <!-- Form Group -->
-                        <div class="col-sm-12">
-                            <small><strong>{{ $message }}</strong></small>
-                        </div>
                         <div class="row form-group">
                             <label class="col-sm-3 col-form-label input-label">Image</label>
 
