@@ -35,8 +35,8 @@ class Addemployeeform extends Component
     public $positions_id;
     public $classifications_id;
     public $employment_statuses_id;
-    public $image;
-    public $file_document;
+    public $image = null;
+    public $file_document = null;
     public $date;
     public $message;
 
@@ -80,48 +80,18 @@ class Addemployeeform extends Component
             'ecp_email' => $this->ecp_email,
         ]);
 
-        if ($request->image_upload != null) {
-            $image_upload = $request->image_upload->file('image');
-            dd($image_upload);
-            $imageName = $employee->lastname.'_'.$employee->firstname.'.'.$this->image->extension();
 
-            $img = Image::make($this->$image_upload->path());
-            $img->resize(800, 800, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('/images/employees/').$imageName);
+        $employeeRels = EmployeeRelationship::create([
+            'employees_id' => $employee->id,
+            'offices_id' => $this->offices_id,
+            'positions_id' => $this->positions_id,
+            'classifications_id' => $this->classifications_id,
+            'employment_statuses_id' => $this->employment_statuses_id,
+            'employee_images_id' => null,
+        ]);
 
-            $user_image = EmployeeImage::create([
-                'name' => $imageName,
-            ]);
-
-            $employeeRels = EmployeeRelationship::create([
-                'employees_id' => $employee->id,
-                'offices_id' => $this->offices_id,
-                'positions_id' => $this->positions_id,
-                'classifications_id' => $this->classifications_id,
-                'employment_statuses_id' => $this->employment_statuses_id,
-                'employee_images_id' => $user_image->id,
-            ]);
-
-            sleep(1);
-
-            session()->flash('success_message', "Successfully added to database");
-        } else {
-            $employeeRels = EmployeeRelationship::create([
-                'employees_id' => $employee->id,
-                'offices_id' => $this->offices_id,
-                'positions_id' => $this->positions_id,
-                'classifications_id' => $this->classifications_id,
-                'employment_statuses_id' => $this->employment_statuses_id,
-                'employee_images_id' => null,
-            ]);
-
-            sleep(1);
-
-            session()->flash('success_message', "Successfully added to database");
-        }
-
-        // document upload TBF
+        sleep(1);
+        session()->flash('success_message', "Successfully added to database");
     }
 
 
