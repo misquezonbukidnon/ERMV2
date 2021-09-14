@@ -10,7 +10,7 @@
     @endif
     <div class="col-lg-12">
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-12">
                 <!-- Card -->
                 <div class="card">
                     <div class="card-header">

@@ -18,11 +18,11 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-6">
-                    <livewire:component.record.addrecordcomponent.employmenttable />
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <livewire:component.record.addrecordcomponent.addemployeeform />
+                </div>
+                <div class="col-md-7">
+                    <livewire:component.record.addrecordcomponent.employmenttable />
                 </div>
             </div>
         </div>
