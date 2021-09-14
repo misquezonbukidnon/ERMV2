@@ -263,7 +263,7 @@
                                 <!-- Select -->
                                 <div class=" dldl">
                                     <div wire:ignore>
-                                        <select wire:model="offices_id" data-pharaonic="select2"
+                                        <select wire:model="positions_id" data-pharaonic="select2"
                                             data-component-id="{{ $this->id }}">
                                             <option>Select Position</option>
                                             @foreach($positions as $position)
@@ -283,7 +283,7 @@
                                 <!-- Select -->
                                 <div class=" dldl">
                                     <div wire:ignore>
-                                        <select wire:model="positions_id" data-pharaonic="select2"
+                                        <select wire:model="offices_id" data-pharaonic="select2"
                                             data-component-id="{{ $this->id }}">
                                             <option>Select offices</option>
                                             @foreach($offices as $office)
