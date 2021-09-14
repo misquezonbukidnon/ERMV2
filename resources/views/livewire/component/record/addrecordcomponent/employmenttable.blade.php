@@ -94,19 +94,22 @@
                 </thead>
 
                 <tbody>
+                    @foreach($employees as $employee)
                     <tr>
                         <td>
-                            <span class=" d-block mb-0">Ivan Tae</span>
+                            <span class=" d-block mb-0">{{ $employee->employees->firstname }} {{
+                                $employee->employees->middlename }} {{
+                                $employee->employees->lastname }} {{ $employee->employees->suffix }}</span>
                         </td>
                         <td>
-                            <span class="d-block mb-0">Designer</span>
-                            <span class="d-block font-size-sm">IT department</span>
+                            <span class="d-block mb-0">{{ $employee->positions->name }}</span>
+                            <span class="d-block font-size-sm">{{ $employee->offices->name }}</span>
                         </td>
                         <td>
-                            <span class=" d-block mb-0">Legendary Jav</span>
+                            <span class=" d-block mb-0">{{ $employee->classifications->name }}</span>
                         </td>
                         <td>
-                            <span class=" d-block mb-0">Casual</span>
+                            <span class=" d-block mb-0">{{ $employee->employment_statuses->name }}</span>
                         </td>
                         <td>
                             <button data-toggle="modal" data-target="#editrecordmodal" type="button"
@@ -115,6 +118,7 @@
                             </button>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
