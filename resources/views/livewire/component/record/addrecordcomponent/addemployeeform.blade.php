@@ -17,40 +17,6 @@
                         <h5 class="card-header-title">Personal Information</h5>
                     </div>
                     <div class="card-body">
-                        <!-- Form Group -->
-                        <div class="row form-group">
-                            <label class="col-sm-3 col-form-label input-label">Image</label>
-                            <div class="col-sm-9">
-                                <div class="d-flex align-items-center">
-                                    <!-- Avatar -->
-                                    <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5"
-                                        for="avatarUploader">
-                                        <img id="avatarImg" class="avatar-img"
-                                            src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
-
-                                        <input type="file" name="image_upload"
-                                            class="js-file-attach avatar-uploader-input" id="avatarUploader"
-                                            data-hs-file-attach-options='{
-                                                        "textTarget": "#avatarImg",
-                                                        "mode": "image",
-                                                        "targetAttr": "src",
-                                                        "resetTarget": ".js-file-attach-reset-img",
-                                                        "resetImg": "/assets/img/160x160/img1.jpg"
-                                                    }'>
-                                        <span class="avatar-uploader-trigger">
-                                            <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
-                                        </span>
-                                    </label>
-                                    <!-- End Avatar -->
-
-                                    <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
-                                </div>
-                                <div class="col-sm-12">
-                                    <!-- <small>{{ $image }}</small> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Form Group -->
                         <!-- End Form Group -->
                         <div class="row form-group">
                             <label class="col-sm-3 col-form-label input-label">Employment
@@ -291,39 +257,6 @@
                             </div>
                         </div>
                         <!-- End Form Group -->
-                    </div>
-                </div>
-                <!-- End Card -->
-            </div>
-            <div class="col-lg-5">
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-header-title">Employment Information</h5>
-                    </div>
-                    <!-- Body -->
-                    <div class="card-body">
-                        <!-- Form Group -->
-                        <div class="row form-group">
-                            <label class="col-sm-3 col-form-label input-label">201
-                                File</label>
-                            <div class="col-sm-9">
-                                <!-- File Attachment Input -->
-                                <label class="custom-file-boxed" for="customFileInputBoxedEg">
-                                    <span id="uploadEmployeeUpdload">Browse your device and upload
-                                        documents</span>
-                                    <small class="d-block text-muted">Maximum file size 10MB</small>
-
-                                    <input id="customFileInputBoxedEg" name="file_document" type="file"
-                                        class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
-                                                    "textTarget": "#uploadEmployeeUpdload"
-                                                }'>
-                                </label>
-                                <!-- End File Attachment Input -->
-                            </div>
-                        </div>
-                        <!-- End Form Group -->
-                        <!-- Form Group -->
                         <div class="row form-group">
                             <label class="col-sm-3 col-form-label input-label">Position</label>
                             <div class="col-sm-9">
@@ -406,9 +339,7 @@
                                 <!-- End Select -->
                             </div>
                         </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
+                        <!-- End Card -->
                     </div>
                     <!-- End Body -->
                 </div>

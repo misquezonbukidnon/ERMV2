@@ -16,11 +16,14 @@
                 <livewire:component.dashboard.userevents />
             </div>
         </div>
-
-        <div class="col-lg-9 mb-5">
-            <livewire:component.record.addrecordcomponent.addemployeeform />
-            <div class="col-lg-7 mt-5">
-                <livewire:component.record.addrecordcomponent.employmenttable />
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-6">
+                    <livewire:component.record.addrecordcomponent.employmenttable />
+                </div>
+                <div class="col-md-6">
+                    <livewire:component.record.addrecordcomponent.addemployeeform />
+                </div>
             </div>
         </div>
     </div>
