@@ -340,6 +340,9 @@
                             </div>
                         </div>
                         <!-- End Card -->
+                        <div class="col-md-12" align="right">
+                            <button class="btn btn-primary" type="submit">save</button>
+                        </div>
                     </div>
                     <!-- End Body -->
                 </div>
