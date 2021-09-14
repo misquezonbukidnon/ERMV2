@@ -43,8 +43,8 @@ class Addemployeeform extends Component
     // validation rules
     protected $rules = [
         'employee_number' => 'required',
-        'lastname' => 'required|min:5',
-        'firstname' => 'required|min:5',
+        'lastname' => 'required',
+        'firstname' => 'required',
         'middlename' => 'required',
         'address' => 'required|min:5',
         'emergency_contact_person' => 'required',
@@ -65,8 +65,7 @@ class Addemployeeform extends Component
         // validation
         $data = $this->validate();
 
-        // storing to first model
-
+        // storing to first models
         $employee = Employee::create([
             'employee_number' => $this->employee_number,
             'lastname' => $this->lastname,
