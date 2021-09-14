@@ -112,7 +112,8 @@
                             <span class=" d-block mb-0">{{ $employee->employment_statuses->name }}</span>
                         </td>
                         <td>
-                            <button data-toggle="modal" data-target="#editrecordmodal" type="button"
+                            <button wire:click="employeeModalEdit{{ $employee->id }}" data-toggle="modal"
+                                data-target="#editrecordmodal" type="button"
                                 class="btn btn-outline-primary btn-xs btn-icon ">
                                 <i class="tio-edit"></i>
                             </button>
