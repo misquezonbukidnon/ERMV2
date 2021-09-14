@@ -8,7 +8,7 @@
         </button>
     </div>
     @endif
-    <div class="col-lg-12">
+    <div class="col-lg-12 mb-10">
         <div class="row">
             <div class="col-lg-12">
                 <!-- Card -->
