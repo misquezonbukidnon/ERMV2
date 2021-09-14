@@ -12,13 +12,13 @@
     <div class="row">
         <div class="col-lg-3">
             <livewire:component.dashboard.userprofile />
-            <div class="mt-3">
+            <div class="mt-3 mb-3">
                 <livewire:component.dashboard.userevents />
             </div>
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5 mb-3">
                     <livewire:component.record.addrecordcomponent.addemployeeform />
                 </div>
                 <div class="col-md-7">
