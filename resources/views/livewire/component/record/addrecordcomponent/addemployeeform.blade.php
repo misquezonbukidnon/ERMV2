@@ -14,10 +14,10 @@
         </div>
         <div class="card-body">
             <!-- End Form Group -->
-            <div class="row form-group">
-                <label class="col-sm-3 col-form-label input-label">Employment
+            <div class="form-group">
+                <label class="col col-form-label input-label">Employment
                     Date</label>
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <!-- Form Group -->
                     <input type="date" class="form-control {{ $errors->has('date') ? ' is-invalid' : '' }}" placeholder="Select dates" name="date">
                     <!-- End Form Group -->
@@ -30,11 +30,11 @@
             </div>
             <!-- End Form Group -->
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="organizationLabel1" class="col-sm-3 col-form-label input-label">Employee
+            <div class="form-group">
+                <label for="organizationLabel1" class="col col-form-label input-label">Employee
                     Identification Number</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="employee_number" type="text" class="form-control {{ $errors->has('employee_number') ? ' is-invalid' : '' }}" name="employee_number" id="Identification Numbe" placeholder="Identification Number" aria-label="Htmlstream">
                     <div>
                         <div class="col-sm-12">
@@ -51,10 +51,10 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="firstname" class="col-sm-3 col-form-label input-label">First name</label>
+            <div class="form-group">
+                <label for="firstname" class="col col-form-label input-label">First name</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="firstname" type="text" class="form-control {{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" id="firstname" placeholder="first name" aria-label="firstname">
                     <div class="col-sm-12">
                         <small>{{ $firstname }}</small>
@@ -70,10 +70,10 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="middlename" class="col-sm-3 col-form-label input-label">Middle name</label>
+            <div class="form-group">
+                <label for="middlename" class="col col-form-label input-label">Middle name</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="middlename" type="text" class="form-control {{ $errors->has('middlename') ? ' is-invalid' : '' }}" name="middlename" id="middlename" placeholder="middle name" aria-label="middlename">
                     <div class="col-sm-12">
                         <small>{{ $middlename }}</small>
@@ -88,10 +88,10 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="lastname" class="col-sm-3 col-form-label input-label">Last name</label>
+            <div class="form-group">
+                <label for="lastname" class="col col-form-label input-label">Last name</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="lastname" type="text" class="form-control {{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" id="lastname" placeholder="last name" aria-label="lastname">
                     <div class="col-sm-12">
                         <small>{{ $lastname }}</small>
@@ -106,10 +106,10 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="suffix" class="col-sm-3 col-form-label input-label">Suffix</label>
+            <div class="form-group">
+                <label for="suffix" class="col col-form-label input-label">Suffix</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="suffix" type="text" class="form-control" name="suffix" id="suffix" placeholder="suffix" aria-label="suffix">
                     <div class="col-sm-12">
                         <small>{{ $suffix }}</small>
@@ -119,11 +119,11 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email <span class="input-label-secondary">(Optional)</span></label>
+            <div class="form-group">
+                <label for="emailLabel" class="col col-form-label input-label">Email <span class="input-label-secondary">(Optional)</span></label>
 
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="email" type="email" class="form-control" name="email" id="emailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                     <div class="col-sm-12">
                         <small>{{ $email }}</small>
@@ -133,10 +133,10 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="emailLabel" class="col-sm-3 col-form-label input-label">Address</label>
+            <div class="form-group">
+                <label for="emailLabel" class="col col-form-label input-label">Address</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="address" type="text" class="form-control {{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" id="AddressLabel" placeholder="Address" aria-label="Address">
                     <div class="col-sm-12">
                         <small>{{ $address }}</small>
@@ -151,14 +151,14 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="js-add-field row form-group" data-hs-add-field-options='{
+            <div class="js-add-field  form-group" data-hs-add-field-options='{
                                             "template": "#addPhoneFieldTemplate",
                                             "container": "#addPhoneFieldContainer",
                                             "defaultCreated": 0
                                         }'>
-                <label for="phoneLabel" class="col-sm-3 col-form-label input-label">Phone <span class="input-label-secondary">(Optional)</span></label>
+                <label for="phoneLabel" class="col col-form-label input-label">Phone <span class="input-label-secondary">(Optional)</span></label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <div class="input-group input-group-sm-down-break align-items-center">
                         <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="contact_number" id="phoneLabel" placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
                                                     "template": "+63 0000000000"
@@ -174,13 +174,13 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="organizationLabel2" class="col-sm-3 col-form-label input-label">Emergency
+            <div class="form-group">
+                <label for="organizationLabel2" class="col col-form-label input-label">Emergency
                     Contact
                     Person</label>
 
                 <!-- Ask HR if emergency contact person is required for the entry -->
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="emergency_contact_person" type="text" class="form-control {{ $errors->has('emergency_contact_person') ? ' is-invalid' : '' }}" name="emergency_contact_person" id="organizationLabel2" placeholder="Emergency Contact Person" aria-label="Htmlstream">
                     <div class="col-sm-12">
                         <small>{{ $emergency_contact_person }}</small>
@@ -195,12 +195,12 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="organizationLabel3" class="col-sm-3 col-form-label input-label">Emergency
+            <div class="form-group">
+                <label for="organizationLabel3" class="col col-form-label input-label">Emergency
                     Contact
                     #</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="ecp_contact_number" type="text" class="form-control {{ $errors->has('ecp_contact_number') ? ' is-invalid' : '' }}" name="ecp_contact_number" id="organizationLabel3" placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
                     <div class="col-sm-12">
                         <small>{{ $ecp_contact_number }}</small>
@@ -214,11 +214,11 @@
             </div>
             <!-- End Form Group -->
             <!-- Form Group -->
-            <div class="row form-group">
-                <label for="emailLabel" class="col-sm-3 col-form-label input-label"> Emergency
+            <div class="form-group">
+                <label for="emailLabel" class="col col-form-label input-label"> Emergency
                     Contact Person Email</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <input wire:model="ecp_email" type="email" class="form-control {{ $errors->has('ecp_email') ? ' is-invalid' : '' }}" name="ecp_email" id="ecpemailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                     <div class="col-sm-12">
                         <small>{{ $ecp_email }}</small>
@@ -226,9 +226,9 @@
                 </div>
             </div>
             <!-- End Form Group -->
-            <div class="row form-group" >
-                <label class="col-sm-3 col-form-label input-label">Position</label>
-                <div class="col-sm-9">
+            <div class="form-group" >
+                <label class="col col-form-label input-label">Position</label>
+                <div class="col-sm-12">
                     <!-- Select -->
                     <div class=" dldl" wire:ignore>
                         <div>
@@ -245,9 +245,9 @@
             </div>
             <!-- End Form Group -->
             <!-- Form Group -->
-            <div  class="row form-group"  >
-                <label class="col-sm-3 col-form-label input-label">Office</label>
-                <div class="col-sm-9">
+            <div  class="form-group"  >
+                <label class="col col-form-label input-label">Office</label>
+                <div class="col-sm-12">
                     <!-- Select -->
                     <div class=" dldl" wire:ignore>
                         <div >
@@ -264,9 +264,9 @@
             </div>
             <!-- End Form Group -->
             <!-- Form Group -->
-            <div class="row form-group" >
-                <label class="col-sm-3 col-form-label input-label">Classification</label>
-                <div class="col-sm-9">
+            <div class="form-group" >
+                <label class="col col-form-label input-label">Classification</label>
+                <div class="col-sm-12">
                     <!-- Select -->
                     <div class=" dldl" wire:ignore>
                         <div>
@@ -285,9 +285,9 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group"  >
-                <label class="col-sm-3 col-form-label input-label">Status</label>
-                <div class="col-sm-9">
+            <div class="form-group"  >
+                <label class="col col-form-label input-label">Status</label>
+                <div class="col-sm-12">
                     <!-- Select -->
                     <div class=" dldl" wire:ignore>
                         <div>

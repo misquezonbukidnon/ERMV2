@@ -12,35 +12,30 @@
     </div>
     <div class="card-body">
         <div class="table-responsive datatable-custom">
-            <table id="officetablelivewire"
-                class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
+            <table id="officetablelivewire" class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
                 <thead class="thead-light ">
                     <tr>
                         <th>
-                            <button wire:click="sortBy('firstname')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Name {{ $search }} <i
-                                        class="tio-double-caret-vertical text-primary"></i>
+                            <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 " style="height: 2.5rem">
+                                <p class="font-weight-bold">Name {{ $search }} <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Position {{ $search_offices }} <i
-                                        class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Position {{ $search_offices }} <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Classification <i
-                                        class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Classification <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Status <i
-                                        class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Status <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
@@ -52,43 +47,31 @@
                     </tr>
                     <tr>
                         <th>
-                            <input type="text" wire:model="search" id="column1_search"
-                                class="form-control form-control-sm" placeholder="Search names">
+                            <input type="text" wire:model="search" id="exampleFormControlSelect1" class="form-control" placeholder="Search names">
                         </th>
                         <th>
-                            <select wire:model="search_offices" id="column2_search" class="js-select2-custom"
-                                data-hs-select2-options='{
-                                            "minimumResultsForSearch": "Infinity",
-                                            "customClass": "custom-select custom-select-sm text-capitalize"
-                                            }'>
-                                <option>Any</option>
+                            <select wire:model="search_offices" id="exampleFormControlSelect1" class="form-control">
+                                <option value="">any</option>
                                 @foreach($offices as $office)
                                 <option value="{{$office->name}}">{{ $office->name }}</option>
                                 @endforeach
                             </select>
-
                         </th>
                         <th>
-                            <select id="column3_search" class="js-select2-custom" data-hs-select2-options='{
-                                            "minimumResultsForSearch": "Infinity",
-                                            "customClass": "custom-select custom-select-sm text-capitalize"
-                                            }'>
-                                <option>any</option>
+                            <select wire:model="search_classifications" id="exampleFormControlSelect1" class="form-control">
+                                <option value="">any</option>
                                 @foreach($classifications as $classification)
-                                <option value="{{$classification->id}}">{{ $classification->name }}
+                                <option value="{{$classification->name}}">{{ $classification->name }}
                                 </option>
                                 @endforeach
                             </select>
                         </th>
                         <th>
-                            <select id="column4_search" class="js-select2-custom" data-hs-select2-options='{
-                                            "minimumResultsForSearch": "Infinity",
-                                            "customClass": "custom-select custom-select-sm text-capitalize"
-                                            }'>
-                                <option value="">Any</option>
+                            <select wire:model="search_employmentstatuses" id="exampleFormControlSelect1" class="form-control">
+                                <option value="">any</option>
                                 @foreach($employmentstatuses as $employmentstatus)
-                                <option value="{{$employmentstatus->id}}">{{ $employmentstatus->name
-                                    }}
+                                <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name
+                                                }}
                                 </option>
                                 @endforeach
                             </select>
@@ -102,25 +85,26 @@
                 <tbody>
                     @foreach($employees as $employee)
                     <tr>
-                        <td>
-                            <span class=" d-block mb-0">{{ $employee->employees->firstname }} {{
+                        <td class="d-flex align-items-center">
+                            <span class="avatar avatar-circle mr-3">
+                                <img class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
+                            </span>
+                            <p class=" text-dark mb-0 f-bold">{{ $employee->employees->firstname }} {{
                                 $employee->employees->middlename }} {{
-                                $employee->employees->lastname }} {{ $employee->employees->suffix }}</span>
+                                $employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
                         </td>
                         <td>
-                            <span class="d-block mb-0">{{ $employee->positions->name }}</span>
+                            <span class="d-block mb-0 f-bold  text-dark">{{ $employee->positions->name }}</span>
                             <span class="d-block font-size-sm">{{ $employee->offices->name }}</span>
                         </td>
                         <td>
                             <span class=" d-block mb-0">{{ $employee->classifications->name }}</span>
                         </td>
                         <td>
-                            <span class=" d-block mb-0">{{ $employee->employment_statuses->name }}</span>
+                            <span class=" d-block mb-0 ">{{ $employee->employment_statuses->name }}</span>
                         </td>
                         <td>
-                            <button wire:click="employeeModalEdit{{ $employee->id }}" data-toggle="modal"
-                                data-target="#editrecordmodal" type="button"
-                                class="btn btn-outline-primary btn-xs btn-icon ">
+                            <button wire:click="employeeModalEdit{{ $employee->id }}" data-toggle="modal" data-target="#editrecordmodal" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
                                 <i class="tio-edit"></i>
                             </button>
                         </td>
@@ -130,15 +114,42 @@
             </table>
             @if (count($employees) === 0)
             <div class="text-center p-4">
-                <img class="mb-3" src="../assets/svg/illustrations/sorry.svg" alt="Image Description"
-                    style="width: 7rem;">
+                <img class="mb-3" src="../assets/svg/illustrations/sorry.svg" alt="Image Description" style="width: 7rem;">
                 <p class="mb-0">No data to show</p>
             </div>
             @endif
         </div>
-        <div class="d-flex justify-content-center justify-content-sm-end">
-            <!-- Pagination -->
-            {{ $employees->links() }}
+    </div>
+    <div class="card-footer">
+        <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+            <div wire:ignore class="col-sm mb-2 mb-sm-0">
+                <div class="d-flex w-75 align-items-center">
+                    <div class="card-text mr-1">Showing</div>
+                    <!-- <button wire:click="resetpageRoute">reset</button> -->
+                    <div class="">
+                        <button class="btn btn-xs " wire:click="resetpageRoute">
+                            <select wire:model="pagecount" class="form-control  custom-select " size="0" style="opacity: 1; width: 5rem" data-hs-select2-options='{
+                                "minimumResultsForSearch": "Infinity",
+                                "placeholder": "10"
+                                }'>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">30</option>
+                                <option value="100">100</option>
+                            </select>
+                        </button>
+                    </div>
+                    <div class="card-text ml-1 ">results </div>
+                </div>
+            </div>
+
+            <div class="col-sm-auto">
+                <div class="d-flex justify-content-center justify-content-sm-end">
+                    <!-- Pagination -->
+                    {{ $employees->links() }}
+                </div>
+            </div>
         </div>
+
     </div>
 </div>

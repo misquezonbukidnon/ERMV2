@@ -16,7 +16,9 @@ class Employmenttable extends Component
     protected $paginationTheme = 'bootstrap';
     public $search = '';
     public $search_offices;
-    public $pagecount = 2;
+    public $search_classifications;
+    public $search_employmentstatuses;
+    public $pagecount = 10;
     public $sortField;
     public $sortAsc = true;
     public $position = '';
@@ -38,18 +40,30 @@ class Employmenttable extends Component
         $this->resetPage();
     }
 
+    public function resetpageRoute()
+    {
+        $this->resetPage();
+    }
+
+
     public function render()
     {
         // $employees = EmployeeRelationship::all();
 
         return view('livewire.component.record.addrecordcomponent.employmenttable', [
-            'employees' => EmployeeRelationship::with('offices')->with('employees')
+            'employees' => EmployeeRelationship::with('offices')->with('employees')->with('classifications')->with('employment_statuses')
             ->whereHas('employees', function ($query) {
                 $query->where('firstname', 'like', '%' . $this->search . '%')
                     ->orWhere('lastname', 'like', '%' . $this->search . '%');
             })
-            ->whereHas('offices', function ($subq) {
-                $subq->where('name', 'like', '%' . $this->search_offices . '%');
+            ->whereHas('offices', function ($sub_offices) {
+                $sub_offices->where('name', 'like', '%' . $this->search_offices . '%');
+            })
+            ->whereHas('classifications', function ($sub_classifications) {
+                $sub_classifications->where('name', 'like', '%' . $this->search_classifications . '%');
+            })
+            ->whereHas('employment_statuses', function ($sub_employmentstatuses) {
+                $sub_employmentstatuses->where('name', 'like', '%' . $this->search_employmentstatuses . '%');
             })
             ->when($this->sortField, function ($query) {
                 $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
