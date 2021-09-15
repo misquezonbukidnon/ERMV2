@@ -226,13 +226,13 @@
                 </div>
             </div>
             <!-- End Form Group -->
-            <div class="row form-group">
+            <div class="row form-group" >
                 <label class="col-sm-3 col-form-label input-label">Position</label>
                 <div class="col-sm-9">
                     <!-- Select -->
-                    <div class=" dldl">
-                        <div wire:ignore>
-                            <select wire:model="positions_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
+                    <div class=" dldl" wire:ignore>
+                        <div>
+                            <select  wire:model="positions_id" data-pharaonic="select2" data-component-id="{{ $this->id }}" >
                                 <option>Select Position</option>
                                 @foreach($positions as $position)
                                 <option value="{{$position->id}}">{{ $position->name }}</option>
@@ -245,12 +245,12 @@
             </div>
             <!-- End Form Group -->
             <!-- Form Group -->
-            <div class="row form-group">
+            <div  class="row form-group"  >
                 <label class="col-sm-3 col-form-label input-label">Office</label>
                 <div class="col-sm-9">
                     <!-- Select -->
-                    <div class=" dldl">
-                        <div wire:ignore>
+                    <div class=" dldl" wire:ignore>
+                        <div >
                             <select wire:model="offices_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                 <option>Select offices</option>
                                 @foreach($offices as $office)
@@ -264,12 +264,12 @@
             </div>
             <!-- End Form Group -->
             <!-- Form Group -->
-            <div class="row form-group">
+            <div class="row form-group" >
                 <label class="col-sm-3 col-form-label input-label">Classification</label>
                 <div class="col-sm-9">
                     <!-- Select -->
-                    <div class=" dldl">
-                        <div wire:ignore>
+                    <div class=" dldl" wire:ignore>
+                        <div>
                             <select wire:model="classifications_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                 <option>Select Classification</option>
                                 @foreach($classifications as $classification)
@@ -285,12 +285,12 @@
             <!-- End Form Group -->
 
             <!-- Form Group -->
-            <div class="row form-group">
+            <div class="row form-group"  >
                 <label class="col-sm-3 col-form-label input-label">Status</label>
                 <div class="col-sm-9">
                     <!-- Select -->
-                    <div class=" dldl">
-                        <div wire:ignore>
+                    <div class=" dldl" wire:ignore>
+                        <div>
                             <select wire:model="employment_statuses_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                 <option>Select Employment Status</option>
                                 @foreach($employmentstatuses as $employmentstatus)

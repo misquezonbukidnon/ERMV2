@@ -5,7 +5,7 @@
         <div class="navbar-brand-wrapper">
           <!-- Logo -->
           <a class="navbar-brand" href="/dashboard" aria-label="Front">
-            <img width="50rem" src="{{ asset('assets/img/160x160/LGUSEAL.png') }}" alt="Logo">
+            <img width="400rem" src="{{ asset('assets/img/160x160/ERMLOGO.png') }}" alt="Logo">
           </a>
           <!-- End Logo -->
         </div>
