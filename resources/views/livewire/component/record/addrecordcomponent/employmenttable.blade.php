@@ -12,30 +12,35 @@
     </div>
     <div class="card-body">
         <div class="table-responsive datatable-custom">
-            <table id="officetablelivewire" class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
+            <table id="officetablelivewire"
+                class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
                 <thead class="thead-light ">
                     <tr>
                         <th>
                             <button wire:click="sortBy('firstname')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Name <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Name {{ $search }} <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Position <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Position {{ $search_offices }} <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Classification <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Classification <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Status <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Status <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
@@ -45,21 +50,23 @@
                             </button>
                         </th>
                     </tr>
-                    <tr wire:ignore>
+                    <tr>
                         <th>
-                            <input type="text" wire:model="search" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
+                            <input type="text" wire:model="search" id="column1_search"
+                                class="form-control form-control-sm" placeholder="Search names">
                         </th>
                         <th>
-                            <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
+                            <select wire:model="search_offices" id="column2_search" class="js-select2-custom"
+                                data-hs-select2-options='{
                                             "minimumResultsForSearch": "Infinity",
                                             "customClass": "custom-select custom-select-sm text-capitalize"
                                             }'>
                                 <option>Any</option>
                                 @foreach($offices as $office)
-                                <option value="{{$office->id}}">{{ $office->name }}</option>
+                                <option value="{{$office->name}}">{{ $office->name }}</option>
                                 @endforeach
                             </select>
-                            </select>
+
                         </th>
                         <th>
                             <select id="column3_search" class="js-select2-custom" data-hs-select2-options='{
@@ -81,7 +88,7 @@
                                 <option value="">Any</option>
                                 @foreach($employmentstatuses as $employmentstatus)
                                 <option value="{{$employmentstatus->id}}">{{ $employmentstatus->name
-                                                }}
+                                    }}
                                 </option>
                                 @endforeach
                             </select>
@@ -111,7 +118,9 @@
                             <span class=" d-block mb-0">{{ $employee->employment_statuses->name }}</span>
                         </td>
                         <td>
-                            <button wire:click="employeeModalEdit{{ $employee->id }}" data-toggle="modal" data-target="#editrecordmodal" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
+                            <button wire:click="employeeModalEdit{{ $employee->id }}" data-toggle="modal"
+                                data-target="#editrecordmodal" type="button"
+                                class="btn btn-outline-primary btn-xs btn-icon ">
                                 <i class="tio-edit"></i>
                             </button>
                         </td>
