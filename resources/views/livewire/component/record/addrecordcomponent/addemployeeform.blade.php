@@ -22,12 +22,13 @@
                             Date</label>
                         <div class="col-sm-12">
                             <!-- Form Group -->
-                            <input type="date" class="form-control {{ $errors->has('date') ? ' is-invalid' : '' }}"
-                                placeholder="Select dates" name="date">
+                            <input wire:model="employment_date" type="date"
+                                class="form-control {{ $errors->has('employment_date') ? ' is-invalid' : '' }}"
+                                placeholder="Select dates" name="employment_date">
                             <!-- End Form Group -->
-                            @if ($errors->has('date'))
+                            @if ($errors->has('employment_date'))
                             <span class="invalid-feedback">
-                                <strong>{{ $errors->first('date') }}</strong>
+                                <strong>{{ $errors->first('employment_date') }}</strong>
                             </span>
                             @endif
                         </div>

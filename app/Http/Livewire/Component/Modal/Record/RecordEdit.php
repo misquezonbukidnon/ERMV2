@@ -14,6 +14,7 @@ use Livewire\WithFileUploads;
 class RecordEdit extends Component
 {
     // Global Input
+    public $employment_date;
     public $employee_number;
     public $lastname;
     public $firstname;
@@ -27,11 +28,11 @@ class RecordEdit extends Component
     public $ecp_email;
     public $offices_id;
     public $positions_id;
+    public $positions_name;
     public $classifications_id;
     public $employment_statuses_id;
     public $image = null;
     public $file_document = null;
-    public $date;
     public $message;
     public $notification = false;
 
@@ -41,6 +42,7 @@ class RecordEdit extends Component
 
     // validation rules
     protected $rules = [
+        'employment_date' => 'required',
         'employee_number' => 'required',
         'lastname' => 'required',
         'firstname' => 'required',
@@ -62,18 +64,22 @@ class RecordEdit extends Component
     public function employeeModalEdit($empId)
     {
         $query = EmployeeRelationship::where('id', $empId)->first();
-        $subq = Employee::where('id', $query->employees_id)->first();
-        $this->employee_number=$subq->employee_number;
-        $this->lastname=$subq->lastname;
-        $this->firstname=$subq->firstname;
-        $this->middlename=$subq->middlename;
-        $this->suffix=$subq->suffix;
-        $this->address=$subq->address;
-        $this->contact_number=$subq->contact_number;
-        $this->email=$subq->email;
-        $this->emergency_contact_person=$subq->emergency_contact_person;
-        $this->ecp_contact_number=$subq->ecp_contact_number;
-        $this->ecp_email=$subq->ecp_email;
+        $subq_employees = Employee::where('id', $query->employees_id)->first();
+        $subq_positions = Position::where('id', $query->positions_id)->first();
+        $this->employment_date=$subq_employees->employment_date;
+        $this->employee_number=$subq_employees->employee_number;
+        $this->lastname=$subq_employees->lastname;
+        $this->firstname=$subq_employees->firstname;
+        $this->middlename=$subq_employees->middlename;
+        $this->suffix=$subq_employees->suffix;
+        $this->address=$subq_employees->address;
+        $this->contact_number=$subq_employees->contact_number;
+        $this->email=$subq_employees->email;
+        $this->emergency_contact_person=$subq_employees->emergency_contact_person;
+        $this->ecp_contact_number=$subq_employees->ecp_contact_number;
+        $this->ecp_email=$subq_employees->ecp_email;
+        $this->positions_id=$subq_positions->id;
+        $this->positions_name=$subq_positions->name;
     }
 
 

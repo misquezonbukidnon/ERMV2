@@ -37,12 +37,13 @@ class Addemployeeform extends Component
     public $employment_statuses_id;
     public $image = null;
     public $file_document = null;
-    public $date;
+    public $employment_date;
     public $message;
     public $notification = false;
 
     // validation rules
     protected $rules = [
+        'employment_date' => 'required',
         'employee_number' => 'required',
         'lastname' => 'required',
         'firstname' => 'required',
@@ -63,11 +64,12 @@ class Addemployeeform extends Component
 
     public function employeeForm(Request $request)
     {
-        // validation
+        // STEP 1: Validation
         $data = $this->validate();
 
-        // storing to first models
+        // STEP 2: Storing to Employee Table
         $employee = Employee::create([
+            'employment_date' => $this->employment_date,
             'employee_number' => $this->employee_number,
             'lastname' => $this->lastname,
             'firstname' => $this->firstname,
@@ -81,7 +83,7 @@ class Addemployeeform extends Component
             'ecp_email' => $this->ecp_email,
         ]);
 
-
+        // STEP 3: Storing to EmployeeRelationship Table
         $employeeRels = EmployeeRelationship::create([
             'employees_id' => $employee->id,
             'offices_id' => $this->offices_id,
@@ -91,11 +93,11 @@ class Addemployeeform extends Component
             'employee_images_id' => null,
         ]);
 
+        // Disables the button for 1 second
         sleep(1);
-
+        // Clear out the form fields after submission
         $this->resetForm();
-
-        // session()->flash('success_message', "Successfully added to database");
+        // Enables notification after submission
         $this->notification = true;
     }
 
@@ -106,7 +108,7 @@ class Addemployeeform extends Component
 
     private function resetForm()
     {
-        $this->date = '';
+        $this->employment_date = '';
         $this->employee_number = '';
         $this->lastname = '';
         $this->firstname = '';
