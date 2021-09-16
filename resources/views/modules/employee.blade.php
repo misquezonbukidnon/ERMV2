@@ -19,10 +19,10 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <livewire:component.record.addrecordcomponent.addemployeeform />
+                    <livewire:component.record.addrecordcomponent.employmenttable />
                 </div>
                 <div class="col-md-12">
-                    <livewire:component.record.addrecordcomponent.employmenttable />
+                    <livewire:component.record.addrecordcomponent.addemployeeform />
                 </div>
             </div>
         </div>
