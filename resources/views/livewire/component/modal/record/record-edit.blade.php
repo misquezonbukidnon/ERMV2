@@ -230,8 +230,8 @@
                         <div class="col-sm-9">
                             <!-- Select -->
                             <div class=" dldl">
-                                <div wire:ignore>
-                                    <select wire:model="offices_id" data-pharaonic="select2"
+                                <div>
+                                    <select wire:model="positions_id" data-pharaonic="select2"
                                         data-component-id="edit{{ $this->id }}">
                                         <option value="{{ $positions_id }}">{{ $positions_name }}</option>
                                         @foreach($positions as $position)
@@ -240,7 +240,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                {{ $offices_id }}
+                                {{ $positions_id }}
                             </div>
                             <!-- End Select -->
                         </div>
@@ -253,7 +253,7 @@
                             <!-- Select -->
                             <div class=" dldl">
                                 <div wire:ignore>
-                                    <select wire:model="positions_id" data-pharaonic="select2"
+                                    <select wire:model="offices_id" data-pharaonic="select2"
                                         data-component-id="edit{{ $this->id }}">
                                         <option>Select offices</option>
                                         @foreach($offices as $office)
@@ -262,7 +262,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                {{ $positions_id }}
+                                {{ $offices_id }}
                             </div>
                             <!-- End Select -->
                         </div>
