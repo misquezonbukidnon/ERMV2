@@ -92,12 +92,40 @@ class Addemployeeform extends Component
         ]);
 
         sleep(1);
+
+        $this->resetForm();
+
         // session()->flash('success_message', "Successfully added to database");
         $this->notification = true;
     }
+
     public function closeMessage()
     {
         $this->notification = false;
+    }
+
+    private function resetForm()
+    {
+        $this->date = '';
+        $this->employee_number = '';
+        $this->lastname = '';
+        $this->firstname = '';
+        $this->middlename = '';
+        $this->address = '';
+        $this->contact_number = '';
+        $this->email = '';
+        $this->emergency_contact_person = '';
+        $this->ecp_contact_number = '';
+        $this->ecp_email = '';
+        $this->offices_id = '';
+        $this->positions_id = '';
+        $this->classifications_id = '';
+        $this->employment_statuses_id = '';
+    }
+
+    public function addEmployeeTableRefresh()
+    {
+        $this->emit('addEmployeeTableRefresh');
     }
 
     public function render()

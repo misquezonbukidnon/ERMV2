@@ -25,6 +25,10 @@ class Employmenttable extends Component
     public $classification = '';
     public $employmentstatus = '';
 
+    protected $listeners = [
+        'addEmployeeTableRefresh',
+    ];
+
     public function sortBy($field)
     {
         if ($this->sortField === $field) {
@@ -43,6 +47,16 @@ class Employmenttable extends Component
     public function resetpageRoute()
     {
         $this->resetPage();
+    }
+
+    public function addEmployeeTableRefresh()
+    {
+        session()->flash('table_updated', "Table has been updated!");
+    }
+
+    public function employeeModalEdit($empId)
+    {
+        $this->emit('employeeModalEdit', $empId);
     }
 
 

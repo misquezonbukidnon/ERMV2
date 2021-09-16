@@ -11,31 +11,44 @@
         </div>
     </div>
     <div class="card-body">
+        @if (session()->has('table_updated'))
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <i class="tio-checkmark-circle mt-1 mr-1"></i> {{ session('table_updated') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="tio-clear tio-lg"></i>
+            </button>
+        </div>
+        @endif
         <div class="table-responsive datatable-custom">
-            <table id="officetablelivewire" class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
+            <table id="officetablelivewire"
+                class="table table-striped  table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
                 <thead class="thead-light ">
                     <tr>
                         <th>
-                            <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Name {{ $search }} <i class="tio-double-caret-vertical text-primary"></i>
+                            <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
+                                style="height: 2.5rem">
+                                <p class="font-weight-bold">Name <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Position {{ $search_offices }} <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Position <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Classification <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Classification <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('name')" class="btn ml-n3 " style="height: 2.5rem">
-                                <p class="font-weight-bold">Status <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Status <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
@@ -47,7 +60,8 @@
                     </tr>
                     <tr>
                         <th>
-                            <input type="text" wire:model="search" id="exampleFormControlSelect1" class="form-control" placeholder="Search names">
+                            <input type="text" wire:model="search" id="exampleFormControlSelect1" class="form-control"
+                                placeholder="Search names">
                         </th>
                         <th>
                             <select wire:model="search_offices" id="exampleFormControlSelect1" class="form-control">
@@ -58,7 +72,8 @@
                             </select>
                         </th>
                         <th>
-                            <select wire:model="search_classifications" id="exampleFormControlSelect1" class="form-control">
+                            <select wire:model="search_classifications" id="exampleFormControlSelect1"
+                                class="form-control">
                                 <option value="">any</option>
                                 @foreach($classifications as $classification)
                                 <option value="{{$classification->name}}">{{ $classification->name }}
@@ -67,11 +82,12 @@
                             </select>
                         </th>
                         <th>
-                            <select wire:model="search_employmentstatuses" id="exampleFormControlSelect1" class="form-control">
+                            <select wire:model="search_employmentstatuses" id="exampleFormControlSelect1"
+                                class="form-control">
                                 <option value="">any</option>
                                 @foreach($employmentstatuses as $employmentstatus)
                                 <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name
-                                                }}
+                                    }}
                                 </option>
                                 @endforeach
                             </select>
@@ -104,7 +120,9 @@
                             <span class=" d-block mb-0 ">{{ $employee->employment_statuses->name }}</span>
                         </td>
                         <td>
-                            <button wire:click="employeeModalEdit{{ $employee->id }}" data-toggle="modal" data-target="#editrecordmodal" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
+                            <button wire:click="employeeModalEdit({{ $employee->id }})" data-toggle="modal"
+                                data-target="#editrecordmodal" type="button"
+                                class="btn btn-outline-primary btn-xs btn-icon ">
                                 <i class="tio-edit"></i>
                             </button>
                         </td>
@@ -114,7 +132,8 @@
             </table>
             @if (count($employees) === 0)
             <div class="text-center p-4">
-                <img class="mb-3" src="../assets/svg/illustrations/sorry.svg" alt="Image Description" style="width: 7rem;">
+                <img class="mb-3" src="../assets/svg/illustrations/sorry.svg" alt="Image Description"
+                    style="width: 7rem;">
                 <p class="mb-0">No data to show</p>
             </div>
             @endif
@@ -128,7 +147,8 @@
                     <!-- <button wire:click="resetpageRoute">reset</button> -->
                     <div class="">
                         <button class="btn btn-xs " wire:click="resetpageRoute">
-                            <select wire:model="pagecount" class="form-control  custom-select " size="0" style="opacity: 1; width: 5rem" data-hs-select2-options='{
+                            <select wire:model="pagecount" class="form-control  custom-select " size="0"
+                                style="opacity: 1; width: 5rem" data-hs-select2-options='{
                                 "minimumResultsForSearch": "Infinity",
                                 "placeholder": "10"
                                 }'>

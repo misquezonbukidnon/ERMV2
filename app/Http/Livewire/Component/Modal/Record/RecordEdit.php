@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Component\Modal\Record;
 
 use App\Models\Classification;
+use App\Models\Employee;
+use App\Models\EmployeeRelationship;
 use App\Models\EmploymentStatus;
 use Livewire\Component;
 use App\Models\Office;
@@ -27,21 +29,51 @@ class RecordEdit extends Component
     public $positions_id;
     public $classifications_id;
     public $employment_statuses_id;
-    public $image;
-    public $file_upload;
+    public $image = null;
+    public $file_document = null;
     public $date;
+    public $message;
+    public $notification = false;
+
+    protected $listeners = [
+        'employeeModalEdit'
+    ];
 
     // validation rules
     protected $rules = [
-        'lastname' => 'required|min:5',
-        'firstname' => 'required|min:5',
-        'middlename' => 'required',
         'employee_number' => 'required',
+        'lastname' => 'required',
+        'firstname' => 'required',
+        'middlename' => 'required',
+        'address' => 'required|min:5',
+        'emergency_contact_person' => 'required',
+        'ecp_contact_number' => 'required',
+        'offices_id' => 'required',
+        'positions_id' => 'required',
+        'classifications_id' => 'required',
+        'employment_statuses_id' => 'required',
     ];
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+
+    public function employeeModalEdit($empId)
+    {
+        $query = EmployeeRelationship::where('id', $empId)->first();
+        $subq = Employee::where('id', $query->employees_id)->first();
+        $this->employee_number=$subq->employee_number;
+        $this->lastname=$subq->lastname;
+        $this->firstname=$subq->firstname;
+        $this->middlename=$subq->middlename;
+        $this->suffix=$subq->suffix;
+        $this->address=$subq->address;
+        $this->contact_number=$subq->contact_number;
+        $this->email=$subq->email;
+        $this->emergency_contact_person=$subq->emergency_contact_person;
+        $this->ecp_contact_number=$subq->ecp_contact_number;
+        $this->ecp_email=$subq->ecp_email;
     }
 
 
