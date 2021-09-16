@@ -29,3 +29,11 @@ body {
 .f-bold {
     font-weight: bold;
 }
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}

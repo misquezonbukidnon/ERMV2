@@ -1,13 +1,14 @@
+
 <form wire:submit.prevent="employeeForm" method="POST" enctype="multipart/form-data">
     @csrf
-    @if (session()->has('success_message'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <i class="tio-checkmark-circle mt-1 mr-1"></i> {{ session('success_message') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <i class="tio-clear tio-lg"></i>
-        </button>
-    </div>
-    @endif
+
+<div class="alert alert-success alert-dismissible fade show    {{ $notification ? ' d-block' : 'd-none' }}" role="alert">
+    <i class="tio-checkmark-circle mt-1 mr-1"></i> Successfully added to database
+    <button type="button" class="close" wire:click="closeMessage">
+        <i class="tio-clear tio-lg"></i>
+    </button>
+</div>
+
     <div class="card">
         <div class="card-header">
             <h5 class="card-header-title">Personal Information</h5>
@@ -21,8 +22,7 @@
                             Date</label>
                         <div class="col-sm-12">
                             <!-- Form Group -->
-                            <input type="date" class="form-control {{ $errors->has('date') ? ' is-invalid' : '' }}"
-                                placeholder="Select dates" name="date">
+                            <input type="date" class="form-control {{ $errors->has('date') ? ' is-invalid' : '' }}" placeholder="Select dates" name="date">
                             <!-- End Form Group -->
                             @if ($errors->has('date'))
                             <span class="invalid-feedback">
@@ -38,10 +38,7 @@
                             Identification Number</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="employee_number" type="text"
-                                class="form-control {{ $errors->has('employee_number') ? ' is-invalid' : '' }}"
-                                name="employee_number" id="Identification Numbe" placeholder="Identification Number"
-                                aria-label="Htmlstream">
+                            <input wire:model="employee_number" type="text" class="form-control {{ $errors->has('employee_number') ? ' is-invalid' : '' }}" name="employee_number" id="Identification Numbe" placeholder="Identification Number" aria-label="Htmlstream">
                             <div>
                                 <div class="col-sm-12">
                                     <small>{{ $employee_number }}</small>
@@ -61,9 +58,7 @@
                         <label for="firstname" class="col col-form-label input-label">First name</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="firstname" type="text"
-                                class="form-control {{ $errors->has('firstname') ? ' is-invalid' : '' }}"
-                                name="firstname" id="firstname" placeholder="first name" aria-label="firstname">
+                            <input wire:model="firstname" type="text" class="form-control {{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" id="firstname" placeholder="first name" aria-label="firstname">
                             <div class="col-sm-12">
                                 <small>{{ $firstname }}</small>
                             </div>
@@ -82,9 +77,7 @@
                         <label for="middlename" class="col col-form-label input-label">Middle name</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="middlename" type="text"
-                                class="form-control {{ $errors->has('middlename') ? ' is-invalid' : '' }}"
-                                name="middlename" id="middlename" placeholder="middle name" aria-label="middlename">
+                            <input wire:model="middlename" type="text" class="form-control {{ $errors->has('middlename') ? ' is-invalid' : '' }}" name="middlename" id="middlename" placeholder="middle name" aria-label="middlename">
                             <div class="col-sm-12">
                                 <small>{{ $middlename }}</small>
                             </div>
@@ -102,9 +95,7 @@
                         <label for="lastname" class="col col-form-label input-label">Last name</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="lastname" type="text"
-                                class="form-control {{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname"
-                                id="lastname" placeholder="last name" aria-label="lastname">
+                            <input wire:model="lastname" type="text" class="form-control {{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" id="lastname" placeholder="last name" aria-label="lastname">
                             <div class="col-sm-12">
                                 <small>{{ $lastname }}</small>
                             </div>
@@ -122,8 +113,7 @@
                         <label for="suffix" class="col col-form-label input-label">Suffix</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="suffix" type="text" class="form-control" name="suffix" id="suffix"
-                                placeholder="suffix" aria-label="suffix">
+                            <input wire:model="suffix" type="text" class="form-control" name="suffix" id="suffix" placeholder="suffix" aria-label="suffix">
                             <div class="col-sm-12">
                                 <small>{{ $suffix }}</small>
                             </div>
@@ -133,13 +123,11 @@
 
                     <!-- Form Group -->
                     <div class="form-group">
-                        <label for="emailLabel" class="col col-form-label input-label">Email <span
-                                class="input-label-secondary">(Optional)</span></label>
+                        <label for="emailLabel" class="col col-form-label input-label">Email <span class="input-label-secondary">(Optional)</span></label>
 
 
                         <div class="col-sm-12">
-                            <input wire:model="email" type="email" class="form-control" name="email" id="emailLabel"
-                                placeholder="yourname@example.com" aria-label="clarice@example.com">
+                            <input wire:model="email" type="email" class="form-control" name="email" id="emailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                             <div class="col-sm-12">
                                 <small>{{ $email }}</small>
                             </div>
@@ -152,9 +140,7 @@
                         <label for="emailLabel" class="col col-form-label input-label">Address</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="address" type="text"
-                                class="form-control {{ $errors->has('address') ? ' is-invalid' : '' }}" name="address"
-                                id="AddressLabel" placeholder="Address" aria-label="Address">
+                            <input wire:model="address" type="text" class="form-control {{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" id="AddressLabel" placeholder="Address" aria-label="Address">
                             <div class="col-sm-12">
                                 <small>{{ $address }}</small>
                             </div>
@@ -174,14 +160,11 @@
                                             "container": "#addPhoneFieldContainer",
                                             "defaultCreated": 0
                                         }'>
-                        <label for="phoneLabel" class="col col-form-label input-label">Phone <span
-                                class="input-label-secondary">(Optional)</span></label>
+                        <label for="phoneLabel" class="col col-form-label input-label">Phone <span class="input-label-secondary">(Optional)</span></label>
 
                         <div class="col-sm-12">
                             <div class="input-group input-group-sm-down-break align-items-center">
-                                <input wire:model="contact_number" type="text" class="js-masked-input form-control"
-                                    name="contact_number" id="phoneLabel" placeholder="+xx xxx-xxxx-xx"
-                                    aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
+                                <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="contact_number" id="phoneLabel" placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
                                                     "template": "+63 0000000000"
                                                     }'>
                             </div>
@@ -202,10 +185,7 @@
 
                         <!-- Ask HR if emergency contact person is required for the entry -->
                         <div class="col-sm-12">
-                            <input wire:model="emergency_contact_person" type="text"
-                                class="form-control {{ $errors->has('emergency_contact_person') ? ' is-invalid' : '' }}"
-                                name="emergency_contact_person" id="organizationLabel2"
-                                placeholder="Emergency Contact Person" aria-label="Htmlstream">
+                            <input wire:model="emergency_contact_person" type="text" class="form-control {{ $errors->has('emergency_contact_person') ? ' is-invalid' : '' }}" name="emergency_contact_person" id="organizationLabel2" placeholder="Emergency Contact Person" aria-label="Htmlstream">
                             <div class="col-sm-12">
                                 <small>{{ $emergency_contact_person }}</small>
                             </div>
@@ -225,10 +205,7 @@
                             #</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="ecp_contact_number" type="text"
-                                class="form-control {{ $errors->has('ecp_contact_number') ? ' is-invalid' : '' }}"
-                                name="ecp_contact_number" id="organizationLabel3" placeholder="+xx xxx-xxxx-xx"
-                                aria-label="Htmlstream">
+                            <input wire:model="ecp_contact_number" type="text" class="form-control {{ $errors->has('ecp_contact_number') ? ' is-invalid' : '' }}" name="ecp_contact_number" id="organizationLabel3" placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
                             <div class="col-sm-12">
                                 <small>{{ $ecp_contact_number }}</small>
                             </div>
@@ -246,10 +223,7 @@
                             Contact Person Email</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="ecp_email" type="email"
-                                class="form-control {{ $errors->has('ecp_email') ? ' is-invalid' : '' }}"
-                                name="ecp_email" id="ecpemailLabel" placeholder="yourname@example.com"
-                                aria-label="clarice@example.com">
+                            <input wire:model="ecp_email" type="email" class="form-control {{ $errors->has('ecp_email') ? ' is-invalid' : '' }}" name="ecp_email" id="ecpemailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                             <div class="col-sm-12">
                                 <small>{{ $ecp_email }}</small>
                             </div>
@@ -262,8 +236,7 @@
                             <!-- Select -->
                             <div class=" dldl" wire:ignore>
                                 <div>
-                                    <select wire:model="positions_id" data-pharaonic="select2"
-                                        data-component-id="{{ $this->id }}">
+                                    <select wire:model="positions_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                         <option>Select Position</option>
                                         @foreach($positions as $position)
                                         <option value="{{$position->id}}">{{ $position->name }}</option>
@@ -282,8 +255,7 @@
                             <!-- Select -->
                             <div class=" dldl" wire:ignore>
                                 <div>
-                                    <select wire:model="offices_id" data-pharaonic="select2"
-                                        data-component-id="{{ $this->id }}">
+                                    <select wire:model="offices_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                         <option>Select offices</option>
                                         @foreach($offices as $office)
                                         <option value="{{$office->id}}">{{ $office->name }}</option>
@@ -302,8 +274,7 @@
                             <!-- Select -->
                             <div class=" dldl" wire:ignore>
                                 <div>
-                                    <select wire:model="classifications_id" data-pharaonic="select2"
-                                        data-component-id="{{ $this->id }}">
+                                    <select wire:model="classifications_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                         <option>Select Classification</option>
                                         @foreach($classifications as $classification)
                                         <option value="{{$classification->id}}">{{ $classification->name }}
@@ -324,8 +295,7 @@
                             <!-- Select -->
                             <div class=" dldl" wire:ignore>
                                 <div>
-                                    <select wire:model="employment_statuses_id" data-pharaonic="select2"
-                                        data-component-id="{{ $this->id }}">
+                                    <select wire:model="employment_statuses_id" data-pharaonic="select2" data-component-id="{{ $this->id }}">
                                         <option>Select Employment Status</option>
                                         @foreach($employmentstatuses as $employmentstatus)
                                         <option value="{{$employmentstatus->id}}">{{ $employmentstatus->name

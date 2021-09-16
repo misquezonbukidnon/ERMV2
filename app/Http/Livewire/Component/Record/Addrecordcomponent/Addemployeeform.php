@@ -39,6 +39,7 @@ class Addemployeeform extends Component
     public $file_document = null;
     public $date;
     public $message;
+    public $notification = false;
 
     // validation rules
     protected $rules = [
@@ -91,9 +92,13 @@ class Addemployeeform extends Component
         ]);
 
         sleep(1);
-        session()->flash('success_message', "Successfully added to database");
+        // session()->flash('success_message', "Successfully added to database");
+        $this->notification = true;
     }
-
+    public function closeMessage()
+    {
+        $this->notification = false;
+    }
 
     public function render()
     {

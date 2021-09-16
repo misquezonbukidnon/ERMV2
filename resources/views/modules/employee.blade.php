@@ -21,7 +21,7 @@
                 <div class="col-md-12 mb-3">
                     <livewire:component.record.addrecordcomponent.employmenttable />
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 mb-5">
                     <livewire:component.record.addrecordcomponent.addemployeeform />
                 </div>
             </div>
