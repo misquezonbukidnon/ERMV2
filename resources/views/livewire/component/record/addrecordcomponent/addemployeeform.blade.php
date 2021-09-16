@@ -1,13 +1,12 @@
-
 <form wire:submit.prevent="employeeForm" method="POST" enctype="multipart/form-data">
     @csrf
 
-<div class="alert alert-success alert-dismissible fade show    {{ $notification ? ' d-block' : 'd-none' }}" role="alert">
-    <i class="tio-checkmark-circle mt-1 mr-1"></i> Successfully added to database
-    <button type="button" class="close" wire:click="closeMessage">
-        <i class="tio-clear tio-lg"></i>
-    </button>
-</div>
+    <div class="alert alert-success alert-dismissible fade show    {{ $notification ? ' d-block' : 'd-none' }}" role="alert">
+        <i class="tio-checkmark-circle mt-1 mr-1"></i> Successfully added to database
+        <button type="button" class="close" wire:click="closeMessage">
+            <i class="tio-clear tio-lg"></i>
+        </button>
+    </div>
 
     <div class="card">
         <div class="card-header">
@@ -164,9 +163,7 @@
 
                         <div class="col-sm-12">
                             <div class="input-group input-group-sm-down-break align-items-center">
-                                <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="contact_number" id="phoneLabel" placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
-                                                    "template": "+63 0000000000"
-                                                    }'>
+                                <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="contact_number" id="phoneLabel" placeholder="Phone Number" aria-label="+x(xxx)xxx-xx-xx" >
                             </div>
                             <div class="col-sm-12">
                                 <small>{{ $contact_number }}</small>
@@ -205,7 +202,7 @@
                             #</label>
 
                         <div class="col-sm-12">
-                            <input wire:model="ecp_contact_number" type="text" class="form-control {{ $errors->has('ecp_contact_number') ? ' is-invalid' : '' }}" name="ecp_contact_number" id="organizationLabel3" placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
+                            <input wire:model="ecp_contact_number" type="text" class="form-control {{ $errors->has('ecp_contact_number') ? ' is-invalid' : '' }}" name="ecp_contact_number" id="organizationLabel3" placeholder="Emergency Contact Number" aria-label="Htmlstream">
                             <div class="col-sm-12">
                                 <small>{{ $ecp_contact_number }}</small>
                             </div>
