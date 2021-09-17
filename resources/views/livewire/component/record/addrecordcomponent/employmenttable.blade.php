@@ -27,7 +27,21 @@
                         <th>
                             <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
                                 style="height: 2.5rem">
-                                <p class="font-weight-bold">Name <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Lastname <i class="tio-double-caret-vertical text-primary"></i>
+                                </p>
+                            </button>
+                        </th>
+                        <th>
+                            <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
+                                style="height: 2.5rem">
+                                <p class="font-weight-bold">Middlename <i class="tio-double-caret-vertical text-primary"></i>
+                                </p>
+                            </button>
+                        </th>
+                        <th>
+                            <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
+                                style="height: 2.5rem">
+                                <p class="font-weight-bold">Firstname <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
@@ -60,19 +74,28 @@
                     </tr>
                     <tr>
                         <th>
-                            <input type="text" wire:model="search" id="exampleFormControlSelect1" class="form-control"
-                                placeholder="Search names">
+                            <input type="text" wire:model="searchlastname" id="searchLastname" class="form-control"
+                                placeholder="Search Lastname">
                         </th>
                         <th>
-                            <select wire:model="search_offices" id="exampleFormControlSelect1" class="form-control">
+                            <input type="text" wire:model="searchmiddlename" id="searchMiddlename" class="form-control"
+                                placeholder="Search Middlename">
+                        </th>
+                        <th>
+                            <input type="text" wire:model="searchfirstname" id="searchFirstname" class="form-control"
+                                placeholder="Search Firstname">
+                        </th>
+                        <th>
+                            <select wire:model="search_offices" id="searhOffice" class="form-control">
                                 <option value="">any</option>
                                 @foreach($offices as $office)
                                 <option value="{{$office->name}}">{{ $office->name }}</option>
                                 @endforeach
                             </select>
                         </th>
+                        
                         <th>
-                            <select wire:model="search_classifications" id="exampleFormControlSelect1"
+                            <select wire:model="search_classifications" id="searchClassification"
                                 class="form-control">
                                 <option value="">any</option>
                                 @foreach($classifications as $classification)
@@ -82,7 +105,7 @@
                             </select>
                         </th>
                         <th>
-                            <select wire:model="search_employmentstatuses" id="exampleFormControlSelect1"
+                            <select wire:model="search_employmentstatuses" id="searchStatus"
                                 class="form-control">
                                 <option value="">any</option>
                                 @foreach($employmentstatuses as $employmentstatus)
@@ -105,12 +128,17 @@
                             <span class="avatar avatar-circle mr-3">
                                 <img class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
                             </span>
-                            <p class=" text-dark mb-0 f-bold">{{ $employee->employees->firstname }} {{
-                                $employee->employees->middlename }} {{
-                                $employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
+                            <p class=" text-dark mb-0 f-bold">{{$employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
                         </td>
                         <td>
-                            <span class="d-block mb-0 f-bold  text-dark">{{ $employee->positions->name }}</span>
+                            <span class=" text-dark mb-0 f-bold"> {{$employee->employees->middlename }}</span>
+                        </td>
+                        <td>
+                            <span class=" text-dark mb-0 f-bold">{{ $employee->employees->firstname }} </span>
+                        </td>
+ 
+                        <td>
+                            <span class="text-dark mb-0 f-bold">{{ $employee->positions->name }}</span>
                             <span class="d-block font-size-sm">{{ $employee->offices->name }}</span>
                         </td>
                         <td>

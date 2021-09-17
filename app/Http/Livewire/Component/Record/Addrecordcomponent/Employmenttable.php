@@ -15,6 +15,9 @@ class Employmenttable extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     public $search = '';
+    public $searchlastname = '';
+    public $searchmiddlename= '';
+    public $searchfirstname = '';
     public $search_offices;
     public $search_classifications;
     public $search_employmentstatuses;
@@ -67,8 +70,13 @@ class Employmenttable extends Component
         return view('livewire.component.record.addrecordcomponent.employmenttable', [
             'employees' => EmployeeRelationship::with('offices')->with('employees')->with('classifications')->with('employment_statuses')
             ->whereHas('employees', function ($query) {
-                $query->where('firstname', 'like', '%' . $this->search . '%')
-                    ->orWhere('lastname', 'like', '%' . $this->search . '%');
+                $query->where('firstname', 'like', '%' . $this->searchfirstname . '%');
+            })
+            ->whereHas('employees', function ($query) {
+                $query->where('middlename', 'like', '%' . $this->searchmiddlename . '%');
+            })
+            ->whereHas('employees', function ($query) {
+                $query->where('lastname', 'like', '%' . $this->searchlastname . '%');
             })
             ->whereHas('offices', function ($sub_offices) {
                 $sub_offices->where('name', 'like', '%' . $this->search_offices . '%');
