@@ -1,4 +1,5 @@
-<div class="modal fade" id="recordshowEmployee" tabindex="-1" role="dialog" aria-labelledby="recordshowEmployee" aria-hidden="true">
+<div class="modal fade" id="recordshowEmployee" tabindex="-1" role="dialog" aria-labelledby="recordshowEmployee"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div id="addUserStepConfirmation" class="card card-lg border-0">
@@ -20,43 +21,43 @@
                 <div class="card-body ">
                     <dl class="row ">
                         <dt class="col-sm-6 text-sm-right">Employment Date: :</dt>
-                        <dd class="col-sm-6">09-17-20212</dd>
+                        <dd class="col-sm-6">{{ $employment_date }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Employee Identification Number:</dt>
-                        <dd class="col-sm-6">J-01023232-0</dd>
+                        <dd class="col-sm-6">{{ $employee_number }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Full name:</dt>
-                        <dd class="col-sm-6">Ivan C. Nacion Sr.</dd>
+                        <dd class="col-sm-6">{{ $firstname }} {{ $middlename }} {{ $lastname }} {{ $suffix }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Email:</dt>
-                        <dd class="col-sm-6">ella@example.com</dd>
+                        <dd class="col-sm-6">{{ $email }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Address:</dt>
-                        <dd class="col-sm-6">Libertad Quezon Bukidnon</dd>
+                        <dd class="col-sm-6">{{ $address }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Phone: :</dt>
-                        <dd class="col-sm-6">09067655434</dd>
+                        <dd class="col-sm-6">{{ $contact_number }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
-                        <dd class="col-sm-6">-</dd>
+                        <dd class="col-sm-6">{{ $emergency_contact_person }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Emergency Contact #: </dt>
-                        <dd class="col-sm-6">098826361232</dd>
+                        <dd class="col-sm-6">{{ $ecp_contact_number }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Emergency Contact Person Email: </dt>
-                        <dd class="col-sm-6">Ivan National</dd>
+                        <dd class="col-sm-6">{{ $ecp_email }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Position: </dt>
-                        <dd class="col-sm-6">Programmer II</dd>
+                        <dd class="col-sm-6">{{ $positions_name }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Office: </dt>
-                        <dd class="col-sm-6">Management Information Systems</dd>
+                        <dd class="col-sm-6">{{ $offices_name }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Classification: </dt>
-                        <dd class="col-sm-6">Regular</dd>
+                        <dd class="col-sm-6">{{ $classifications_name }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Status: </dt>
-                        <dd class="col-sm-6">Employed</dd>
+                        <dd class="col-sm-6">{{ $employment_statuses_name }}</dd>
 
                     </dl>
                     <!-- End Row -->

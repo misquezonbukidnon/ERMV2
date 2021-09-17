@@ -62,6 +62,10 @@ class Employmenttable extends Component
         $this->emit('employeeModalEdit', $empId);
     }
 
+    public function showEmployee($empId)
+    {
+        $this->emit('showEmployee', $empId);
+    }
 
     public function render()
     {

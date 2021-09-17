@@ -27,21 +27,24 @@
                         <th>
                             <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
                                 style="height: 2.5rem">
-                                <p class="font-weight-bold">Lastname <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Lastname <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
                                 style="height: 2.5rem">
-                                <p class="font-weight-bold">Firstname <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Firstname <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
                                 style="height: 2.5rem">
-                                <p class="font-weight-bold">Middlename <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Middlename <i
+                                        class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
@@ -75,15 +78,15 @@
                     <tr>
                         <th>
                             <input type="text" wire:model="searchlastname" id="searchLastname" class="form-control"
-                                placeholder="Search Lastname">
+                                placeholder="Last name">
                         </th>
                         <th>
                             <input type="text" wire:model="searchfirstname" id="searchFirstname" class="form-control"
-                                placeholder="Search Firstname">
+                                placeholder="First name">
                         </th>
                         <th>
                             <input type="text" wire:model="searchmiddlename" id="searchMiddlename" class="form-control"
-                                placeholder="Search Middlename">
+                                placeholder="Middle name">
                         </th>
                         <th>
                             <select wire:model="search_offices" id="searhOffice" class="form-control">
@@ -93,10 +96,9 @@
                                 @endforeach
                             </select>
                         </th>
-                        
+
                         <th>
-                            <select wire:model="search_classifications" id="searchClassification"
-                                class="form-control">
+                            <select wire:model="search_classifications" id="searchClassification" class="form-control">
                                 <option value="">any</option>
                                 @foreach($classifications as $classification)
                                 <option value="{{$classification->name}}">{{ $classification->name }}
@@ -105,8 +107,7 @@
                             </select>
                         </th>
                         <th>
-                            <select wire:model="search_employmentstatuses" id="searchStatus"
-                                class="form-control">
+                            <select wire:model="search_employmentstatuses" id="searchStatus" class="form-control">
                                 <option value="">any</option>
                                 @foreach($employmentstatuses as $employmentstatus)
                                 <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name
@@ -125,11 +126,12 @@
                     @foreach($employees as $employee)
                     <tr>
                         <td class="d-flex align-items-center table-click" data-toggle="modal"
-                                data-target="#recordshowEmployee">
+                            data-target="#recordshowEmployee" wire:click="showEmployee({{ $employee->id }})">
                             <span class="avatar avatar-circle mr-3">
                                 <img class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
                             </span>
-                            <p class=" text-dark mb-0 f-bold  table-click">{{$employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
+                            <p class=" text-dark mb-0 f-bold  table-click">{{$employee->employees->lastname }} {{
+                                $employee->employees->suffix }}</p>
                         </td>
                         <td>
                             <span class=" text-dark mb-0 f-bold">{{ $employee->employees->firstname }} </span>
