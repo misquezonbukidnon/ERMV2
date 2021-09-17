@@ -35,7 +35,7 @@
                         <dt class="col-sm-6 text-sm-right">Address:</dt>
                         <dd class="col-sm-6">{{ $address }}</dd>
 
-                        <dt class="col-sm-6 text-sm-right">Phone: :</dt>
+                        <dt class="col-sm-6 text-sm-right">Phone:</dt>
                         <dd class="col-sm-6">{{ $contact_number }}</dd>
 
                         <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
