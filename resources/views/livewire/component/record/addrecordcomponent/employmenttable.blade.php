@@ -34,14 +34,14 @@
                         <th>
                             <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
                                 style="height: 2.5rem">
-                                <p class="font-weight-bold">Middlename <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Firstname <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
                         <th>
                             <button wire:click="sortBy('employees -> firstname')" class="btn ml-n3 "
                                 style="height: 2.5rem">
-                                <p class="font-weight-bold">Firstname <i class="tio-double-caret-vertical text-primary"></i>
+                                <p class="font-weight-bold">Middlename <i class="tio-double-caret-vertical text-primary"></i>
                                 </p>
                             </button>
                         </th>
@@ -78,12 +78,12 @@
                                 placeholder="Search Lastname">
                         </th>
                         <th>
-                            <input type="text" wire:model="searchmiddlename" id="searchMiddlename" class="form-control"
-                                placeholder="Search Middlename">
-                        </th>
-                        <th>
                             <input type="text" wire:model="searchfirstname" id="searchFirstname" class="form-control"
                                 placeholder="Search Firstname">
+                        </th>
+                        <th>
+                            <input type="text" wire:model="searchmiddlename" id="searchMiddlename" class="form-control"
+                                placeholder="Search Middlename">
                         </th>
                         <th>
                             <select wire:model="search_offices" id="searhOffice" class="form-control">
@@ -131,12 +131,11 @@
                             <p class=" text-dark mb-0 f-bold">{{$employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
                         </td>
                         <td>
-                            <span class=" text-dark mb-0 f-bold"> {{$employee->employees->middlename }}</span>
-                        </td>
-                        <td>
                             <span class=" text-dark mb-0 f-bold">{{ $employee->employees->firstname }} </span>
                         </td>
- 
+                        <td>
+                            <span class=" text-dark mb-0 f-bold"> {{$employee->employees->middlename }}</span>
+                        </td>
                         <td>
                             <span class="text-dark mb-0 f-bold">{{ $employee->positions->name }}</span>
                             <span class="d-block font-size-sm">{{ $employee->offices->name }}</span>
