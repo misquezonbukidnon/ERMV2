@@ -37,3 +37,11 @@ body {
 .d-none {
     display: none;
 }
+
+.table-click {
+    cursor: pointer;
+}
+
+.table-click:hover {
+    color: #1e90ff !important;
+}

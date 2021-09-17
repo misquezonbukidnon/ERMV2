@@ -124,11 +124,12 @@
                 <tbody>
                     @foreach($employees as $employee)
                     <tr>
-                        <td class="d-flex align-items-center">
+                        <td class="d-flex align-items-center table-click" data-toggle="modal"
+                                data-target="#recordshowEmployee">
                             <span class="avatar avatar-circle mr-3">
                                 <img class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
                             </span>
-                            <p class=" text-dark mb-0 f-bold">{{$employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
+                            <p class=" text-dark mb-0 f-bold  table-click">{{$employee->employees->lastname }} {{ $employee->employees->suffix }}</p>
                         </td>
                         <td>
                             <span class=" text-dark mb-0 f-bold">{{ $employee->employees->firstname }} </span>
