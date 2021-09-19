@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h5 class="card-header-title">Events</h5>
+        <h5 class="card-header-title">Event Logs</h5>
     </div>
     <!-- End Header -->
 
@@ -14,11 +14,13 @@
                         <img class="step-avatar-img" src="../assets/img/160x160/img9.jpg" alt="Image Description">
                     </div>
                     <div class="step-content">
-                        <h4>Jay Lilia Poe <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"just now"</span></h4>
+                        <h4>Jay Lilia Poe <span class="badge badge-soft-primary badge-pill"><span
+                                    class="legend-indicator bg-primary"></span>"just now"</span></h4>
                         <p class="step-text">Added a new record.</p>
                         <div class="media">
                             <div class="step-avatar">
-                                <img class="step-avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
+                                <img class="step-avatar-img" src="../assets/img/160x160/img10.jpg"
+                                    alt="Image Description">
                             </div>
                             <div class="media-body text-truncate">
                                 <span class="d-block text-dark text-truncate">Lods Pomzic</span>
@@ -35,8 +37,10 @@
                         <img class="step-avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
                     </div>
                     <div class="step-content">
-                        <h4>Jay Leo Pol <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"1 hour ago"</span></h4>
-                        <p class="step-text">We strive to figure out ways to help your business grow through all platforms.</p>
+                        <h4>Jay Leo Pol <span class="badge badge-soft-primary badge-pill"><span
+                                    class="legend-indicator bg-primary"></span>"1 hour ago"</span></h4>
+                        <p class="step-text">We strive to figure out ways to help your business grow through all
+                            platforms.</p>
 
                     </div>
                 </div>
@@ -48,7 +52,8 @@
                         <img class="step-avatar-img" src="../assets/img/160x160/img3.jpg" alt="Image Description">
                     </div>
                     <div class="step-content">
-                        <h4>Je Lio Pul <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"just now"</span></h4>
+                        <h4>Je Lio Pul <span class="badge badge-soft-primary badge-pill"><span
+                                    class="legend-indicator bg-primary"></span>"just now"</span></h4>
                         <p class="step-text">Find what you need in one template and combine features at will.</p>
                     </div>
                 </div>

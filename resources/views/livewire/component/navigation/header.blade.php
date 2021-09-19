@@ -4,7 +4,7 @@
       <div class="navbar-nav-wrap">
         <div class="navbar-brand-wrapper">
           <!-- Logo -->
-          <a class="navbar-brand" href="/dashboard" aria-label="Front">
+          <a class="navbar-brand" href="/" aria-label="Front">
             <img width="400rem" src="{{ asset('assets/img/160x160/ERMLOGO.png') }}" alt="Logo">
           </a>
           <!-- End Logo -->
@@ -95,7 +95,7 @@
                 <a class="dropdown-item" href="{{ route('employee_create') }}">New Records</a>
                 <a class="dropdown-item" href="#">Update Records</a>
                 <a class="dropdown-item" href="{{ route('office') }}">Offices</a>
-                <a class="dropdown-item" href="#">Import/Export Records</a>
+                <a class="dropdown-item" href="{{ route('settings_records') }}">Import/Export Records</a>
               </div>
             </li>
 

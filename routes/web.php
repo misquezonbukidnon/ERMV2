@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OfficeController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,3 +50,7 @@ Route::get('/office', [OfficeController::class, 'index'])
 Route::get('/employee/create', [EmployeeController::class, 'index'])
     ->middleware('auth')
     ->name('employee_create');
+
+Route::get('/settings/records', [SettingController::class, 'index'])
+    ->middleware('auth')
+    ->name('settings_records');
