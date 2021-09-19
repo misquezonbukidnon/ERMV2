@@ -23,7 +23,7 @@
                                     <h6 class="card-subtitle d-flex justify-content-center">Total Regular</h6>
                                     <div class=" d-flex justify-content-center w-100">
                                         <div class="mt-3">
-                                            <span class="card-title h1">72,540</span>
+                                            <span class="card-title h1">{{ $regular }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     <h6 class="card-subtitle d-flex justify-content-center">Total Casual</h6>
                                     <div class=" d-flex justify-content-center w-100">
                                         <div class="mt-3">
-                                            <span class="card-title h1">72,540</span>
+                                            <span class="card-title h1">{{ $casual }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                     <h6 class="card-subtitle d-flex justify-content-center">Total Job Order</h6>
                                     <div class=" d-flex justify-content-center w-100">
                                         <div class="mt-3">
-                                            <span class="card-title h1">72,540</span>
+                                            <span class="card-title h1">{{ $jobOrder }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                     <h6 class="card-subtitle d-flex justify-content-center">Total Honorarium</h6>
                                     <div class=" d-flex justify-content-center w-100">
                                         <div class="mt-3">
-                                            <span class="card-title h1">72,540</span>
+                                            <span class="card-title h1">{{ $honorarium }}</span>
                                         </div>
                                     </div>
                                 </div>
