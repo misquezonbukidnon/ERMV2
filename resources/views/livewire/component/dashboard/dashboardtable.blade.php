@@ -6,9 +6,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive datatable-custom">
-                    <table id="columnSearchDatatable"
-                        class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
-                        data-hs-datatables-options='{
+                    <table id="columnSearchDatatable" class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
                                             "columnDefs": [{
                                                     "orderable": true
                                                 }],
@@ -31,8 +29,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <input type="text" id="column1_search" class="form-control form-control-sm"
-                                        placeholder="Search names">
+                                    <input type="text" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
                                 </th>
                                 <th>
                                     <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
@@ -40,9 +37,9 @@
                                             "customClass": "custom-select custom-select-sm text-capitalize"
                                             }'>
                                         <option value="">Any</option>
-                                        <option value="Director">Director</option>
-                                        <option value="Unknown">Unknown</option>
-                                        <option value="Executive director">Executive director</option>
+                                        @foreach($offices as $office)
+                                        <option value="{{$office->name}}">{{ $office->name }}</option>
+                                        @endforeach
                                     </select>
                                 </th>
                                 <th>
@@ -51,9 +48,9 @@
                                             "customClass": "custom-select custom-select-sm text-capitalize"
                                             }'>
                                         <option value="">Any</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="United States">United States</option>
-                                        <option value="Austria ">Austria </option>
+                                        @foreach($classifications as $classifications)
+                                        <option value="{{$classifications->name}}">{{ $classifications->name }}</option>
+                                        @endforeach
                                     </select>
                                 </th>
                                 <th>
@@ -62,113 +59,36 @@
                                             "customClass": "custom-select custom-select-sm text-capitalize"
                                             }'>
                                         <option value="">Any</option>
-                                        <option value="Active">Active</option>
-                                        <option value="Pending">Pending</option>
-                                        <option value="Suspended">Suspended</option>
+                                        @foreach($employmentstatuses as $employmentstatuses)
+                                        <option value="{{$employmentstatuses->name}}">{{ $employmentstatuses->name }}</option>
+                                        @endforeach
                                     </select>
                                 </th>
                             </tr>
                         </thead>
 
                         <tbody>
+                            @foreach($employees as $employee)
                             <tr>
                                 <td>
-                                    <a class="media align-items-center pe-auto" style="cursor: pointer;"
-                                        data-toggle="modal" data-target="#employeemodal">
+                                    <a class="media align-items-center pe-auto" style="cursor: pointer;" data-toggle="modal" data-target="#employeemodal">
                                         <div class="avatar avatar-circle mr-3">
-                                            <img class="avatar-img" src="../assets/img/160x160/img10.jpg"
-                                                alt="Image Description">
+                                            <img class="avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
                                         </div>
-                                        <span class="d-block h5 text-hover-primary mb-0">Amanda Harvey </span>
+                                        <span class="d-block h5 text-hover-primary mb-0">{{$employee->employees->lastname }} {{ $employee->employees->firstname }} {{
+                                    $employee->employees->suffix }} </span>
                                     </a>
                                 </td>
                                 <td>
-                                    <span class="d-block h5 mb-0">Director</span>
-                                    <span class="d-block font-size-sm">Human resources</span>
+                                    <span class="d-block h5 mb-0">{{ $employee->positions->name }}</span>
+                                    <span class="d-block font-size-sm">{{ $employee->offices->name }}</span>
                                 </td>
-                                <td>United Kingdom <span class="text-hide">Code: GB</span></td>
+                                <td>{{ $employee->classifications->name }} <span class="text-hide">Code: GB</span></td>
                                 <td>
-                                    <span class="legend-indicator bg-success"></span>Active
+                                    {{ $employee->employment_statuses->name }}
                                 </td>
                             </tr>
-
-
-                            <tr>
-                                <td>
-                                    <a class="media align-items-center" href="../user-profile.html">
-                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                            <span class="avatar-initials">A</span>
-                                        </div>
-                                        <span class="d-block h5 text-hover-primary mb-0">Anne Richard</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <span class="d-block h5 mb-0">Seller</span>
-                                    <span class="d-block font-size-sm">Branding products</span>
-                                </td>
-                                <td>United States <span class="text-hide">Code: US</span></td>
-                                <td>
-                                    <span class="legend-indicator bg-warning"></span>Pending
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <a class="media align-items-center" href="../user-profile.html">
-                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                            <span class="avatar-initials">D</span>
-                                        </div>
-                                        <span class="d-block h5 text-hover-primary mb-0">David Harrison</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <span class="d-block h5 mb-0">Unknown</span>
-                                    <span class="d-block font-size-sm">Unknown</span>
-                                </td>
-                                <td>United States <span class="text-hide">Code: US</span></td>
-                                <td>
-                                    <span class="legend-indicator bg-success"></span>Active
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <a class="media align-items-center" href="../user-profile.html">
-                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                            <span class="avatar-initials">F</span>
-                                        </div>
-                                        <span class="d-block h5 text-hover-primary mb-0">Finch Hoot</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <span class="d-block h5 mb-0">Designer</span>
-                                    <span class="d-block font-size-sm">IT department</span>
-                                </td>
-                                <td>Argentina <span class="text-hide">Code: AR</span></td>
-                                <td>
-                                    <span class="legend-indicator bg-danger"></span>Suspended
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <a class="media align-items-center" href="../user-profile.html">
-                                        <div class="avatar avatar-soft-primary avatar-circle mr-3">
-                                            <span class="avatar-initials">B</span>
-                                        </div>
-                                        <span class="d-block h5 text-hover-primary mb-0">Bob Dean</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <span class="d-block h5 mb-0">Executive director</span>
-                                    <span class="d-block font-size-sm">Marketing</span>
-                                </td>
-                                <td>Austria <span class="text-hide">Code: AT</span></td>
-                                <td>
-                                    <span class="legend-indicator bg-success"></span>Active
-                                </td>
-                            </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

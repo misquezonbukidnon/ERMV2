@@ -10,7 +10,7 @@
 
 
      <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-3 mb-3">
                <livewire:component.dashboard.userprofile />
                <div class="mt-3 mb-3">
                     <livewire:component.dashboard.userevents />
@@ -18,7 +18,12 @@
           </div>
           <div class="col-md-9">
                <div class="row">
-                    <!-- your import_export component here.. -->
+                    <div class="col-md-12  mb-3">
+                         <livewire:component.settings.import-export-component.settings-import />
+                    </div>
+                    <div class="col-md-12  mb-3">
+                         <livewire:component.settings.import-export-component.settings-export />
+                    </div>
                </div>
           </div>
      </div>

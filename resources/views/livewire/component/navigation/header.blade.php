@@ -5,7 +5,8 @@
         <div class="navbar-brand-wrapper">
           <!-- Logo -->
           <a class="navbar-brand" href="/" aria-label="Front">
-            <img width="400rem" src="{{ asset('assets/img/160x160/ERMLOGO.png') }}" alt="Logo">
+            <img width="40rem" src="{{ asset('assets/img/160x160/LGUSEAL.png') }}" alt="Logo">
+            Electronic Records Management
           </a>
           <!-- End Logo -->
         </div>

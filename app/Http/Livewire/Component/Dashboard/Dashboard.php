@@ -11,6 +11,8 @@ class Dashboard extends Component
     public $regular;
     public $jobOrder;
     public $casual;
+    public $elective;
+    public $co_terminus;
 
     public function render()
     {
@@ -22,6 +24,10 @@ class Dashboard extends Component
         $this->jobOrder = $q_jobOrder;
         $q_casual = EmployeeRelationship::where('classifications_id', '=', 2)->count();
         $this->casual = $q_casual;
+        $elective = EmployeeRelationship::where('classifications_id', '=', 5)->count();
+        $this->elective = $elective;
+        $co_terminus = EmployeeRelationship::where('classifications_id', '=', 6)->count();
+        $this->co_terminus = $co_terminus;
         return view('livewire.component.dashboard.dashboard');
     }
 }
