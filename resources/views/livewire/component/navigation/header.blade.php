@@ -2,12 +2,12 @@
   <header class="navbar navbar-expand-lg navbar-spacer-y navbar-dark">
     <div class="container">
       <div class="navbar-nav-wrap">
-        <div class="navbar-brand-wrapper">
+        <div class="navbar-brand-wrapper  d-flex align-items-center">
           <!-- Logo -->
           <a class="navbar-brand" href="/" aria-label="Front">
             <img width="40rem" src="{{ asset('assets/img/160x160/LGUSEAL.png') }}" alt="Logo">
-            Electronic Records Management
           </a>
+          <h1 class="text-light mt-2">Employee Records Management</h1>
           <!-- End Logo -->
         </div>
 
@@ -20,26 +20,21 @@
             <li class="nav-item">
               <!-- Account -->
               <div class="hs-unfold">
-                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
-                  data-hs-unfold-options='{
+                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;" data-hs-unfold-options='{
                         "target": "#accountNavbarDropdown",
                         "type": "css-animation"
                     }'>
                   <div class="avatar avatar-sm avatar-circle">
-                    <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}"
-                      alt="Image Description">
+                    <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}" alt="Image Description">
                     <span class="avatar-status avatar-sm-status avatar-status-success"></span>
                   </div>
                 </a>
 
-                <div id="accountNavbarDropdown"
-                  class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account"
-                  style="width: 16rem;">
+                <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
                   <div class="dropdown-item">
                     <div class="media align-items-center">
                       <div class="avatar avatar-sm avatar-circle mr-2">
-                        <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}"
-                          alt="Image Description">
+                        <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}" alt="Image Description">
                       </div>
                       <div class="media-body">
                         <span class="card-title h5">{{ auth()->user()->first }} {{ auth()->user()->last }}</span>
@@ -70,9 +65,7 @@
           <!-- End Navbar -->
         </div>
         <!-- End Secondary Content -->
-        <button type="button" class="navbar-toggler btn btn-ghost-secondary rounded-circle"
-          aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarNavMenuHeightEg"
-          data-toggle="collapse" data-target="#navbarNavMenuHeightEg">
+        <button type="button" class="navbar-toggler btn btn-ghost-secondary rounded-circle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarNavMenuHeightEg" data-toggle="collapse" data-target="#navbarNavMenuHeightEg">
           <i class="tio-menu-hamburger"></i>
         </button>
         <!-- End Toggle -->
@@ -81,20 +74,15 @@
           <ul class="navbar-nav ml-auto">
             <!-- Dropdown -->
             <li class="dropdown">
-              <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                  class="tio-home"></i>&nbsp;Home</a>
+              <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="tio-home"></i>&nbsp;Home</a>
               <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
                 <a class="dropdown-item" href="/">Dashboard</a>
               </div>
             </li>
             <li class="dropdown">
-              <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                  class="tio-document-text"></i>&nbsp;Records</a>
+              <a class="nav-link nav-link-toggle" href="javascript:;" id="dropdownSubMenuHeightEg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="tio-document-text"></i>&nbsp;Records</a>
               <div class="dropdown-menu" aria-labelledby="dropdownSubMenuHeightEg" style="min-width: 230px;">
                 <a class="dropdown-item" href="{{ route('employee_create') }}">New Records</a>
-                <a class="dropdown-item" href="#">Update Records</a>
                 <a class="dropdown-item" href="{{ route('office') }}">Offices</a>
                 <a class="dropdown-item" href="{{ route('settings_records') }}">Import/Export Records</a>
               </div>
