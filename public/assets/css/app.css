@@ -45,3 +45,8 @@ body {
 .table-click:hover {
     color: #1e90ff !important;
 }
+
+.viewEmployeeCustomField {
+    background-color: transparent !important;
+    border: none !important;
+}

@@ -91,9 +91,10 @@ class Employmenttable extends Component
             ->whereHas('employment_statuses', function ($sub_employmentstatuses) {
                 $sub_employmentstatuses->where('name', 'like', '%' . $this->search_employmentstatuses . '%');
             })
-            ->when($this->sortField, function ($query) {
-                $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
-            })->paginate($this->pagecount),
+            // ->when($this->sortField, function ($query) {
+            //     $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
+            // })
+            ->paginate($this->pagecount),
             'offices' => Office::all(),
             'positions'=> Position::all(),
             'classifications'=> Classification::all(),

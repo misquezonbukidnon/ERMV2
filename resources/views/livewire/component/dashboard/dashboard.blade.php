@@ -17,7 +17,7 @@
                 <div class="col-lg-9 mb-3">
                     <!-- total summary -->
                     <div class="row">
-                        <div class="col-sm-3  mb-3">
+                        <div class="col-sm-2  mb-3">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -32,7 +32,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-3 mb-3">
+                        <div class="col-sm-2 mb-3">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -47,7 +47,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-3  mb-3">
+                        <div class="col-sm-2  mb-3">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -62,7 +62,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-3  mb-3">
+                        <div class="col-sm-2  mb-3">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -77,7 +77,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-3  mb-3">
+                        <div class="col-sm-2  mb-3">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -92,7 +92,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-3  mb-3">
+                        <div class="col-sm-2  mb-3">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
