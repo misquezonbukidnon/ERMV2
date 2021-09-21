@@ -11,23 +11,19 @@ use App\Models\EmploymentStatus;
 
 class Dashboardtable extends Component
 {
-    public  $employees;
-    public  $offices;
-    public  $positions;
-    public  $classifications;
-    public  $employmentstatuses;
+    public $employees;
+    public $offices;
+    public $positions;
+    public $classifications;
+    public $employmentstatuses;
     public function render()
     {
-        $employees = EmployeeRelationship::all();
-        $this->employees = $employees;
-        $offices = Office::all();
-        $this->offices = $offices;
-        $positions = Position::all();
-        $this->positions = $positions;
-        $classifications = Classification::all();
-        $this->classifications = $classifications;
-        $employmentstatuses = EmploymentStatus::all();
-        $this->employmentstatuses = $employmentstatuses;
-        return view('livewire.component.dashboard.dashboardtable' );
+        $query = EmployeeRelationship::with('employees', 'offices', 'positions', 'classifications', 'employment_statuses')->get();
+        $this->employees = $query;
+        $this->offices = $query;
+        $this->positions = $query;
+        $this->classifications = $query;
+        $this->employmentstatuses = $query;
+        return view('livewire.component.dashboard.dashboardtable');
     }
 }

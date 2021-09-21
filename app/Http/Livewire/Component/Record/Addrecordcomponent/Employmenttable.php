@@ -72,7 +72,7 @@ class Employmenttable extends Component
         // $employees = EmployeeRelationship::all();
 
         return view('livewire.component.record.addrecordcomponent.employmenttable', [
-            'employees' => EmployeeRelationship::with('offices')->with('employees')->with('classifications')->with('employment_statuses')
+            'employees' => EmployeeRelationship::with('offices')->with('employees')->with('classifications')->with('employment_statuses')->with('positions')
             ->whereHas('employees', function ($query) {
                 $query->where('firstname', 'like', '%' . $this->searchfirstname . '%');
             })
