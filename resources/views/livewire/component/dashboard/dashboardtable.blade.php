@@ -104,7 +104,7 @@
             <div class="card-footer">
                 <!-- Pagination -->
                 <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
-                    <div class="col-sm-1 mb-2 mb-sm-0">
+                    <div class="col-sm-2 mb-2 mb-sm-0">
                         <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
                             <span class="mr-2">Showing:</span>
 
