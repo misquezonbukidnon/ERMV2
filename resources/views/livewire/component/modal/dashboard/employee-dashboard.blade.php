@@ -1,47 +1,74 @@
-<div class="modal fade" id="employeemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div wire:ignore class="modal fade" id="employeemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div id="addUserStepConfirmation" class="card card-lg border-0">
                 <!-- Profile Cover -->
                 <div class="profile-cover">
                     <div class="profile-cover-img-wrapper">
-                        <img class="profile-cover-img" src="./assets/img/1920x400/img3.jpg" alt="Image Description">
+                        <img class="profile-cover-img" src="../assets/img/1920x400/img3.jpg" alt="Image Description">
                     </div>
                 </div>
                 <!-- End Profile Cover -->
 
                 <!-- Avatar -->
                 <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
-                    <img class="avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
+                    <img class="avatar-img" src="../assets/img/160x160/img9.jpg" alt="Image Description">
                 </div>
                 <!-- End Avatar -->
 
                 <!-- Body -->
-                <div class="card-body ">
+                <div class="card-body">
                     <dl class="row ">
-                        <dt class="col-sm-6 text-sm-right">Full name:</dt>
-                        <dd class="col-sm-6">Ella Lauda</dd>
+                        <dt class="col-sm-6 text-sm-right">Employment Date:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="employment_date" disabled>
+
+
+                        <dt class="col-sm-6 text-sm-right">Employee Identification Number:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="employee_number" disabled>
+
+
+                        <dt class="col-sm-6 text-sm-right">First name:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="firstname" disabled>
+
+                        <dt class="col-sm-6 text-sm-right">Middle name:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="middlename" disabled>
+
+                        <dt class="col-sm-6 text-sm-right">Last name:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="lastname" disabled>
+
+                        <dt class="col-sm-6 text-sm-right">Suffix:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="suffix" disabled>
+
 
                         <dt class="col-sm-6 text-sm-right">Email:</dt>
-                        <dd class="col-sm-6">ella@example.com</dd>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="email" disabled>
+
+                        <dt class="col-sm-6 text-sm-right">Address:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="address" disabled>
 
                         <dt class="col-sm-6 text-sm-right">Phone:</dt>
-                        <dd class="col-sm-6">+1 (609) 972-22-22</dd>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="contact_number" disabled>
 
-                        <dt class="col-sm-6 text-sm-right">Organization:</dt>
-                        <dd class="col-sm-6">Htmlstream</dd>
+                        <dt class="col-sm-6 text-sm-right">Emergency Contact Person:</dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="emergency_contact_person" disabled>
 
-                        <dt class="col-sm-6 text-sm-right">Department:</dt>
-                        <dd class="col-sm-6">-</dd>
+                        <dt class="col-sm-6 text-sm-right">Emergency Contact #: </dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="ecp_contact_number" disabled>
 
-                        <dt class="col-sm-6 text-sm-right">Account type:</dt>
-                        <dd class="col-sm-6">Individual</dd>
+                        <dt class="col-sm-6 text-sm-right">Emergency Contact Person Email: </dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="ecp_email" disabled>
 
-                        <dt class="col-sm-6 text-sm-right">Country:</dt>
-                        <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1"
-                                src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Great Britain Flag"> United
-                            Kingdom</dd>
+                        <dt class="col-sm-6 text-sm-right">Position: </dt>
+                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom" wire:model="positions_name" disabled></textarea>
+
+                        <dt class="col-sm-6 text-sm-right">Office: </dt>
+                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom" wire:model="offices_name" disabled></textarea>
+
+                        <dt class="col-sm-6 text-sm-right">Classification: </dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="classifications_name" disabled>
+
+                        <dt class="col-sm-6 text-sm-right">Status: </dt>
+                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="employment_statuses_name" disabled>
 
                     </dl>
                     <!-- End Row -->

@@ -4,10 +4,6 @@ namespace App\Http\Livewire\Component\Dashboard;
 
 use App\Models\EmployeeRelationship;
 use Livewire\Component;
-use App\Models\Office;
-use App\Models\Position;
-use App\Models\Classification;
-use App\Models\EmploymentStatus;
 
 class Dashboardtable extends Component
 {
@@ -16,6 +12,13 @@ class Dashboardtable extends Component
     public $positions;
     public $classifications;
     public $employmentstatuses;
+
+
+    public function showEmployee($empId)
+    {
+        $this->emit('showEmployee', $empId);
+    }
+
     public function render()
     {
         $query = EmployeeRelationship::with('employees', 'offices', 'positions', 'classifications', 'employment_statuses')->get();

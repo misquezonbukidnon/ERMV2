@@ -50,3 +50,10 @@ body {
     background-color: transparent !important;
     border: none !important;
 }
+
+.textareaCustom {
+    resize: none !important;
+    height: auto !important;
+    width: 15rem !important;
+    overflow: hidden;
+}

@@ -1,4 +1,4 @@
-<div class="row">
+<div wire:ignore class="row">
     <div class="col-lg-12">
         <div class="card mt-3">
             <div class="card-header">
@@ -74,7 +74,7 @@
                         <tbody>
                             @foreach($employees as $employee)
                             <tr>
-                                <td>
+                                <td wire:click="showEmployee({{ $employee->id }})" >
                                     <a class="media align-items-center pe-auto" style="cursor: pointer;"
                                         data-toggle="modal" data-target="#employeemodal">
                                         <div class="avatar avatar-circle mr-3">

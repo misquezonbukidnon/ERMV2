@@ -59,10 +59,10 @@
                         <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="ecp_email" disabled>
 
                         <dt class="col-sm-6 text-sm-right">Position: </dt>
-                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="positions_name" disabled>
+                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom"  wire:model="positions_name" disabled></textarea>
 
                         <dt class="col-sm-6 text-sm-right">Office: </dt>
-                        <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="offices_name" disabled>
+                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom"  wire:model="offices_name" disabled></textarea>
 
                         <dt class="col-sm-6 text-sm-right">Classification: </dt>
                         <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="classifications_name" disabled>
