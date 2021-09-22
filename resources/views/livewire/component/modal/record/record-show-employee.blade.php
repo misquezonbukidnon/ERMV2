@@ -1,5 +1,5 @@
 <div wire:ignore class="modal fade" id="recordshowEmployee" tabindex="-1" role="dialog" aria-labelledby="recordshowEmployee" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div id="addUserStepConfirmation" class="card card-lg border-0">
                 <!-- Profile Cover -->
@@ -59,10 +59,10 @@
                         <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="ecp_email" disabled>
 
                         <dt class="col-sm-6 text-sm-right">Position: </dt>
-                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom"  wire:model="positions_name" disabled></textarea>
+                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom" wire:model="positions_name" disabled></textarea>
 
                         <dt class="col-sm-6 text-sm-right">Office: </dt>
-                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom"  wire:model="offices_name" disabled></textarea>
+                        <textarea id=textareashow type="text" placeholder="Loading..." class="viewEmployeeCustomField textareaCustom" wire:model="offices_name" disabled></textarea>
 
                         <dt class="col-sm-6 text-sm-right">Classification: </dt>
                         <input type="text" placeholder="Loading..." class="viewEmployeeCustomField" wire:model="classifications_name" disabled>

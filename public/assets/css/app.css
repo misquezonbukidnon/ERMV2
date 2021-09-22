@@ -49,11 +49,25 @@ body {
 .viewEmployeeCustomField {
     background-color: transparent !important;
     border: none !important;
+    width: auto !important;
+    margin-left: 1rem !important;
 }
 
 .textareaCustom {
+    height: 1.8rem;
     resize: none !important;
-    height: auto !important;
-    width: 15rem !important;
-    overflow: hidden;
+    width: 26rem !important;
+}
+
+@media (orientation: portrait) {
+    .textareaCustom {
+        text-align: center !important;
+        height: 2.7rem
+    }
+    .sink-pagination {
+        transform: scale(0.8) !important;
+    }
+    .w-page-orientP {
+        transform: scale(0.7) !important;
+    }
 }

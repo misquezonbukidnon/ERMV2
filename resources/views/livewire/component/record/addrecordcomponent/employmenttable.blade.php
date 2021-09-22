@@ -178,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-auto">
+            <div class="col-sm-auto  w-page-orientP" >
                 <div class="d-flex justify-content-center justify-content-sm-end">
                     <!-- Pagination -->
                     {{ $employees->links() }}

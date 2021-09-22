@@ -128,7 +128,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-auto">
+                    <div class="col-sm-auto sink-pagination">
                         <div class="d-flex justify-content-center justify-content-sm-end">
                             <!-- Pagination -->
                             <nav id="datatableWithFilterPagination" aria-label="Activity pagination"></nav>
