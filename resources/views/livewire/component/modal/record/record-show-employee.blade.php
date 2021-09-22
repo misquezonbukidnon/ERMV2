@@ -11,7 +11,7 @@
                 <!-- End Profile Cover -->
 
                 <!-- Avatar -->
-                <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
+                <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar" >
                     <img class="avatar-img" src="../assets/img/160x160/img9.jpg" alt="Image Description">
                 </div>
                 <!-- End Avatar -->

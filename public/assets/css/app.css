@@ -59,6 +59,11 @@ body {
     width: 26rem !important;
 }
 
+.avatar-xxl {
+    width: 12.875rem !important;
+    height: 12.875rem !important;
+}
+
 @media (orientation: portrait) {
     .textareaCustom {
         text-align: center !important;
