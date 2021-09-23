@@ -113,7 +113,9 @@
                     @foreach($employees as $employee)
                     <tr>
                         <td class="d-flex align-items-center ">
-                            <span class="avatar avatar-circle mr-3">
+                            <span class="avatar avatar-circle mr-3" data-toggle="tooltip" data-placement="right" data-html="true" title="{{$employee->employees->lastname
+                                            }} {{ $employee->employees->firstname }} {{
+                                            $employee->employees->suffix }}">
                                 <img class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
                             </span>
                             <p class=" text-dark mb-0 f-bold">{{$employee->employees->lastname }} {{
@@ -178,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-auto  w-page-orientP" >
+            <div class="col-sm-auto  w-page-orientP">
                 <div class="d-flex justify-content-center justify-content-sm-end">
                     <!-- Pagination -->
                     {{ $employees->links() }}
