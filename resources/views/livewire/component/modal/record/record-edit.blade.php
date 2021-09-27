@@ -1,20 +1,20 @@
 <div wire:ignore class="modal fade" id="editrecordmodal" tabindex="-1" role="dialog" aria-labelledby="editRecordModal"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editeditRecordModal">Edit Employee</h5>
-                <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary" data-dismiss="modal"
-                    aria-label="Close">
-                    <i class="tio-clear tio-lg"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
+        <form wire:submit.prevent="editEmployee" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editeditRecordModal">Edit Employee</h5>
+                    <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary" data-dismiss="modal"
+                        aria-label="Close">
+                        <i class="tio-clear tio-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
                     <!-- Form Group -->
                     <div class="row form-group">
                         <label class="col-sm-3 col-form-label input-label">Image</label>
-
                         <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                                 <!-- Avatar -->
@@ -22,22 +22,20 @@
                                     for="editavatarUploader">
                                     <img id="editavatarImg" class="avatar-img"
                                         src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
-
-                                    <input type="file" name="image" class="js-file-attach avatar-uploader-input"
-                                        id="editavatarUploader" data-hs-file-attach-options='{
+                                    <input wire:model="image" type="file" name="image"
+                                        class="js-file-attach avatar-uploader-input" id="editavatarUploader"
+                                        data-hs-file-attach-options='{
                                                         "textTarget": "#editavatarImg",
                                                         "mode": "image",
                                                         "targetAttr": "src",
                                                         "resetTarget": ".js-file-attach-reset-img",
                                                         "resetImg": "/assets/img/160x160/img1.jpg"
                                                     }'>
-
                                     <span class="avatar-uploader-trigger">
                                         <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
                                     </span>
                                 </label>
                                 <!-- End Avatar -->
-
                                 <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
                             </div>
                             <div class="col-sm-12">
@@ -69,9 +67,15 @@
                             Identification Number</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="employee_number" type="text" class="form-control" name="employee_number"
-                                id="editIdentification Numbe" placeholder="Identification Number"
+                            <input wire:model="employee_number" type="text"
+                                class="form-control {{ $errors->has('employee_number') ? ' is-invalid' : '' }}"
+                                name="employee_number" id="editIdentification Numbe" placeholder="Identification Number"
                                 aria-label="Htmlstream">
+                            @if ($errors->has('employee_number'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('employee_number') }}</strong>
+                            </span>
+                            @endif
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -215,8 +219,9 @@
                                 <span id="fileAttachmentInputModalEg">Browse your device and upload documents</span>
                                 <small class="d-block text-muted">Maximum file size 10MB</small>
 
-                                <input id="fileAttachmentLabelModalEg" name="custom-file-boxed" type="file"
-                                    class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
+                                <input wire:model="file_document" id="fileAttachmentLabelModalEg"
+                                    name="custom-file-boxed" type="file" class="js-file-attach custom-file-boxed-input"
+                                    data-hs-file-attach-options='{
                                 "textTarget": "#fileAttachmentInputModalEg"
                             }'>
                             </label>
@@ -233,9 +238,8 @@
                                 <div>
                                     <select wire:model="positions_id" data-pharaonic="select2"
                                         data-component-id="edit{{ $this->id }}">
-                                        <option value="{{ $positions_id }}">{{ $positions_name }}</option>
                                         @foreach($positions as $position)
-                                        <option value="{{$position->name}}">{{ $position->name }}
+                                        <option value="{{ $position->id }}">{{ $position->name }}
                                         </option>
                                         @endforeach
                                     </select>
@@ -255,9 +259,8 @@
                                 <div wire:ignore>
                                     <select wire:model="offices_id" data-pharaonic="select2"
                                         data-component-id="edit{{ $this->id }}">
-                                        <option>Select offices</option>
                                         @foreach($offices as $office)
-                                        <option value="{{$office->name}}">{{ $office->name }}
+                                        <option value="{{$office->id}}">{{ $office->name }}
                                         </option>
                                         @endforeach
                                     </select>
@@ -277,9 +280,8 @@
                                 <div wire:ignore>
                                     <select wire:model="classifications_id" data-pharaonic="select2"
                                         data-component-id="edit{{ $this->id }}">
-                                        <option>Select Classification</option>
                                         @foreach($classifications as $classification)
-                                        <option value="{{$classification->name}}">{{
+                                        <option value="{{$classification->id}}">{{
                                             $classification->name }}
                                         </option>
                                         @endforeach
@@ -301,9 +303,8 @@
                                 <div wire:ignore>
                                     <select wire:model="employment_statuses_id" data-pharaonic="select2"
                                         data-component-id="edit{{ $this->id }}">
-                                        <option>Select Employment Status</option>
                                         @foreach($employmentstatuses as $employmentstatus)
-                                        <option value="{{$employmentstatus->name}}">{{
+                                        <option value="{{$employmentstatus->id}}">{{
                                             $employmentstatus->name
                                             }}
                                         </option>
@@ -315,12 +316,14 @@
                             <!-- End Select -->
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button wire:click="addEmployeeTableRefresh" type="submit" class="btn btn-primary">Save
+                        changes</button>
+                </div>
+        </form>
     </div>
+</div>
 </div>
