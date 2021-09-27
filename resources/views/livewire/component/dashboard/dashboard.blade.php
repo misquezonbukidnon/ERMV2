@@ -117,3 +117,4 @@
     </div>
 </div>
 <livewire:component.modal.dashboard.employee-dashboard />
+<livewire:component.modal.dashboard.welcome />

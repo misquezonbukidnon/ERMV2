@@ -264,7 +264,10 @@
       current_count.text(characterCount);
     });
   </script>
-
+ 
+ <script>
+   $("#welcomeModal").modal()
+ </script>
   <!-- IE Support -->
   <script>
     if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write(
