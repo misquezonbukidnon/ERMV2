@@ -1,4 +1,3 @@
-<!-- Modal -->
 <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -22,17 +21,9 @@
                 </div>
             </div>
             <div class="modal-footer d-block text-center py-sm-5">
-                <small class="text-cap mb-4">Powered By: </small>
-
-                <div class="w-85 mx-auto">
-                    <div class="row justify-content-between">
-                        <div class="col">
-                            <span class="d-block font-weight-bold mb-1">Management Information Systems</span>
-                        </div>
-                    </div>
-                </div>
+                <small class="text-cap mb-1">Powered By: </small>
+                <span class="d-block font-weight-bold mb-1">Management Information Systems</span>
             </div>
         </div>
     </div>
 </div>
-<!-- End Modal -->

@@ -64,6 +64,66 @@ body {
     height: 12.875rem !important;
 }
 
+.file-manager-custom-height {
+    height: 30rem !important;
+    overflow: hidden !important;
+    overflow-y: auto !important;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 10px !important;
+}
+
+
+/* Track */
+
+.custom-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey !important;
+    border-radius: 10px !important;
+}
+
+
+/* Handle */
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: grey !important;
+    border-radius: 10px !important;
+}
+
+
+/* Handle on hover */
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #377dff!important;
+}
+
+tr::-webkit-scrollbar {
+    width: 10px !important;
+}
+
+
+/* Track */
+
+tr::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey !important;
+    border-radius: 10px !important;
+}
+
+
+/* Handle */
+
+tr::-webkit-scrollbar-thumb {
+    background: grey !important;
+    border-radius: 10px !important;
+}
+
+
+/* Handle on hover */
+
+tr::-webkit-scrollbar-thumb:hover {
+    background: #377dff!important;
+}
+
 @media (orientation: portrait) {
     .textareaCustom {
         text-align: center !important;

@@ -5,7 +5,7 @@
     <!-- End Header -->
 
     <!-- Body -->
-    <div class="card-body " style="overflow-y: auto; overflow-x: hidden; height: 437px">
+    <div class="card-body custom-scroll " style="overflow-y: auto; overflow-x: hidden; height: 437px">
         <!-- Step -->
         <ul class="step">
             <li class="step-item">

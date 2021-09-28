@@ -68,7 +68,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody >
                             @foreach($employees as $employee)
                             <tr>
                                 <td wire:click="showEmployee({{ $employee->id }})">

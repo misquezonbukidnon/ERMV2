@@ -25,7 +25,7 @@
             <div class="page-header">
                 <div class="row align-items-end">
                     <div class="col-sm mb-2 mb-sm-0">
-                    <h3 class="card-title">file Manager</h3>
+                        <h3 class="card-title">file Manager</h3>
                     </div>
                 </div>
                 <!-- End Row -->
@@ -57,12 +57,13 @@
             <!-- End Header -->
 
             <!-- Tab Content -->
-            <div class="tab-content" id="connectionsTabContent">
+            <div class="tab-content file-manager-custom-height custom-scroll" id="connectionsTabContent">
                 <div class="tab-pane fade active show" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                     <!-- Folders -->
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-                        <div class="col mb-3 mb-lg-5">
+                        @for ($i = 0; $i <= 20; $i++) <div class="col mb-3 mb-lg-5">
                             <!-- Card -->
+
                             <div class="card card-sm card-hover-shadow card-header-borderless h-100 text-center">
                                 <div class="card-header">
                                     <small>25kb</small>
@@ -97,58 +98,61 @@
                                     <p class="small">Updated 50 min ago</p>
                                 </div>
                             </div>
+
                             <!-- End Card -->
-                        </div>
                     </div>
-                    <!-- End Folders -->
+                    @endfor
                 </div>
+                <!-- End Folders -->
+            </div>
 
-                <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
-                    <ul class="list-group">
-                        <!-- List Item -->
-                        <li class="list-group-item">
-                            <div class="row align-items-center gx-2">
-                                <div class="col-auto">
-                                    <img class="avatar avatar-xs avatar-4by3" src="../assets/svg/brands/google-sheets.svg" alt="Image Description">
-                                </div>
+            <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+                <ul class="list-group">
+                    <!-- List Item -->
+                    @for ($i = 0; $i <= 20; $i++) <li class="list-group-item">
+                        <div class="row align-items-center gx-2">
+                            <div class="col-auto">
+                                <img class="avatar avatar-xs avatar-4by3" src="../assets/svg/brands/google-sheets.svg" alt="Image Description">
+                            </div>
 
-                                <div class="col">
-                                    <h5 class="mb-0">
-                                        <a class="text-dark" href="#">Sample File</a>
-                                    </h5>
-                                    <ul class="list-inline list-separator small">
-                                        <li class="list-inline-item">Updated 50 min ago</li>
-                                        <li class="list-inline-item">25kb</li>
-                                    </ul>
-                                </div>
+                            <div class="col">
+                                <h5 class="mb-0">
+                                    <a class="text-dark" href="#">Sample File</a>
+                                </h5>
+                                <ul class="list-inline list-separator small">
+                                    <li class="list-inline-item">Updated 50 min ago</li>
+                                    <li class="list-inline-item">25kb</li>
+                                </ul>
+                            </div>
 
-                                <div class="col-auto">
-                                    <!-- Unfold -->
-                                    <div class="hs-unfold">
-                                        <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options="{
+                            <div class="col-auto">
+                                <!-- Unfold -->
+                                <div class="hs-unfold">
+                                    <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options="{
                                                     &quot;target&quot;: &quot;#filesListDropdown1&quot;,
                                                     &quot;type&quot;: &quot;css-animation&quot;
                                                     }" data-hs-unfold-target="#filesListDropdown1" data-hs-unfold-invoker="">
-                                            <span class="d-none d-sm-inline-block mr-1">More</span>
-                                            <i class="tio-chevron-down"></i>
+                                        <span class="d-none d-sm-inline-block mr-1">More</span>
+                                        <i class="tio-chevron-down"></i>
+                                    </a>
+                                    <div id="filesListDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated" style="min-width: 13rem; animation-duration: 300ms;" data-hs-target-height="0" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut">
+                                        <span class="dropdown-header">Settings</span>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="tio-delete-outlined dropdown-item-icon"></i> Delete
                                         </a>
-                                        <div id="filesListDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated" style="min-width: 13rem; animation-duration: 300ms;" data-hs-target-height="0" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut">
-                                            <span class="dropdown-header">Settings</span>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="tio-delete-outlined dropdown-item-icon"></i> Delete
-                                            </a>
-                                        </div>
                                     </div>
-                                    <!-- End Unfold -->
                                 </div>
+                                <!-- End Unfold -->
                             </div>
-                            <!-- End Row -->
+                        </div>
+                        <!-- End Row -->
                         </li>
+                        @endfor
                         <!-- End List Item -->
-                    </ul>
-                    <!-- End List Dot -->
-                </div>
+                </ul>
+                <!-- End List Dot -->
             </div>
         </div>
+    </div>
     </div>
 </form>
