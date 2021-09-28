@@ -10,10 +10,13 @@ use Livewire\Component;
 use App\Models\Office;
 use App\Models\Position;
 use Livewire\WithFileUploads;
+use Intervention\Image\Facades\Image;
 
 class RecordEdit extends Component
 {
+    use WithFileUploads;
     // Global Input
+    public $empId;
     public $employment_date;
     public $employee_number;
     public $lastname;
@@ -63,25 +66,68 @@ class RecordEdit extends Component
 
     public function employeeModalEdit($empId)
     {
-        $query = EmployeeRelationship::where('id', $empId)->first();
-        $subq_employees = Employee::where('id', $query->employees_id)->first();
-        $subq_positions = Position::where('id', $query->positions_id)->first();
-        $this->employment_date=$subq_employees->employment_date;
-        $this->employee_number=$subq_employees->employee_number;
-        $this->lastname=$subq_employees->lastname;
-        $this->firstname=$subq_employees->firstname;
-        $this->middlename=$subq_employees->middlename;
-        $this->suffix=$subq_employees->suffix;
-        $this->address=$subq_employees->address;
-        $this->contact_number=$subq_employees->contact_number;
-        $this->email=$subq_employees->email;
-        $this->emergency_contact_person=$subq_employees->emergency_contact_person;
-        $this->ecp_contact_number=$subq_employees->ecp_contact_number;
-        $this->ecp_email=$subq_employees->ecp_email;
-        $this->positions_id=$subq_positions->id;
-        $this->positions_name=$subq_positions->name;
+        $query = EmployeeRelationship::with('employees', 'positions', 'classifications', 'employment_statuses')->where('id', $empId)->first();
+        $this->empId=$query->id;
+        $this->employment_date=$query->employees->employment_date;
+        $this->employee_number=$query->employees->employee_number;
+        $this->lastname=$query->employees->lastname;
+        $this->firstname=$query->employees->firstname;
+        $this->middlename=$query->employees->middlename;
+        $this->suffix=$query->employees->suffix;
+        $this->address=$query->employees->address;
+        $this->contact_number=$query->employees->contact_number;
+        $this->email=$query->employees->email;
+        $this->emergency_contact_person=$query->employees->emergency_contact_person;
+        $this->ecp_contact_number=$query->employees->ecp_contact_number;
+        $this->ecp_email=$query->employees->ecp_email;
+        $this->offices_id=$query->offices_id;
+        $this->classifications_id=$query->classifications_id;
+        $this->employment_statuses_id=$query->employment_statuses_id;
+        $this->positions_id=$query->positions->id;
+        $this->positions_name=$query->positions->name;
     }
 
+    public function editEmployee()
+    {
+        $query = EmployeeRelationship::find($this->empId);
+        $query_employee = Employee::find($query->employees_id);
+        $query_employee->employment_date = $this->employment_date;
+        $query_employee->employee_number = $this->employee_number;
+        $query_employee->firstname = $this->firstname;
+        $query_employee->middlename = $this->middlename;
+        $query_employee->lastname = $this->lastname;
+        $query_employee->suffix = $this->suffix;
+        $query_employee->address = $this->address;
+        $query_employee->contact_number = $this->contact_number;
+        $query_employee->email = $this->email;
+        $query_employee->emergency_contact_person = $this->emergency_contact_person;
+        $query_employee->ecp_contact_number = $this->ecp_contact_number;
+        $query_employee->ecp_email = $this->ecp_email;
+        $query_employee->save();
+
+        $query->offices_id = $this->offices_id;
+        $query->positions_id = $this->positions_id;
+        $query->classifications_id = $this->classifications_id;
+        $query->employment_statuses_id = $this->employment_statuses_id;
+        $query->save();
+
+        if ($query->employee_images_id == null) {
+            if ($this->image == null) {
+                dd('image is empty');
+            } else {
+                dd('image is not empty');
+            }
+        } else {
+            # code...
+        }
+
+        sleep(1);
+    }
+
+    public function addEmployeeTableRefresh()
+    {
+        $this->emit('addEmployeeTableRefresh');
+    }
 
     public function render()
     {
