@@ -264,6 +264,10 @@
       current_count.text(characterCount);
     });
   </script>
+
+<script>
+$(document).ready(function() { $("#select2").select2(); });
+</script>
  
  <script>
    $("#welcomeModal").modal()

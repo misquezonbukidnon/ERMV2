@@ -134,7 +134,7 @@ class RecordEdit extends Component
         $offices = Office::all();
         $positions = Position::all();
         $classifications = Classification::all();
-        $employmentstatuses = EmploymentStatus::all();
-        return view('livewire.component.modal.record.record-edit', compact('offices', 'positions', 'classifications', 'employmentstatuses'));
+        $employment_statuses = EmploymentStatus::all();
+        return view('livewire.component.modal.record.record-edit', compact('offices', 'positions', 'classifications', 'employment_statuses'));
     }
 }

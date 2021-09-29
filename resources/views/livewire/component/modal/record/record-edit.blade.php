@@ -1,13 +1,11 @@
-<div wire:ignore class="modal fade" id="editrecordmodal" tabindex="-1" role="dialog" aria-labelledby="editRecordModal"
-    aria-hidden="true">
+<div wire:ignore class="modal fade" id="editrecordmodal" tabindex="-1" role="dialog" aria-labelledby="editRecordModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form wire:submit.prevent="editEmployee" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editeditRecordModal">Edit Employee</h5>
-                    <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary" data-dismiss="modal"
-                        aria-label="Close">
+                    <button type="button" class="btn btn-xs btn-icon btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
                         <i class="tio-clear tio-lg"></i>
                     </button>
                 </div>
@@ -18,13 +16,9 @@
                         <div class="col-sm-9">
                             <div class="d-flex align-items-center">
                                 <!-- Avatar -->
-                                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5"
-                                    for="editavatarUploader">
-                                    <img id="editavatarImg" class="avatar-img"
-                                        src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
-                                    <input wire:model="image" type="file" name="image"
-                                        class="js-file-attach avatar-uploader-input" id="editavatarUploader"
-                                        data-hs-file-attach-options='{
+                                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="editavatarUploader">
+                                    <img id="editavatarImg" class="avatar-img" src="{{ asset('assets/img/160x160/img1.jpg') }}" alt="Image Description">
+                                    <input wire:model="image" type="file" name="image" class="js-file-attach avatar-uploader-input" id="editavatarUploader" data-hs-file-attach-options='{
                                                         "textTarget": "#editavatarImg",
                                                         "mode": "image",
                                                         "targetAttr": "src",
@@ -49,9 +43,7 @@
                             Date</label>
                         <div class="col-sm-9">
                             <!-- Form Group -->
-                            <input wire:model="employment_date" type="date"
-                                class="form-control {{ $errors->has('employment_date') ? ' is-invalid' : '' }}"
-                                placeholder="Select dates" name="employment_date">
+                            <input wire:model="employment_date" type="date" class="form-control {{ $errors->has('employment_date') ? ' is-invalid' : '' }}" placeholder="Select dates" name="employment_date">
                             @if ($errors->has('employment_date'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('employment_date') }}</strong>
@@ -67,10 +59,7 @@
                             Identification Number</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="employee_number" type="text"
-                                class="form-control {{ $errors->has('employee_number') ? ' is-invalid' : '' }}"
-                                name="employee_number" id="editIdentification Numbe" placeholder="Identification Number"
-                                aria-label="Htmlstream">
+                            <input wire:model="employee_number" type="text" class="form-control {{ $errors->has('employee_number') ? ' is-invalid' : '' }}" name="employee_number" id="editIdentification Numbe" placeholder="Identification Number" aria-label="Htmlstream">
                             @if ($errors->has('employee_number'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('employee_number') }}</strong>
@@ -84,8 +73,7 @@
                         <label for="editfirstname" class="col-sm-3 col-form-label input-label">First name</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="firstname" type="text" class="form-control" name="editfirstname"
-                                id="editfirstname" placeholder="first name" aria-label="editfirstname">
+                            <input wire:model="firstname" type="text" class="form-control" name="editfirstname" id="editfirstname" placeholder="first name" aria-label="editfirstname">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -95,8 +83,7 @@
                         <label for="editmiddlename" class="col-sm-3 col-form-label input-label">Middle name</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="middlename" type="text" class="form-control" name="editmiddlename"
-                                id="editmiddlename" placeholder="middle name" aria-label="editmiddlename">
+                            <input wire:model="middlename" type="text" class="form-control" name="editmiddlename" id="editmiddlename" placeholder="middle name" aria-label="editmiddlename">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -106,8 +93,7 @@
                         <label for="editlastname" class="col-sm-3 col-form-label input-label">Last name</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="lastname" type="text" class="form-control" name="editlastname"
-                                id="editlastname" placeholder="last name" aria-label="editlastname">
+                            <input wire:model="lastname" type="text" class="form-control" name="editlastname" id="editlastname" placeholder="last name" aria-label="editlastname">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -117,8 +103,7 @@
                         <label for="editsuffix" class="col-sm-3 col-form-label input-label">Suffix</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="suffix" type="text" class="form-control" name="editsuffix"
-                                id="editsuffix" placeholder="suffix" aria-label="editsuffix">
+                            <input wire:model="suffix" type="text" class="form-control" name="editsuffix" id="editsuffix" placeholder="suffix" aria-label="editsuffix">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -130,8 +115,7 @@
 
 
                         <div class="col-sm-9">
-                            <input wire:model="email" type="email" class="form-control" name="email" id="editemailLabel"
-                                placeholder="yourname@example.com" aria-label="clarice@example.com">
+                            <input wire:model="email" type="email" class="form-control" name="email" id="editemailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -141,8 +125,7 @@
                         <label for="emailLabel" class="col-sm-3 col-form-label input-label">Address</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="address" type="text" class="form-control" name="Address"
-                                id="editAddressLabel" placeholder="Address" aria-label="Address">
+                            <input wire:model="address" type="text" class="form-control" name="Address" id="editAddressLabel" placeholder="Address" aria-label="Address">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -158,9 +141,7 @@
 
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm-down-break align-items-center">
-                                <input wire:model="contact_number" type="text" class="js-masked-input form-control"
-                                    name="phone" id="editphoneLabel" placeholder="+xx xxx-xxxx-xx"
-                                    aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
+                                <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="phone" id="editphoneLabel" placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
                                                     "template": "+63 0000000000"
                                                     }'>
                             </div>
@@ -177,9 +158,7 @@
                             Person</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="emergency_contact_person" type="text" class="form-control"
-                                name="emergency_contact_person" id="editorganizationLabel2"
-                                placeholder="Emergency Contact Person" aria-label="Htmlstream">
+                            <input wire:model="emergency_contact_person" type="text" class="form-control" name="emergency_contact_person" id="editorganizationLabel2" placeholder="Emergency Contact Person" aria-label="Htmlstream">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -191,9 +170,7 @@
                             #</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="ecp_contact_number" type="text" class="form-control"
-                                name="ecp_contact_number" id="editorganizationLabel3" placeholder="+xx xxx-xxxx-xx"
-                                aria-label="Htmlstream">
+                            <input wire:model="ecp_contact_number" type="text" class="form-control" name="ecp_contact_number" id="editorganizationLabel3" placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -204,9 +181,7 @@
                             Contact Person Email</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="ecp_email" type="email" class="form-control" name="ecp_email"
-                                id="editecpemailLabel" placeholder="yourname@example.com"
-                                aria-label="clarice@example.com">
+                            <input wire:model="ecp_email" type="email" class="form-control" name="ecp_email" id="editecpemailLabel" placeholder="yourname@example.com" aria-label="clarice@example.com">
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -219,9 +194,7 @@
                                 <span id="fileAttachmentInputModalEg">Browse your device and upload documents</span>
                                 <small class="d-block text-muted">Maximum file size 10MB</small>
 
-                                <input wire:model="file_document" id="fileAttachmentLabelModalEg"
-                                    name="custom-file-boxed" type="file" class="js-file-attach custom-file-boxed-input"
-                                    data-hs-file-attach-options='{
+                                <input wire:model="file_document" id="fileAttachmentLabelModalEg" name="custom-file-boxed" type="file" class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
                                 "textTarget": "#fileAttachmentInputModalEg"
                             }'>
                             </label>
@@ -236,10 +209,9 @@
                             <!-- Select -->
                             <div class=" dldl">
                                 <div>
-                                    <select wire:model="positions_id" data-pharaonic="select2"
-                                        data-component-id="edit{{ $this->id }}">
+                                    <select wire:model="positions_id" class="custom-select">
                                         @foreach($positions as $position)
-                                        <option value="{{ $position->id }}">{{ $position->name }}
+                                        <option key="{{ $position->id}}" value="{{ $position->id }}">{{ $position->name }}
                                         </option>
                                         @endforeach
                                     </select>
@@ -257,8 +229,7 @@
                             <!-- Select -->
                             <div class=" dldl">
                                 <div wire:ignore>
-                                    <select wire:model="offices_id" data-pharaonic="select2"
-                                        data-component-id="edit{{ $this->id }}">
+                                    <select wire:model="offices_id" class="custom-select" data-component-id="edit{{ $this->id }}">
                                         @foreach($offices as $office)
                                         <option value="{{$office->id}}">{{ $office->name }}
                                         </option>
@@ -278,8 +249,7 @@
                             <!-- Select -->
                             <div class=" dldl">
                                 <div wire:ignore>
-                                    <select wire:model="classifications_id" data-pharaonic="select2"
-                                        data-component-id="edit{{ $this->id }}">
+                                    <select wire:model="classifications_id" class="custom-select" data-component-id="edit{{ $this->id }}">
                                         @foreach($classifications as $classification)
                                         <option value="{{$classification->id}}">{{
                                             $classification->name }}
@@ -301,12 +271,10 @@
                             <!-- Select -->
                             <div class=" dldl">
                                 <div wire:ignore>
-                                    <select wire:model="employment_statuses_id" data-pharaonic="select2"
-                                        data-component-id="edit{{ $this->id }}">
-                                        @foreach($employmentstatuses as $employmentstatus)
+                                    <select wire:model="employment_statuses_id" class="custom-select" data-component-id="edit{{ $this->id }}">
+                                    @foreach($employment_statuses as $employmentstatus)
                                         <option value="{{$employmentstatus->id}}">{{
-                                            $employmentstatus->name
-                                            }}
+                                            $employmentstatus->name }}
                                         </option>
                                         @endforeach
                                     </select>
@@ -325,5 +293,4 @@
                 </div>
         </form>
     </div>
-</div>
 </div>
