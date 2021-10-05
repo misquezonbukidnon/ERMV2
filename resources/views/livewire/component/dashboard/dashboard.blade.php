@@ -17,7 +17,7 @@
                 <div class="col-lg-9 mb-3">
                     <!-- total summary -->
                     <div class="row">
-                        <div class="col-sm-2  mb-3">
+                        <div class="col-sm-2  mb-3" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Total Regular Employees: {{ $regular }}">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -32,7 +32,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-2 mb-3">
+                        <div class="col-sm-2 mb-3" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Total Casual Employees: {{ $casual }}">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -47,7 +47,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-2  mb-3">
+                        <div class="col-sm-2  mb-3"  data-toggle="tooltip" data-placement="bottom" data-html="true" title="Total Job Order Employees: {{ $jobOrder }}">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -62,11 +62,11 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-2  mb-3">
+                        <div class="col-sm-2  mb-3"   data-toggle="tooltip" data-placement="bottom" data-html="true" title="Total Honorarium Employees: {{ $honorarium }}">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
-                                    <h6 class="card-subtitle d-flex justify-content-center">Total Honorarium</h6>
+                                    <h6 class="card-subtitle d-flex justify-content-center ">Total Honorarium</h6>
                                     <div class=" d-flex justify-content-center w-100">
                                         <div class="mt-3">
                                             <span class="card-title h1">{{ $honorarium }}</span>
@@ -77,7 +77,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-2  mb-3">
+                        <div class="col-sm-2  mb-3"  data-toggle="tooltip" data-placement="bottom" data-html="true" title="Total Elective Employees:  {{ $elective }}">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
@@ -92,7 +92,7 @@
                             <!-- End Card -->
                         </div>
 
-                        <div class="col-sm-2  mb-3">
+                        <div class="col-sm-2  mb-3" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Total Co-Terminus Employees: {{ $co_terminus }}">
                             <!-- Card -->
                             <a class="card card-hover-shadow  w-100 h-100" href="#">
                                 <div class="card-body">
