@@ -67,16 +67,16 @@
                     </tr>
                     <tr>
                         <th>
-                            <input type="text" wire:model="searchlastname" id="searchLastname" class="form-control" placeholder="Last name">
+                            <input type="text" wire:model="searchlastname"  wire:click="resetpageRoute"  id="searchLastname" class="form-control" placeholder="Last name">
                         </th>
                         <th>
-                            <input type="text" wire:model="searchfirstname" id="searchFirstname" class="form-control" placeholder="First name">
+                            <input type="text" wire:model="searchfirstname"  id="searchFirstname" class="form-control" placeholder="First name">
                         </th>
                         <th>
                             <input type="text" wire:model="searchmiddlename" id="searchMiddlename" class="form-control" placeholder="Middle name">
                         </th>
                         <th>
-                            <select wire:model="search_offices" id="searhOffice" class="form-control">
+                            <select wire:model="search_offices" wire:click="resetpageRoute" id="searhOffice" class="form-control">
                                 <option value="">any</option>
                                 @foreach($offices as $office)
                                 <option value="{{$office->name}}">{{ $office->name }}</option>
@@ -85,7 +85,7 @@
                         </th>
 
                         <th>
-                            <select wire:model="search_classifications" id="searchClassification" class="form-control">
+                            <select wire:model="search_classifications"  wire:click="resetpageRoute"   id="searchClassification" class="form-control">
                                 <option value="">any</option>
                                 @foreach($classifications as $classification)
                                 <option value="{{$classification->name}}">{{ $classification->name }}
@@ -94,7 +94,7 @@
                             </select>
                         </th>
                         <th>
-                            <select wire:model="search_employmentstatuses" id="searchStatus" class="form-control">
+                            <select wire:model="search_employmentstatuses"  wire:click="resetpageRoute"   id="searchStatus" class="form-control">
                                 <option value="">any</option>
                                 @foreach($employmentstatuses as $employmentstatus)
                                 <option value="{{$employmentstatus->name}}">{{ $employmentstatus->name

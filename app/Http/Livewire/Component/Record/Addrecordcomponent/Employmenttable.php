@@ -16,7 +16,7 @@ class Employmenttable extends Component
     protected $paginationTheme = 'bootstrap';
     public $search = '';
     public $searchlastname = '';
-    public $searchmiddlename= '';
+    public $searchmiddlename = '';
     public $searchfirstname = '';
     public $search_offices;
     public $search_classifications;
@@ -41,7 +41,6 @@ class Employmenttable extends Component
         }
         $this->sortField = $field;
     }
-
     public function updatingSearch()
     {
         $this->resetPage();
@@ -73,31 +72,31 @@ class Employmenttable extends Component
 
         return view('livewire.component.record.addrecordcomponent.employmenttable', [
             'employees' => EmployeeRelationship::with('offices')->with('employees')->with('classifications')->with('employment_statuses')->with('positions')
-            ->whereHas('employees', function ($query) {
-                $query->where('firstname', 'like', '%' . $this->searchfirstname . '%');
-            })
-            ->whereHas('employees', function ($query) {
-                $query->where('middlename', 'like', '%' . $this->searchmiddlename . '%');
-            })
-            ->whereHas('employees', function ($query) {
-                $query->where('lastname', 'like', '%' . $this->searchlastname . '%');
-            })
-            ->whereHas('offices', function ($sub_offices) {
-                $sub_offices->where('name', 'like', '%' . $this->search_offices . '%');
-            })
-            ->whereHas('classifications', function ($sub_classifications) {
-                $sub_classifications->where('name', 'like', '%' . $this->search_classifications . '%');
-            })
-            ->whereHas('employment_statuses', function ($sub_employmentstatuses) {
-                $sub_employmentstatuses->where('name', 'like', '%' . $this->search_employmentstatuses . '%');
-            })
-            // ->when($this->sortField, function ($query) {
-            //     $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
-            // })
-            ->paginate($this->pagecount),
+                ->whereHas('employees', function ($query) {
+                    $query->where('firstname', 'like', '%' . $this->searchfirstname . '%');
+                })
+                ->whereHas('employees', function ($query) {
+                    $query->where('middlename', 'like', '%' . $this->searchmiddlename . '%');
+                })
+                ->whereHas('employees', function ($query) {
+                    $query->where('lastname', 'like', '%' . $this->searchlastname . '%');
+                })
+                ->whereHas('offices', function ($sub_offices) {
+                    $sub_offices->where('name', 'like', '%' . $this->search_offices . '%');
+                })
+                ->whereHas('classifications', function ($sub_classifications) {
+                    $sub_classifications->where('name', 'like', '%' . $this->search_classifications . '%');
+                })
+                ->whereHas('employment_statuses', function ($sub_employmentstatuses) {
+                    $sub_employmentstatuses->where('name', 'like', '%' . $this->search_employmentstatuses . '%');
+                })
+                ->when($this->sortField, function ($query) {
+                    $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
+                })
+                ->paginate($this->pagecount),
             'offices' => Office::all(),
-            'positions'=> Position::all(),
-            'classifications'=> Classification::all(),
+            'positions' => Position::all(),
+            'classifications' => Classification::all(),
             'employmentstatuses' => EmploymentStatus::all()
         ]);
     }

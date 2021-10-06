@@ -12,7 +12,6 @@ use Livewire\Component;
 
 class RecordShowEmployee extends Component
 {
-    // Global Input
     public $employment_date;
     public $employee_number;
     public $lastname;

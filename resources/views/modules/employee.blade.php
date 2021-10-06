@@ -28,6 +28,7 @@
         </div>
     </div>
 </div>
-<livewire:component.modal.record.record-edit />
 <livewire:component.modal.record.record-show-employee />
+<livewire:component.modal.record.record-edit />
+
 @endsection

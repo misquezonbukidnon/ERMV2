@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Welcome extends Component
 {
+    public $page = 1;
     public function render()
     {
         if (Auth::check()) {
@@ -17,5 +18,11 @@ class Welcome extends Component
         } else {
             return view('livewire.component.modal.dashboard.welcome');
         }
+    }
+
+    public function next()
+    {
+        $this -> page = 2;
+       
     }
 }

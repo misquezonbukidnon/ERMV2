@@ -2,13 +2,13 @@
 
 namespace App\Http\Livewire\Component\Modal\Dashboard;
 
-use Livewire\Component;
 use App\Models\Classification;
 use App\Models\Employee;
 use App\Models\EmployeeRelationship;
 use App\Models\EmploymentStatus;
 use App\Models\Office;
 use App\Models\Position;
+use Livewire\Component;
 
 class EmployeeDashboard extends Component
 {

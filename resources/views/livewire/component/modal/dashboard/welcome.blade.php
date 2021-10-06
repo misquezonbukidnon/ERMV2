@@ -1,4 +1,4 @@
-<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+<div  wire:ignore class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -17,13 +17,9 @@
                     <img class="avatar-img" src="../images/users/{{ $users->userimages->name }}" alt="Image Description">
                 </div>
                 <div class="text-center">
-                    <h4 class="h1">Welcome {{ auth()->user()->first }} {{ auth()->user()->last }}!</h4>
-                    <p>We're happy to see you .</p>
+                    <h4 class="h2">{{ auth()->user()->first }} {{ auth()->user()->last }}</h4>
+                    <p>Welcome to Employee Records Management, we're happy to see you .</p>
                 </div>
-            </div>
-            <div class="modal-footer d-block text-center py-sm-5">
-                <small class="text-cap mb-1">Powered By: </small>
-                <p class="text-cap mb-4">Local Government Unit of Quezon Bukidnon <br> Management Information System Division</p>
             </div>
         </div>
     </div>
