@@ -70,10 +70,10 @@
                             <input type="text" wire:model="searchlastname"  wire:click="resetpageRoute"  id="searchLastname" class="form-control" placeholder="Last name">
                         </th>
                         <th>
-                            <input type="text" wire:model="searchfirstname"  id="searchFirstname" class="form-control" placeholder="First name">
+                            <input type="text" wire:model="searchfirstname" wire:click="resetpageRoute"  id="searchFirstname" class="form-control" placeholder="First name">
                         </th>
                         <th>
-                            <input type="text" wire:model="searchmiddlename" id="searchMiddlename" class="form-control" placeholder="Middle name">
+                            <input type="text" wire:model="searchmiddlename" wire:click="resetpageRoute" id="searchMiddlename" class="form-control" placeholder="Middle name">
                         </th>
                         <th>
                             <select wire:model="search_offices" wire:click="resetpageRoute" id="searhOffice" class="form-control">
