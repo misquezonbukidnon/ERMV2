@@ -141,9 +141,9 @@
 
                         <div class="col-sm-9">
                             <div class="input-group input-group-sm-down-break align-items-center">
-                                <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="phone" id="editphoneLabel" placeholder="+xx xxx-xxxx-xx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
-                                                    "template": "+63 0000000000"
-                                                    }'>
+                                <input wire:model="contact_number" type="text" class="js-masked-input form-control" name="phone" id="editphoneLabel" placeholder="(+xx) xxx-xxx-xxxx" aria-label="(+xx) xxx-xxx-xxxx" data-hs-mask-options="{
+                                    &quot;template&quot;: &quot;(+63) 000-000-0000&quot;
+                                    }" />
                             </div>
                             <!-- Container For Input Field -->
                             <div id="editaddPhoneFieldContainer"></div>
@@ -170,7 +170,9 @@
                             #</label>
 
                         <div class="col-sm-9">
-                            <input wire:model="ecp_contact_number" type="text" class="form-control" name="ecp_contact_number" id="editorganizationLabel3" placeholder="+xx xxx-xxxx-xx" aria-label="Htmlstream">
+                            <input wire:model="ecp_contact_number" type="text" class=" js-masked-input form-control" name="ecp_contact_number" id="editorganizationLabel3" placeholder="(+xx) xxx-xxx-xxxx" aria-label="(+xx) xxx-xxx-xxxx" data-hs-mask-options="{
+                                    &quot;template&quot;: &quot;(+63) 000-000-0000&quot;
+                                    }"/>
                         </div>
                     </div>
                     <!-- End Form Group -->
@@ -272,7 +274,7 @@
                             <div class=" dldl">
                                 <div wire:ignore>
                                     <select wire:model="employment_statuses_id" class="custom-select" data-component-id="edit{{ $this->id }}">
-                                    @foreach($employment_statuses as $employmentstatus)
+                                        @foreach($employment_statuses as $employmentstatus)
                                         <option value="{{$employmentstatus->id}}">{{
                                             $employmentstatus->name }}
                                         </option>
