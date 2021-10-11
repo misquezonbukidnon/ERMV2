@@ -25,7 +25,7 @@
             <div class="page-header">
                 <div class="row align-items-end">
                     <div class="col-sm mb-2 mb-sm-0">
-                        <h3 class="card-title">file Manager</h3>
+                        <h3 class="card-title">File Manager</h3>
                     </div>
                 </div>
                 <!-- End Row -->
@@ -67,24 +67,10 @@
                             <div class="card card-sm card-hover-shadow card-header-borderless h-100 text-center">
                                 <div class="card-header">
                                     <small>25kb</small>
+                                    <button type="button"  style="z-index: 10 !important" class="btn btn-light btn-icon">
+                                        <i class="tio-delete"></i>
+                                    </button>
 
-                                    <!-- Unfold -->
-                                    <div class="hs-unfold ml-auto">
-                                        <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary card-unfold rounded-circle" href="javascript:;" data-hs-unfold-options="{
-                                                    &quot;target&quot;: &quot;#filesGridDropdown1&quot;,
-                                                    &quot;type&quot;: &quot;css-animation&quot;
-                                                    }" data-hs-unfold-target="#filesGridDropdown1" data-hs-unfold-invoker="">
-                                            <i class="tio-more-vertical"></i>
-                                        </a>
-
-                                        <div id="filesGridDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right hs-unfold-content-initialized hs-unfold-css-animation animated hs-unfold-hidden hs-unfold-reverse-y" style="min-width: 13rem; animation-duration: 300ms;" data-hs-target-height="306" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut">
-                                            <span class="dropdown-header">Settings</span>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="tio-delete-outlined dropdown-item-icon"></i> Delete
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Unfold -->
                                 </div>
 
                                 <div class="card-body">
@@ -94,8 +80,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">sample file</h5>
-                                    <p class="small">Updated 50 min ago</p>
+                                    <h5 class="card-title">Emlployee 10{{$i}}</h5>
+                                    <p class="small">Updated {{$i}} min ago</p>
                                 </div>
                             </div>
 
@@ -117,10 +103,10 @@
 
                             <div class="col">
                                 <h5 class="mb-0">
-                                    <a class="text-dark" href="#">Sample File</a>
+                                    <a class="text-dark" href="#">Emlployee 10{{$i}}</a>
                                 </h5>
                                 <ul class="list-inline list-separator small">
-                                    <li class="list-inline-item">Updated 50 min ago</li>
+                                    <li class="list-inline-item">Updated {{$i}} min ago</li>
                                     <li class="list-inline-item">25kb</li>
                                 </ul>
                             </div>
@@ -128,13 +114,9 @@
                             <div class="col-auto">
                                 <!-- Unfold -->
                                 <div class="hs-unfold">
-                                    <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;" data-hs-unfold-options="{
-                                                    &quot;target&quot;: &quot;#filesListDropdown1&quot;,
-                                                    &quot;type&quot;: &quot;css-animation&quot;
-                                                    }" data-hs-unfold-target="#filesListDropdown1" data-hs-unfold-invoker="">
-                                        <span class="d-none d-sm-inline-block mr-1">More</span>
-                                        <i class="tio-chevron-down"></i>
-                                    </a>
+                                    <button type="button" class="btn btn-light btn-icon">
+                                        <i class="tio-delete"></i>
+                                    </button>
                                     <div id="filesListDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated" style="min-width: 13rem; animation-duration: 300ms;" data-hs-target-height="0" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut">
                                         <span class="dropdown-header">Settings</span>
                                         <a class="dropdown-item" href="#">
