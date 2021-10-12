@@ -27,6 +27,11 @@ class Employmenttable extends Component
     public $position = '';
     public $classification = '';
     public $employmentstatus = '';
+    public $employees;
+    public $offices;
+    public $positions;
+    public $classifications;
+    public $employmentstatuses;
 
     protected $listeners = [
         'addEmployeeTableRefresh',
@@ -69,35 +74,12 @@ class Employmenttable extends Component
     public function render()
     {
         // $employees = EmployeeRelationship::all();
-
-        return view('livewire.component.record.addrecordcomponent.employmenttable', [
-            'employees' => EmployeeRelationship::with('offices')->with('employees')->with('classifications')->with('employment_statuses')->with('positions')
-                ->whereHas('employees', function ($query) {
-                    $query->where('firstname', 'like', '%' . $this->searchfirstname . '%');
-                })
-                ->whereHas('employees', function ($query) {
-                    $query->where('middlename', 'like', '%' . $this->searchmiddlename . '%');
-                })
-                ->whereHas('employees', function ($query) {
-                    $query->where('lastname', 'like', '%' . $this->searchlastname . '%');
-                })
-                ->whereHas('offices', function ($sub_offices) {
-                    $sub_offices->where('name', 'like', '%' . $this->search_offices . '%');
-                })
-                ->whereHas('classifications', function ($sub_classifications) {
-                    $sub_classifications->where('name', 'like', '%' . $this->search_classifications . '%');
-                })
-                ->whereHas('employment_statuses', function ($sub_employmentstatuses) {
-                    $sub_employmentstatuses->where('name', 'like', '%' . $this->search_employmentstatuses . '%');
-                })
-                ->when($this->sortField, function ($query) {
-                    $query->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
-                })
-                ->paginate($this->pagecount),
-            'offices' => Office::all(),
-            'positions' => Position::all(),
-            'classifications' => Classification::all(),
-            'employmentstatuses' => EmploymentStatus::all()
-        ]);
+        $query = EmployeeRelationship::with('employees', 'offices', 'positions', 'classifications', 'employment_statuses')->get();
+        $this->employees = $query;
+        $this->offices = $query;
+        $this->positions = $query;
+        $this->classifications = $query;
+        $this->employmentstatuses = $query;
+        return view('livewire.component.record.addrecordcomponent.employmenttable');
     }
 }
