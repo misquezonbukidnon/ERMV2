@@ -13,7 +13,7 @@
           <div class="col-lg-3 mb-3">
                <livewire:component.dashboard.userprofile />
                <div class="mt-3 mb-3">
-                    <livewire:component.dashboard.userevents />
+                    <!-- user events here -->
                </div>
           </div>
           <div class="col-lg-9">

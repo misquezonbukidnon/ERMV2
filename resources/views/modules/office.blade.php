@@ -20,11 +20,8 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-lg-8 mb-5">
+                        <div class="col-lg-12 mb-5">
                             <livewire:component.office.officetable />
-                        </div>
-                        <div class="col-lg-4 mb-3">
-                            <livewire:component.dashboard.userevents />
                         </div>
                     </div>
 
