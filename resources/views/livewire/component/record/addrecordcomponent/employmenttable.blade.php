@@ -6,7 +6,9 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive datatable-custom">
-                    <table id="columnSearchDatatable" class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
+                    <table id="columnSearchDatatable"
+                        class="table w-100 table-striped table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                        data-hs-datatables-options='{
                                             "columnDefs": [{
                                                     "orderable": true
                                                 }],
@@ -29,7 +31,8 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <input type="text" id="column1_search" class="form-control form-control-sm" placeholder="Search names">
+                                    <input type="text" id="column1_search" class="form-control form-control-sm"
+                                        placeholder="Search names">
                                 </th>
                                 <th>
                                     <select id="column2_search" class="js-select2-custom" data-hs-select2-options='{
@@ -38,7 +41,8 @@
                                             }'>
                                         <option value="">Any</option>
                                         @foreach($offices as $office)
-                                        <option value="{{$office-> positions ->name}}">{{ $office->positions->name }}</option>
+                                        <option value="{{$office-> positions ->name}}">{{ $office->positions->name }}
+                                        </option>
                                         @endforeach
                                     </select>
                                 </th>
@@ -49,7 +53,8 @@
                                             }'>
                                         <option value="">Any</option>
                                         @foreach($classifications as $classifications)
-                                        <option value="{{$classifications -> classifications -> name}}">{{ $classifications -> classifications ->name }}</option>
+                                        <option value="{{$classifications -> classifications -> name}}">{{
+                                            $classifications -> classifications ->name }}</option>
                                         @endforeach
                                     </select>
                                 </th>
@@ -60,7 +65,8 @@
                                             }'>
                                         <option value="">Any</option>
                                         @foreach($employmentstatuses as $employmentstatuses)
-                                        <option value="{{$employmentstatuses -> employment_statuses -> name}}">{{ $employmentstatuses -> employment_statuses -> name }}
+                                        <option value="{{$employmentstatuses -> employment_statuses -> name}}">{{
+                                            $employmentstatuses -> employment_statuses -> name }}
                                         </option>
                                         @endforeach
                                     </select>
@@ -68,30 +74,7 @@
                             </tr>
                         </thead>
 
-                        <tbody >
-                            @foreach($employees as $employee)
-                            <tr>
-                                <td>
-                                    <a class="media align-items-center pe-auto" >
-                                        <div class="avatar avatar-circle mr-3"  style="cursor: pointer;" data-toggle="modal" data-target="#recordshowEmployee" wire:click="showEmployee({{ $employee->id }})" data-toggle="tooltip" data-placement="right" data-html="true" title="{{$employee->employees->lastname
-                                            }} {{ $employee->employees->firstname }} {{
-                                            $employee->employees->suffix }}">
-                                            <img class="avatar-img"   src="../assets/img/160x160/img10.jpg" alt="Image Description">
-                                        </div>
-                                        <span   wire:click="employeeModalEdit({{ $employee->id }})"  style="cursor: pointer;" data-toggle="modal" data-target="#editrecordmodal" data-toggle="tooltip" data-placement="right" data-html="true" title="Edit Employee" class="d-block h5 text-hover-primary mb-0">{{$employee->employees->lastname }} {{ $employee->employees->firstname }} {{
-                                            $employee->employees->suffix }} </span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <span class="d-block h5 mb-0">{{ $employee->positions->name }}</span>
-                                    <span class="d-block font-size-sm">{{ $employee->offices->name }}</span>
-                                </td>
-                                <td>{{ $employee->classifications->name }} <span class="text-hide">Code: GB</span></td>
-                                <td>
-                                    {{ $employee->employment_statuses->name }}
-                                </td>
-                            </tr>
-                            @endforeach
+                        <tbody>
                         </tbody>
                     </table>
                 </div>
