@@ -18,6 +18,16 @@ body {
     height: 40px;
 }
 
+table.dataTable thead th,
+table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: transparent !important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: transparent !important;
+}
+
 .select2-selection__arrow {
     top: 6px !important;
 }

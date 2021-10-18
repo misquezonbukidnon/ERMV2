@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
 use Illuminate\Http\Request;
+use App\Models\Employee;
 use DataTables;
 
 class EmployeeController extends Controller
@@ -15,13 +15,22 @@ class EmployeeController extends Controller
      */
     public function index(Request $request)
     {
+        
         /**
          * Server-side Process (DataTables)
          */
         if ($request->ajax()) {
-            $emp_rel = EmployeeRelationship::with('employees', 'offices', 'positions', 'classifications', 'employment_statuses')->get();
-            return DataTables::of($emp_rel)->make(true);
+            $emp_rel = Employee::all();
+            return DataTables::of($emp_rel)
+            ->addColumn(‘action’, function ($emp_rel) {
+                $name = "name";
+                return $name;
+            })
+            ->rawColumns([‘action’])
+            ->make(true);
         }
+
+
 
         return view('modules.employee');
     }
