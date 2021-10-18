@@ -86,9 +86,22 @@
         serverSide: true,
         deferRender: true,
         ajax: '/employee/create',
-        columns: [{
-            data: 'lastname',
-            name: 'lastname'
+        columns: [
+          {
+            data: 'name',
+            name: 'name'
+          },
+          {
+            data: 'position',
+            name: 'position'
+          },
+          {
+            data: 'classification',
+            name: 'classification'
+          },
+          {
+            data: 'status',
+            name: 'status'
           },
           {
             data: 'action',

@@ -8,7 +8,10 @@
                 <div class="box table-responsive" style="width:100%;">
                         <table id="employeetable" class="display">
                             <thead>
-                                    <th>lastname</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Classification</th>
+                                    <th>Status</th>
                                     <th>action</th>
                             </thead>
                             <tbody>
