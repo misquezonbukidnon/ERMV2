@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
-use DataTables;
+use Yajra\DataTables\DataTables;
 
 class EmployeeController extends Controller
 {
@@ -15,18 +15,18 @@ class EmployeeController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         /**
          * Server-side Process (DataTables)
          */
         if ($request->ajax()) {
-            $emp_rel = Employee::all();
-            return DataTables::of($emp_rel)
-            ->addColumn(‘action’, function ($emp_rel) {
-                $name = "name";
-                return $name;
+            $empRel = Employee::all();
+            return DataTables::of($empRel)
+            ->addColumn('action', function ($empRel) {
+                $button = $empRel->firstname;
+                return $button;
             })
-            ->rawColumns([‘action’])
+            ->rawColumns(['action'])
             ->make(true);
         }
 
