@@ -12,13 +12,13 @@ class SettingsImport extends Component
     public $xlsFile;
     public function uploadFile()
     {
-        dd($this->xlsFile);
+        // dd($this->xlsFile);
 
-        // $this->validate([
-        //     'xlsFile' => 'mimes:xlsx', // 1MB Max
-        // ]);
+        $this->validate([
+            'xlsFile' => 'mimes:xlsx', // 1MB Max
+        ]);
 
-        // $this->xlsFile->store('files');
+        $this->xlsFile->store('files');
 
 
         // Sleep for 1 second before flash message

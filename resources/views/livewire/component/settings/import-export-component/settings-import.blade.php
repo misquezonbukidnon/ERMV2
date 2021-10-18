@@ -1,15 +1,14 @@
 <form wire:submit.prevent="uploadFile" method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="card mb-3">
+    <div class="card mb-3" wire:ignore>
         <!-- File Attachment Input -->
         <div class="card-body">
             <h3 class="card-title">Import</h3>
             <p class="card-text">Import Files or Data.</p>
-            <label class="custom-file-boxed" for="customFileInputBoxedEg">
+            <label class="custom-file-boxed" for="customFileInputBoxedEg"  wire:model="xlsFile">
                 <span id="customFileBoxedEgsettings">Browse your device and upload documents</span>
                 <small class="d-block text-muted">Maximum file size 10MB</small>
-
-                <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file" wire:model="xlsFile"
+                <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file"
                     class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
                 "textTarget": "#customFileBoxedEgsettings"
             }'>
