@@ -78,7 +78,7 @@ class EmployeeController extends Controller
             $empRel = EmployeeRelationship::with('employees', 'offices', 'positions', 'classifications', 'employment_statuses')->get();
             return DataTables::of($empRel)
                 ->addColumn('name', function ($empRel) {
-                    $suffix = isset($empRel->employees->suffix) ? "," . $empRel->employees->suffix : " ";
+                    $suffix = isset($empRel->employees->suffix) ? ", " . $empRel->employees->suffix : " ";
                     $name = $empRel->employees->firstname . " " . $empRel->employees->middlename’ . " " . $empRel->employees->lastname . $suffix;
                     return $name;
                 })
