@@ -51,22 +51,22 @@ class EmployeeController extends Controller
         $subq_classifications = Classification::where('id', $query->classifications_id)->first();
         $subq_employment_statuses = EmploymentStatus::where('id', $query->employment_statuses_id)->first();
 
-        $this->employment_date=$subq_employees->employment_date;
-        $this->employee_number=$subq_employees->employee_number;
-        $this->lastname=$subq_employees->lastname;
-        $this->firstname=$subq_employees->firstname;
-        $this->middlename=$subq_employees->middlename;
-        $this->suffix=$subq_employees->suffix;
-        $this->address=$subq_employees->address;
-        $this->contact_number=$subq_employees->contact_number;
-        $this->email=$subq_employees->email;
-        $this->emergency_contact_person=$subq_employees->emergency_contact_person;
-        $this->ecp_contact_number=$subq_employees->ecp_contact_number;
-        $this->ecp_email=$subq_employees->ecp_email;
-        $this->positions_name=$subq_positions->name;
-        $this->offices_name=$subq_offices->name;
-        $this->classifications_name=$subq_classifications->name;
-        $this->employment_statuses_name=$subq_employment_statuses->name;
+        $this->employment_date = $subq_employees->employment_date;
+        $this->employee_number = $subq_employees->employee_number;
+        $this->lastname = $subq_employees->lastname;
+        $this->firstname = $subq_employees->firstname;
+        $this->middlename = $subq_employees->middlename;
+        $this->suffix = $subq_employees->suffix;
+        $this->address = $subq_employees->address;
+        $this->contact_number = $subq_employees->contact_number;
+        $this->email = $subq_employees->email;
+        $this->emergency_contact_person = $subq_employees->emergency_contact_person;
+        $this->ecp_contact_number = $subq_employees->ecp_contact_number;
+        $this->ecp_email = $subq_employees->ecp_email;
+        $this->positions_name = $subq_positions->name;
+        $this->offices_name = $subq_offices->name;
+        $this->classifications_name = $subq_classifications->name;
+        $this->employment_statuses_name = $subq_employment_statuses->name;
     }
     public function index(Request $request)
     {
@@ -96,12 +96,13 @@ class EmployeeController extends Controller
                     return $employment_statuses;
                 })
                 ->addColumn('action', function ($empRel) {
-                    $button = '<button wire:click="employeeModalEdit({{$empRel->employees->id }})" data-toggle="modal" data-target="#editrecordmodal" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
+                    $button = '<button @click="employeeModalEdit({{$empRel->employees->id }})" data-toggle="modal" data-target="#editrecordmodal" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
                     <i class="tio-edit"></i>
                 </button>
-                <button  wire:click="showEmployee({{$empRel->employees->id }})" data-toggle="modal" data-target="#recordshowEmployee" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
+                <button  @click="showEmployee({{$empRel->employees->id }})" data-toggle="modal" data-target="#recordshowEmployee" type="button" class="btn btn-outline-primary btn-xs btn-icon ">
                     <i class="tio-visible"></i>
                 </button>';
+
 
                     return $button;
                 })

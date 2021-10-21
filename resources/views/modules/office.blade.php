@@ -14,14 +14,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div id="accountSidebarNav"></div>
-                    <livewire:component.office.addofficeform />
+                    <livewire:page.office.office-addofficeform/>
                     <br>
-                    <livewire:component.dashboard.userprofile />
+                    <livewire:global.user-profile.user-profile />
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-12 mb-5">
-                            <livewire:component.office.officetable />
+                            <livewire:page.office.office-table />
                         </div>
                     </div>
 
@@ -32,5 +32,5 @@
     </div>
     <!-- End Body -->
 </div>
-<livewire:component.modal.office.office-edit />
+<livewire:page.modal.modal-office.office-editoffice />
 @endsection

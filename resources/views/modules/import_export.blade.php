@@ -11,7 +11,7 @@
 
      <div class="row">
           <div class="col-lg-3 mb-3">
-               <livewire:component.dashboard.userprofile />
+               <livewire:global.user-profile.user-profile />
                <div class="mt-3 mb-3">
                     <!-- user events here -->
                </div>
@@ -19,10 +19,10 @@
           <div class="col-lg-9">
                <div class="row">
                     <div class="col-md-12  mb-3">
-                         <livewire:component.settings.import-export-component.settings-import />
+                         <livewire:page.settings.settings-import />
                     </div>
                     <div class="col-md-12  mb-3">
-                         <livewire:component.settings.import-export-component.settings-export />
+                         <livewire:page.settings.settings-export />
                     </div>
                </div>
           </div>

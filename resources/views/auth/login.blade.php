@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-    <livewire:component.auth.login />
+    <livewire:auth.login />
 @endsection

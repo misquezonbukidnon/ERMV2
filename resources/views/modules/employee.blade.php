@@ -11,24 +11,24 @@
 
     <div class="row">
         <div class="col-lg-3">
-            <livewire:component.dashboard.userprofile />
+            <livewire:global.user-profile.user-profile />
             <div class="mt-3 mb-3">
-            
+
             </div>
         </div>
         <div class="col-lg-9">
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <livewire:component.record.addrecordcomponent.employmenttable />
+                    <livewire:page.record.record-employeetable />
                 </div>
                 <div class="col-md-12 mb-5">
-                    <livewire:component.record.addrecordcomponent.addemployeeform />
+                    <livewire:page.record.index/>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<livewire:component.modal.record.record-show-employee />
-<livewire:component.modal.record.record-edit />
+<livewire:global.modal.modal-dashboard.dashboard-showemployee />
+<livewire:page.modal.modal-record.record-editrecord />
 
 @endsection
