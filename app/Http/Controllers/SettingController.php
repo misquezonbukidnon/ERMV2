@@ -13,6 +13,6 @@ class SettingController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->input('file'));
+        dd($request->all());
     }
 }
