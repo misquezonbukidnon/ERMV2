@@ -3,7 +3,15 @@
     <div class="card mb-3">
         <!-- File Attachment Input -->
         <div class="card-body">
-            <input id="myinput" name="file" type="file" class="">
+            <!-- <input id="myinput" name="file" type="file" class=""> -->
+            <label class="custom-file-boxed" for="customFileInputBoxedEg">
+                <span id="customFileBoxedEg">Browse your device and upload documents</span>
+                <small class="d-block text-muted">Maximum file size 10MB</small>
+
+                <input id="customFileInputBoxedEg"  id="myinput" name="file" type="file"class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
+             "textTarget": "#customFileBoxedEg"
+           }'>
+            </label>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary">Upload</button>
             </div>
