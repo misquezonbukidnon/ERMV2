@@ -10,4 +10,9 @@ class SettingController extends Controller
     {
         return view('modules.import_export');
     }
+
+    public function store(Request $request)
+    {
+        dd($request->input('file'));
+    }
 }

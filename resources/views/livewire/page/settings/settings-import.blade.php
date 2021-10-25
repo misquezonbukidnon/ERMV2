@@ -1,16 +1,14 @@
-<form wire:submit.prevent="uploadFile" method="POST" enctype="multipart/form-data">
+<form action="/settings/import" method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="card mb-3" wire:ignore>
+    <div class="card mb-3">
         <!-- File Attachment Input -->
         <div class="card-body">
             <h3 class="card-title">Import</h3>
             <p class="card-text">Import Files or Data.</p>
-            <label class="custom-file-boxed" for="customFileInputBoxedEg" wire:model="xlsFile">
+            <label class="custom-file-boxed" for="customFileInputBoxedEg">
                 <span id="customFileBoxedEgsettings">Browse your device and upload documents</span>
                 <small class="d-block text-muted">Maximum file size 10MB</small>
-                <input id="customFileInputBoxedEg" name="custom-file-boxed" type="file" class="js-file-attach custom-file-boxed-input" data-hs-file-attach-options='{
-                "textTarget": "#customFileBoxedEgsettings"
-            }'>
+                <input id="customFileInputBoxedEg" name="file" type="file" class="form-control">
             </label>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary">Upload</button>
@@ -41,12 +39,14 @@
                     <!-- Nav -->
                     <ul class="nav nav-segment" id="connectionsTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="grid-tab" data-toggle="tab" href="#grid" role="tab" aria-controls="grid" aria-selected="true" title="Column view">
+                            <a class="nav-link active" id="grid-tab" data-toggle="tab" href="#grid" role="tab"
+                                aria-controls="grid" aria-selected="true" title="Column view">
                                 <i class="tio-column-view-outlined"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false" title="List view">
+                            <a class="nav-link" id="list-tab" data-toggle="tab" href="#list" role="tab"
+                                aria-controls="list" aria-selected="false" title="List view">
                                 <i class="tio-agenda-view-outlined"></i>
                             </a>
                         </li>
@@ -74,7 +74,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <img class="avatar avatar-4by3" src="../assets/svg/brands/google-sheets.svg" alt="Image Description">
+                                    <img class="avatar avatar-4by3" src="../assets/svg/brands/google-sheets.svg"
+                                        alt="Image Description">
 
                                     <a class="stretched-link" href="#"></a>
                                 </div>
@@ -98,7 +99,8 @@
                     @for ($i = 0; $i <= 20; $i++) <li class="list-group-item">
                         <div class="row align-items-center gx-2">
                             <div class="col-auto">
-                                <img class="avatar avatar-xs avatar-4by3" src="../assets/svg/brands/google-sheets.svg" alt="Image Description">
+                                <img class="avatar avatar-xs avatar-4by3" src="../assets/svg/brands/google-sheets.svg"
+                                    alt="Image Description">
                             </div>
 
                             <div class="col">
@@ -117,7 +119,11 @@
                                     <button type="button" class="btn btn-light btn-icon">
                                         <i class="tio-delete"></i>
                                     </button>
-                                    <div id="filesListDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated" style="min-width: 13rem; animation-duration: 300ms;" data-hs-target-height="0" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut">
+                                    <div id="filesListDropdown1"
+                                        class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated"
+                                        style="min-width: 13rem; animation-duration: 300ms;" data-hs-target-height="0"
+                                        data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp"
+                                        data-hs-unfold-content-animation-out="fadeOut">
                                         <span class="dropdown-header">Settings</span>
                                         <a class="dropdown-item" href="#">
                                             <i class="tio-delete-outlined dropdown-item-icon"></i> Delete

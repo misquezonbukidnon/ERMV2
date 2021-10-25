@@ -54,3 +54,6 @@ Route::get('/employee/create', [EmployeeController::class, 'index'])
 Route::get('/settings/records', [SettingController::class, 'index'])
     ->middleware('auth')
     ->name('settings_records');
+
+Route::post('/settings/import', [SettingController::class, 'store'])
+    ->middleware('auth');
